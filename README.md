@@ -1,3 +1,8 @@
 # FED1 Project Exam 1
 
-Use this file to describe your project.
+## Client:
+- Name: SoundWaves Discoveries
+- Sector: Music discovery platform
+- Size: 24 employees
+- Location: Worldwide
+- Mission: Create an innovative platform for discovering and promoting new musical talent worldwide, connecting music enthusiast with emerging artist, and providing a unique music exploration experience. 
