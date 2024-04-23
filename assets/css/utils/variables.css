@@ -58,5 +58,17 @@
     --text-2xl: clamp(1.728rem, 1.6341rem + 0.4693vi, 2.1973rem);
     --text-3xl: clamp(2.0736rem, 1.939rem + 0.673vi, 2.7466rem);
     --text-4xl: clamp(2.4883rem, 2.2993rem + 0.9449vi, 3.4332rem);
+
+    /* SPACING */
+
+    --space-3xs: clamp(0.25rem, 0.2375rem + 0.0625vi, 0.3125rem);       /* 5px - 4px */
+    --space-2xs: clamp(0.5rem, 0.4875rem + 0.0625vi, 0.5625rem);        /* 8px - 9px */
+    --space-xs: clamp(0.75rem, 0.725rem + 0.125vi, 0.875rem);           /* 14px - 12px */
+    --space-s: clamp(1rem, 0.975rem + 0.125vi, 1.125rem);               /* 16px - 18px */
+    --space-m: clamp(1.5rem, 1.4625rem + 0.1875vi, 1.6875rem);          /* 27px - 24px */
+    --space-l: clamp(2rem, 1.95rem + 0.25vi, 2.25rem);                  /* 36px - 32px */
+    --space-xl: clamp(3rem, 2.925rem + 0.375vi, 3.375rem);              /* 54px - 48px */
+    --space-2xl: clamp(4rem, 3.9rem + 0.5vi, 4.5rem);                   /* 72px - 64px */
+    --space-3xl: clamp(6rem, 5.85rem + 0.75vi, 6.75rem);                /* 108px - 96px */
  }
    
