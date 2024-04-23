@@ -4,60 +4,60 @@
 
     /* MAIN COLORS RGB */
 
-    --color-primary: 7, 13, 17;
-    --color-secondary: 253, 253, 253;
+    --color-primary: 7, 13, 17;                 /* #070d11 */
+    --color-secondary: 253, 253, 253;           /* #fdfdfd */
 
 
     /* REST OF COLORS RGB */
 
-    --turquoise-light: 235, 250, 250;
-    --turquoise-light-hover: 225, 247, 247;
-    --turquoise-light-active: 194, 239, 239;
-    --turquoise-normal: 57, 204, 204;
-    --turquoise-normal-hover: 51, 184, 184;
-    --turquoise-normal-active: 46, 163, 163;
-    --turquoise-dark: 43, 153, 153;
-    --turquoise-dark-hover: 34, 122, 122;
-    --turquoise-dark-active: 26, 92, 92;
-    --turquoise-darker: 20, 71, 71;
+    --turquoise-light: 235, 250, 250;           /* #ebfafa */
+    --turquoise-light-hover: 225, 247, 247;     /* #e1f7f7 */
+    --turquoise-light-active: 194, 239, 239;    /* #c2efef */
+    --turquoise-normal: 57, 204, 204;           /* #39cccc */
+    --turquoise-normal-hover: 51, 184, 184;     /* #33b8b8 */
+    --turquoise-normal-active: 46, 163, 163;    /* #2ea3a3 */
+    --turquoise-dark: 43, 153, 153;             /* #2b9999 */
+    --turquoise-dark-hover: 34, 122, 122;       /* #227a7a */
+    --turquoise-dark-active: 26, 92, 92;        /* #1a5c5c */
+    --turquoise-darker: 20, 71, 71;             /* #144747 */
 
-    --elephant-light: 232, 236, 239;
-    --elephant-light-hover: 220, 227, 2306;
-    --elephant-light-active: 183, 197, 204;
-    --elephant-normal: 22, 67, 90;
-    --elephant-normal-hover: 20, 60, 81;
-    --elephant-normal-active: 18, 54, 72;
-    --elephant-dark: 17, 50, 68;
-    --elephant-dark-hover: 13, 40, 54;
-    --elephant-dark-active: 10, 30, 40;
-    --elephant-darker: 8, 23, 31;
+    --elephant-light: 232, 236, 239;            /* #e8ecef */
+    --elephant-light-hover: 220, 227, 2306;     /* #dce3e6 */
+    --elephant-light-active: 183, 197, 204;     /* #b7c5cc */
+    --elephant-normal: 22, 67, 90;              /* #16435a */
+    --elephant-normal-hover: 20, 60, 81;        /* #143c51 */
+    --elephant-normal-active: 18, 54, 72;       /* #123648 */
+    --elephant-dark: 17, 50, 68;                /* #113244 */
+    --elephant-dark-hover: 13, 40, 54;          /* #0d2836 */
+    --elephant-dark-active: 10, 30, 40;         /* #0a1e28 */
+    --elephant-darker: 8, 23, 31;               /* #08171f */
 
-    --gray-light: 253, 253, 253;
-    --gray-light-hover: 252, 252, 252;
-    --gray-light-active: 250, 250, 250;
-    --gray-normal: 238, 238, 238;
-    --gray-normal-hover: 214, 214, 214;
-    --gray-normal-active: 190, 190, 190;
-    --gray-dark: 179, 179, 179;
-    --gray-dark-hover: 143, 143, 143;
-    --gray-dark-active: 107, 107, 107;
-    --gray-darker: 83, 83, 83;
+    --gray-light: 253, 253, 253;                /* #fdfdfd */
+    --gray-light-hover: 252, 252, 252;          /* #fcfcfc */
+    --gray-light-active: 250, 250, 250;         /* #fafafa */
+    --gray-normal: 238, 238, 238;               /* #eeeeee */
+    --gray-normal-hover: 214, 214, 214;         /* #d6d6d6 */
+    --gray-normal-active: 190, 190, 190;        /* #bebebe */
+    --gray-dark: 179, 179, 179;                 /* #b3b3b3 */
+    --gray-dark-hover: 143, 143, 143;           /* #8f8f8f */
+    --gray-dark-active: 107, 107, 107;          /* #6b6b6b */
+    --gray-darker: 83, 83, 83;                  /* #535353 */
 
-    --red-warning: 128, 35, 32;
-    --green-success: 33, 96, 33;
+    --red-warning: 128, 35, 32;                 /* #802320 */
+    --green-success: 33, 96, 33;                /* #216021 */
     
     /* TYPOGRAPHY */
 
     --font-primary: 'Poppins', sans-serif;
 
-    --text-xs: clamp(0.6944rem, 0.6893rem + 0.0256vi, 0.72rem);
-    --text-sm: clamp(0.8333rem, 0.82rem + 0.0667vi, 0.9rem);
-    --text-base: clamp(1rem, 0.975rem + 0.125vi, 1.125rem);
-    --text-lg: clamp(1.2rem, 1.1588rem + 0.2063vi, 1.4063rem);
-    --text-xl: clamp(1.44rem, 1.3764rem + 0.3178vi, 1.7578rem);
-    --text-2xl: clamp(1.728rem, 1.6341rem + 0.4693vi, 2.1973rem);
-    --text-3xl: clamp(2.0736rem, 1.939rem + 0.673vi, 2.7466rem);
-    --text-4xl: clamp(2.4883rem, 2.2993rem + 0.9449vi, 3.4332rem);
+    --text-xs: clamp(0.6944rem, 0.6893rem + 0.0256vi, 0.72rem);         /* 11px - 12px */
+    --text-sm: clamp(0.8333rem, 0.82rem + 0.0667vi, 0.9rem);            /* 13px - 14px */
+    --text-base: clamp(1rem, 0.975rem + 0.125vi, 1.125rem);             /* 16px - 18px */
+    --text-lg: clamp(1.2rem, 1.1588rem + 0.2063vi, 1.4063rem);          /* 19px - 22px */
+    --text-xl: clamp(1.44rem, 1.3764rem + 0.3178vi, 1.7578rem);         /* 23px - 28px */
+    --text-2xl: clamp(1.728rem, 1.6341rem + 0.4693vi, 2.1973rem);       /* 28px - 36px */
+    --text-3xl: clamp(2.0736rem, 1.939rem + 0.673vi, 2.7466rem);        /* 33px - 44px */
+    --text-4xl: clamp(2.4883rem, 2.2993rem + 0.9449vi, 3.4332rem);      /* 39px - 55px */
 
     /* SPACING */
 
@@ -70,5 +70,18 @@
     --space-xl: clamp(3rem, 2.925rem + 0.375vi, 3.375rem);              /* 54px - 48px */
     --space-2xl: clamp(4rem, 3.9rem + 0.5vi, 4.5rem);                   /* 72px - 64px */
     --space-3xl: clamp(6rem, 5.85rem + 0.75vi, 6.75rem);                /* 108px - 96px */
+
+    /* One-up pairs */
+    /* --space-3xs-2xs: clamp(0.25rem, 0.1875rem + 0.3125vi, 0.5625rem);
+    --space-2xs-xs: clamp(0.5rem, 0.425rem + 0.375vi, 0.875rem);
+    --space-xs-s: clamp(0.75rem, 0.675rem + 0.375vi, 1.125rem);
+    --space-s-m: clamp(1rem, 0.8625rem + 0.6875vi, 1.6875rem);
+    --space-m-l: clamp(1.5rem, 1.35rem + 0.75vi, 2.25rem);
+    --space-l-xl: clamp(2rem, 1.725rem + 1.375vi, 3.375rem);
+     --space-xl-2xl: clamp(3rem, 2.7rem + 1.5vi, 4.5rem);
+     --space-2xl-3xl: clamp(4rem, 3.45rem + 2.75vi, 6.75rem); */
+
+    /* Custom pairs */
+    /* --space-s-l: clamp(1rem, 0.75rem + 1.25vi, 2.25rem); */
  }
    
