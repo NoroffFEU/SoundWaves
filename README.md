@@ -1,5 +1,7 @@
 # FED1 Project Exam 1
 
+Testing commit! :)
+
 ## Client:
 - Name: SoundWaves Discoveries
 - Sector: Music discovery platform
