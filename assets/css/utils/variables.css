@@ -1,95 +1,62 @@
 :root {
+    /* SCHEME */
+    color-scheme: light dark;
 
-    /* MAIN COLORS */
+    /* MAIN COLORS RGB */
 
-    --color-primary: var(--ebony-400) ;
-    --color-secondary: #ffffff;
+    --color-primary: 7, 13, 17;
+    --color-secondary: 253, 253, 253;
 
 
-    /* REST OF COLORS */
+    /* REST OF COLORS RGB */
 
-    --ebony-50: #eaecee;
-    --ebony-75: #a8b0b7;
-    --ebony-100: #858f9a;
-    --ebony-200: #505f6e;
-    --ebony-300: #2c3e50;
-    --ebony-400: #1f2b38;
-    --ebony-500: #1b2631;
+    --turquoise-light: 235, 250, 250;
+    --turquoise-light-hover: 225, 247, 247;
+    --turquoise-light-active: 194, 239, 239;
+    --turquoise-normal: 57, 204, 204;
+    --turquoise-normal-hover: 51, 184, 184;
+    --turquoise-normal-active: 46, 163, 163;
+    --turquoise-dark: 43, 153, 153;
+    --turquoise-dark-hover: 34, 122, 122;
+    --turquoise-dark-active: 26, 92, 92;
+    --turquoise-darker: 20, 71, 71;
 
-    --coral-50:#ffefed;
-    --coral-75: #ffbfb4;
-    --coral-100: #ffa594;
-    --coral-200: #ff7e66;
-    --coral-300: #ff6347;
-    --coral-400: #b34532;
-    --coral-500: #9c3c2b;
-    
-    --green-50:#e8f6f3;
-    --green-75: #9fd8cd;
-    --green-100: #78c8b8;
-    --green-200: #3eb09a;
-    --green-300: #16a085;
-    --green-400: #0f705d;
-    --green-500: #0d6251;
-    
-    --orange-50:#fdf2e9;
-    --orange-75: #f5caa4;
-    --orange-100: #f1b47f;
-    --orange-200: #ea9448;
-    --orange-300: #e67e22;
-    --orange-400: #a15818;
-    --orange-500: #8c4d15;
-    
-    --grey-50:#f4f6f6;
-    --grey-75: #d4dadb;
-    --grey-100: #c2cbcb;
-    --grey-200: #a7b4b5;
-    --grey-300: #95a5a6;
-    --grey-400: #687374;
-    --grey-500: #5b6565;
-      
-    --purple-50:#f5eef8;
-    --purple-75: #d6bbe1;
-    --purple-100: #c59fd5;
-    --purple-200: #ac75c2;
-    --purple-300: #9b59b6;
-    --purple-400: #6d3e7f;
-    --purple-500: #5f366f;
+    --elephant-light: 232, 236, 239;
+    --elephant-light-hover: 220, 227, 2306;
+    --elephant-light-active: 183, 197, 204;
+    --elephant-normal: 22, 67, 90;
+    --elephant-normal-hover: 20, 60, 81;
+    --elephant-normal-active: 18, 54, 72;
+    --elephant-dark: 17, 50, 68;
+    --elephant-dark-hover: 13, 40, 54;
+    --elephant-dark-active: 10, 30, 40;
+    --elephant-darker: 8, 23, 31;
 
-    --yellow-50: #fef9e7;
-    --yellow-75: #f9e79d;
-    --yellow-100: #f7dd74;
-    --yellow-200: #f3ce38;
-    --yellow-300: #f1c40f;
-    --yellow-400: #a9890b;
-    --yellow-500: #937809;
-    
-    --green-light-50:#eafaf1;
-    --green-light-75: #a9eac5;
-    --green-light-100: #86e1ad;
-    --green-light-200: #52d589;
-    --green-light-300: #2ecc71;
-    --green-light-400: #208f4f;
-    --green-light-500: #1c7c45;
+    --gray-light: 253, 253, 253;
+    --gray-light-hover: 252, 252, 252;
+    --gray-light-active: 250, 250, 250;
+    --gray-normal: 238, 238, 238;
+    --gray-normal-hover: 214, 214, 214;
+    --gray-normal-active: 190, 190, 190;
+    --gray-dark: 179, 179, 179;
+    --gray-dark-hover: 143, 143, 143;
+    --gray-dark-active: 107, 107, 107;
+    --gray-darker: 83, 83, 83;
 
-    --blue-50:#ebf5fb;
-    --blue-75: #acd5f0;
-    --blue-100: #89c3ea;
-    --blue-200: #57aae1;
-    --blue-300: #3498db;
-    --blue-400: #246a99;
-    --blue-500: #205d86;
+    --red-warning: 128, 35, 32;
+    --green-success: 33, 96, 33;
     
     /* TYPOGRAPHY */
 
     --font-primary: 'Poppins', sans-serif;
 
-    --fs-32: 3.2rem;
-    --fs-28: 2.8rem;
-    --fs-25: 2.5rem;
-    --fs-22: 2.2rem;
-    --fs-20: 2rem;
-    --fs-18: 1.8rem;
-    --fs-16: 1.6rem;
+    --text-xs: clamp(0.6944rem, 0.6893rem + 0.0256vi, 0.72rem);
+    --text-sm: clamp(0.8333rem, 0.82rem + 0.0667vi, 0.9rem);
+    --text-base: clamp(1rem, 0.975rem + 0.125vi, 1.125rem);
+    --text-lg: clamp(1.2rem, 1.1588rem + 0.2063vi, 1.4063rem);
+    --text-xl: clamp(1.44rem, 1.3764rem + 0.3178vi, 1.7578rem);
+    --text-2xl: clamp(1.728rem, 1.6341rem + 0.4693vi, 2.1973rem);
+    --text-3xl: clamp(2.0736rem, 1.939rem + 0.673vi, 2.7466rem);
+    --text-4xl: clamp(2.4883rem, 2.2993rem + 0.9449vi, 3.4332rem);
  }
    
