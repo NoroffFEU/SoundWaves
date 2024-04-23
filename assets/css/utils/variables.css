@@ -1,0 +1,95 @@
+:root {
+
+    /* MAIN COLORS */
+
+    --color-primary: var(--ebony-400) ;
+    --color-secondary: #ffffff;
+
+
+    /* REST OF COLORS */
+
+    --ebony-50: #eaecee;
+    --ebony-75: #a8b0b7;
+    --ebony-100: #858f9a;
+    --ebony-200: #505f6e;
+    --ebony-300: #2c3e50;
+    --ebony-400: #1f2b38;
+    --ebony-500: #1b2631;
+
+    --coral-50:#ffefed;
+    --coral-75: #ffbfb4;
+    --coral-100: #ffa594;
+    --coral-200: #ff7e66;
+    --coral-300: #ff6347;
+    --coral-400: #b34532;
+    --coral-500: #9c3c2b;
+    
+    --green-50:#e8f6f3;
+    --green-75: #9fd8cd;
+    --green-100: #78c8b8;
+    --green-200: #3eb09a;
+    --green-300: #16a085;
+    --green-400: #0f705d;
+    --green-500: #0d6251;
+    
+    --orange-50:#fdf2e9;
+    --orange-75: #f5caa4;
+    --orange-100: #f1b47f;
+    --orange-200: #ea9448;
+    --orange-300: #e67e22;
+    --orange-400: #a15818;
+    --orange-500: #8c4d15;
+    
+    --grey-50:#f4f6f6;
+    --grey-75: #d4dadb;
+    --grey-100: #c2cbcb;
+    --grey-200: #a7b4b5;
+    --grey-300: #95a5a6;
+    --grey-400: #687374;
+    --grey-500: #5b6565;
+      
+    --purple-50:#f5eef8;
+    --purple-75: #d6bbe1;
+    --purple-100: #c59fd5;
+    --purple-200: #ac75c2;
+    --purple-300: #9b59b6;
+    --purple-400: #6d3e7f;
+    --purple-500: #5f366f;
+
+    --yellow-50: #fef9e7;
+    --yellow-75: #f9e79d;
+    --yellow-100: #f7dd74;
+    --yellow-200: #f3ce38;
+    --yellow-300: #f1c40f;
+    --yellow-400: #a9890b;
+    --yellow-500: #937809;
+    
+    --green-light-50:#eafaf1;
+    --green-light-75: #a9eac5;
+    --green-light-100: #86e1ad;
+    --green-light-200: #52d589;
+    --green-light-300: #2ecc71;
+    --green-light-400: #208f4f;
+    --green-light-500: #1c7c45;
+
+    --blue-50:#ebf5fb;
+    --blue-75: #acd5f0;
+    --blue-100: #89c3ea;
+    --blue-200: #57aae1;
+    --blue-300: #3498db;
+    --blue-400: #246a99;
+    --blue-500: #205d86;
+    
+    /* TYPOGRAPHY */
+
+    --font-primary: 'Poppins', sans-serif;
+
+    --fs-32: 3.2rem;
+    --fs-28: 2.8rem;
+    --fs-25: 2.5rem;
+    --fs-22: 2.2rem;
+    --fs-20: 2rem;
+    --fs-18: 1.8rem;
+    --fs-16: 1.6rem;
+ }
+   
