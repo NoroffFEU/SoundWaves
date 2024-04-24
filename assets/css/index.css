@@ -11,6 +11,88 @@
 @import url("./utils/text.css");
 @import url("./utils/icons.css");
 
+/* ----- LINE ----- */
+.line {
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(90deg, rgba(22,67,90,1) 0%, rgba(57,204,204,1) 50%, rgba(22,67,90,1) 100%);
+}
+
+/* ----- HEADER ----- */
+
+header {
+    
+    & svg {
+        aspect-ratio: 58 / 7;
+        width: 175px;
+        height: 100%;
+    }
+
+    & a {
+        font-size: var(--text-sm);
+        font-weight: 300;
+    }
+
+    .toggle-switch {
+        position: relative;
+        width: 45px;
+        height: 30px;
+        --light: rgba(var(--color-secondary), 1);
+        --dark: #28292c;
+
+        & .switch-label {
+            position: absolute;
+            width: 100%;
+            height: 25px;
+            background-color: var(--dark);
+            border-radius: 30px;
+            cursor: pointer;
+            border: 3px solid var(--dark);
+          }
+          
+        & .checkbox {
+            display: none;
+          }
+          
+        & .slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+          }
+          
+        & .checkbox:checked ~ .slider {
+            background-color: var(--light);
+          }
+          
+        & .slider::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 4px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            -webkit-box-shadow: inset 6px -4px 0px 0px var(--light);
+            box-shadow: inset 6px -4px 0px 0px var(--light);
+            background-color: var(--dark);
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+          }
+          
+        & .checkbox:checked ~ .slider::before {
+            -webkit-transform: translateX(18px);
+            -ms-transform: translateX(18px);
+            transform: translateX(18px);
+            background-color: var(--dark);
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+    }
+}
 
 
 
+  
