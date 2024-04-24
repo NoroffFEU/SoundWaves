@@ -48,7 +48,7 @@
     
     /* TYPOGRAPHY */
 
-    --font-primary: 'Poppins', sans-serif;
+    --font-primary: 'Poppins', sans-serif;      /* TODO */
 
     --text-xs: clamp(0.6944rem, 0.6893rem + 0.0256vi, 0.72rem);         /* 11px - 12px */
     --text-sm: clamp(0.8333rem, 0.82rem + 0.0667vi, 0.9rem);            /* 13px - 14px */
