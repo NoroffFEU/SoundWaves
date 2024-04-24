@@ -35,8 +35,8 @@
 </head>
 <body>
     <header>
-        <a href="#">
-            <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="#" aria-label="SoundWaves logo">
+            <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo">
                 <g id="logo">
                 <g id="waves">
                 <g id="WAVES">
@@ -98,17 +98,17 @@
                 </defs>
             </svg> 
         </a>
-        <nav>
+        <nav role="navigation">
             <ul>
-                <li><a href="#">
-                    <span class="material-symbols-outlined">search</span>
+                <li><a href="#" aria-label="Language selector">
+                    <span class="material-symbols-outlined">globe</span>
                     EN</a>
                 </li>
-                <li><a href="#">
-                    <span class="material-symbols-outlined">globe</span>
+                <li><a href="#" aria-label="Search">
+                    <span class="material-symbols-outlined">search</span>
                     Search</a>
                 </li>
-                <li><a href="#">
+                <li><a href="#" aria-label="Toggle dark mode">
                     <span class="material-symbols-outlined">dark_mode</span>
                     </a>
                 </li>
@@ -116,7 +116,7 @@
     </header>
 
     <section class="hero">
-        <article>
+        <article aria-label="Featured posts">
             <div>
                 <span class="tag">Music tech</span>
                 <h1 class="title">Lorem ipsum, door sit amet consectetur.</h1>
@@ -134,7 +134,7 @@
             </div>
         </article>
 
-        <div class="carousel-dots">
+        <div class="carousel-dots" aria-hidden="true">
             <span class="dot">*</span>
             <span class="dot">*</span>
             <span class="dot">*</span>
@@ -142,167 +142,199 @@
     </section>
 
     <main>
-        <section class="breadcrumbs">
-            <a href="#">Soundwaves</a>
+        <section class="breadcrumbs" role="navigation" aria-label="Breadcrumb navigation">
+            <a href="#">SoundWaves</a>
             <span>></span>
             <a href="#">Blog</a>
             <span>></span>
-            <p>All posts</p>
+            <p aria-current="page">All posts</p>
         </section>
     
         <section class="categories">
             <h3>Blog categories</h3>
-            <div>
-                <article>
-                    <div>
-                        <h4>New releases</h4>
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </div>
-                    <div>
-                        <h4>Artist spotlights</h4>
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </div>
-                    <div>
-                        <h4>Music reviews</h4>
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </div>
-                    <div>
-                        <h4>Music & wellness</h4>
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </div>
-                    <div>
-                        <h4>Concert coverage</h4>
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </div>
-                    <div>
-                        <h4>Music tech</h4>
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </div>
-                </article>
-            </section>
+            <nav role="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <h4>New releases</h4>
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h4>Artist spotlights</h4>
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h4>Music reviews</h4>
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h4>Music & wellness</h4>
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h4>Concert coverage</h4>
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h4>Music tech</h4>
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>     
+        </section>
         
-            <section class="posts">
-                <h3>All posts</h3>
-                <article data-first-post="true">
-                    <header>
-                        <img src="./assets/img/Placeholder 1.jpg" alt="">
-                    </header>
+        <section class="posts">
+
+            <h3>All posts</h3>
+
+            <article data-first-post="true">
+                <header>
+                    <img src="./assets/img/Placeholder 1.jpg" alt="">
+                </header>
+                <div>
                     <div>
-                        <div>
-                            <span class="tag">New releases</span>
-                            <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
-                        </div>
-                        <footer>
-                            <span class="date">10/20/2024</span>
+                        <span class="tag">New releases</span>
+                        <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
+                    </div>
+                    <footer>
+                        <span class="date">10/20/2024</span>
+                        <a href="#">
                             <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
                         </footer>
                     </div>
-                </article>
-                <article data-first-post="false">
-                    <header>
-                        <img src="./assets/img/Placeholder 4.jpg" alt="">
-                    </header>
+            </article>
+
+            <article data-first-post="false">
+                <header>
+                    <img src="./assets/img/Placeholder 4.jpg" alt="">
+                </header>
+                <div>
                     <div>
-                        <div>
-                            <span class="tag">New releases</span>
-                            <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
-                        </div>
-                        <footer>
-                            <span class="date">10/20/2024</span>
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </footer>
+                        <span class="tag">New releases</span>
+                        <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
                     </div>
-                </article>
-                <article data-first-post="false">
-                    <header>
-                        <img src="./assets/img/Placeholder 3.jpg" alt="">
-                    </header>
+                    <footer>
+                        <span class="date">10/20/2024</span>
+                        <a href="#">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </footer>
+                </div>
+            </article>
+
+            <article data-first-post="false">
+                <header>
+                    <img src="./assets/img/Placeholder 3.jpg" alt="">
+                </header>
+                <div>
                     <div>
-                        <div>
-                            <span class="tag">New releases</span>
-                            <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
-                        </div>
-                        <footer>
-                            <span class="date">10/20/2024</span>
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </footer>
+                        <span class="tag">New releases</span>
+                        <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
                     </div>
-                </article>
-                <article data-first-post="false">
-                    <header>
-                        <img src="./assets/img/Placeholder 6.jpg" alt="">
-                    </header>
+                    <footer>
+                        <span class="date">10/20/2024</span>
+                        <a href="#">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </footer>
+                </div>
+            </article>
+
+            <article data-first-post="false">
+                <header>
+                    <img src="./assets/img/Placeholder 6.jpg" alt="">
+                </header>
+                <div>
                     <div>
-                        <div>
-                            <span class="tag">New releases</span>
-                            <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
-                        </div>
-                        <footer>
-                            <span class="date">10/20/2024</span>
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </footer>
+                        <span class="tag">New releases</span>
+                        <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
                     </div>
-                </article>
-                <article data-first-post="false">
-                    <header>
-                        <img src="./assets/img/Placeholder 7.jpg" alt="">
-                    </header>
+                    <footer>
+                        <span class="date">10/20/2024</span>
+                        <a href="#">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </footer>
+                </div>
+            </article>
+
+            <article data-first-post="false">
+                <header>
+                    <img src="./assets/img/Placeholder 7.jpg" alt="">
+                </header>
+                <div>
                     <div>
-                        <div>
-                            <span class="tag">New releases</span>
-                            <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
-                        </div>
-                        <footer>
-                            <span class="date">10/20/2024</span>
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </footer>
+                        <span class="tag">New releases</span>
+                        <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
                     </div>
-                </article>
-                <article data-first-post="false">
-                    <header>
-                        <img src="./assets/img/Placeholder 2.jpg" alt="">
-                    </header>
+                    <footer>
+                        <span class="date">10/20/2024</span>
+                        <a href="#">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </footer>
+                </div>
+            </article>
+
+            <article data-first-post="false">
+                <header>
+                    <img src="./assets/img/Placeholder 2.jpg" alt="">
+                </header>
+                <div>
                     <div>
-                        <div>
-                            <span class="tag">New releases</span>
-                            <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
-                        </div>
-                        <footer>
-                            <span class="date">10/20/2024</span>
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </footer>
+                        <span class="tag">New releases</span>
+                        <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
                     </div>
-                </article>
-                <article data-first-post="false">
-                    <header>
-                        <img src="./assets/img/Placeholder 5.jpg" alt="">
-                    </header>
+                    <footer>
+                        <span class="date">10/20/2024</span>
+                        <a href="#">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </footer>
+                </div>
+            </article>
+
+            <article data-first-post="false">
+                <header>
+                    <img src="./assets/img/Placeholder 5.jpg" alt="">
+                </header>
+                <div>
                     <div>
-                        <div>
-                            <span class="tag">New releases</span>
-                            <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
-                        </div>
-                        <footer>
-                            <span class="date">10/20/2024</span>
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </footer>
+                        <span class="tag">New releases</span>
+                        <h4 class="title">Lorem ipsum, dolor sit amet consectetur</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus nemo illum voluptatem, fugit unde sequi repellendus laboriosam error odio totam aspernatur? Nesciunt nemo ut quis, laborum placeat facere ullam.</p>
                     </div>
-                </article>
-            </div>
+                    <footer>
+                        <span class="date">10/20/2024</span>
+                        <a href="#">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </footer>
+                </div>
+            </article>
     
             <div class="pagination">
-                <a href="#">
-                    Load more stories
+                <button type="button" aria-label="Load more stories">
                     <span class="material-symbols-outlined">expand_more</span>
-    
-                </a>
+                </button>
             </div>
         </section>
     
@@ -311,8 +343,8 @@
             <p>Subscribe to our newsletter and be the first to know about new releases, upcoming concerts, and insider music news.</p>
             <div>
                 <label for="news-email">Email</label>
-                <input type="email" id="news-email" placeholder="Email address">
-                <button>Subscribe</button>
+                <input type="email" id="news-email" placeholder="Email address" aria-label="Email address">
+                <button type="submit">Subscribe</button>
             </div>
             <p>Your information will be used in accordance with our
                 <span>privacy policy</span>
@@ -321,8 +353,8 @@
     </main>
     <footer>
         <div>
-            <a href="#">
-                <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="#" aria-label="Home">
+                <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo">
                     <g id="logo">
                     <g id="waves">
                     <g id="WAVES">
@@ -385,16 +417,16 @@
                 </svg> 
             </a>
             <div class="social">
-                <a href="#">
+                <a href="#" aria-label="Facebook">
                     <span>facebook</span>
                 </a>
-                <a href="#">
+                <a href="#" aria-label="Twitter / X">
                     <span>twitter</span>
                 </a>
-                <a href="#">
+                <a href="#" aria-label="Instagram">
                     <span>instagram</span>
                 </a>
-                <a href="#">
+                <a href="#" aria-label="YouTube">
                     <span>youtube</span>
                 </a>
             </div>
@@ -405,7 +437,7 @@
             <span>Noroff logo</span>
         </div>
 
-        <div>
+        <div class="footer-links" role="navigation" aria-label="Footer navigation links">
             <a href="#">
                 <span>Terms of use</span>
             </a>
@@ -426,7 +458,7 @@
             </a>
         </div>
 
-        <div>
+        <div aria-label="Copyright notice">
             <span>© 2024 Soundwaves Discoveries, Inc</span>
         </div>
         
