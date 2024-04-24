@@ -48,7 +48,6 @@
 
     html {
         scroll-behavior: smooth;
-        font-size: 62.5%;
     }
 
     /* ----- TEXT STYLES ----- */
@@ -63,8 +62,8 @@
 
 
     ::selection {
-        background-color: var(--color-secondary);
-        color: var(--color-primary);
+        background-color: rgba(var(--color-secondary), 1);
+        color: rgba(var(--color-primary), 1);
     }
 
     /* ----- FORMS ----- */
@@ -95,8 +94,8 @@
         min-height: 100vh;
         font-size: 100%;
         font-family: var(--font-primary);
-        background: var(--color-primary);
-        color: var(--color-secondary);
+        background: rgba(var(--color-primary), 1);
+        color: rgba(var(--color-secondary), 1);
         line-height: 1.4;
         font-smooth: always;
         -webkit-font-smoothing: antialiased;
