@@ -177,6 +177,23 @@ header {
     }
 }
 
+/* ----- BREADCRUMBS ----- */
+
+.breadcrumbs {
+    background-color: rgba(var(--elephant-darker), 1);
+    font-size: var(--text-sm);
+
+    & a, span {
+        font-weight: 600;
+    }
+
+    p {
+        color: rgba(var(--color-secondary), .75);
+        font-weight: 300;
+
+    }
+}
+
 
 
   
