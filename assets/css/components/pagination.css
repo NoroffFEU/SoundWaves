@@ -1,0 +1,22 @@
+/* ----- PAGINATION LANDING PAGE ----- */
+.pagination {
+    
+    padding-block: var(--space-3xl);
+    display: grid;
+   
+
+    & button {
+        cursor: pointer;
+        font-size: var(--text-sm);
+    }
+
+    & span {
+        display: block;
+        max-width: fit-content;
+        margin: auto;
+        background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
+        padding: 5px;
+        margin-top: var(--space-s);
+        border-radius: 50%;
+    }
+}

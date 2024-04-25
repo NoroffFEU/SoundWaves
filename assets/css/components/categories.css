@@ -1,0 +1,12 @@
+/* ----- BLOG CATEGORIES ----- */
+.categories {
+    padding-bottom: var(--space-3xl);
+
+    & a {
+        position: relative;
+        background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
+        padding: var(--space-m);
+        border-radius: 10px;
+        z-index: 20;  
+    }
+}
