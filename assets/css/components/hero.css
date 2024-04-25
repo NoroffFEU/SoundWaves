@@ -1,6 +1,7 @@
 /* ----- HERO ----- */
 
 .hero {
+    scroll-snap-type: x mandatory;
     overflow: scroll;
 
     &::after {
@@ -14,11 +15,12 @@
     }
     
     & article {
-        min-height: calc(100dvh - 74px);
-        
+        min-height: calc(100dvh - 74px);  
     }
 
     & .featured-post {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
         flex: 1 0 100%;
         background-size: cover;
         background-position: center;
