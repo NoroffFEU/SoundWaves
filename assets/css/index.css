@@ -24,6 +24,62 @@
 
 
 
+/* ----- SUMMARY ----- */
+.summary {
+    background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
+    border-radius: 10px;
+    padding: var(--space-l);
+
+    & div:first-of-type {
+        border-right: 2px solid rgba(var(--turquoise-dark), 1);
+    }
+
+    & div:last-of-type {
+        border-left: 2px solid rgba(var(--turquoise-dark), 1);
+    }
+}
+
+/* ----- SEARCH IMPUT ----- */
+
+.search-edit {
+    padding: var(--space-3xl);
+    
+    & div {
+        border: 2px solid rgba(var(--turquoise-dark), 1);
+        border-radius: 10px;
+        max-width: 500px;
+        width: 100%;
+
+        & input {
+            font-size: var(--text-sm);
+            font-weight: 300;
+            padding: 15px;
+            width: 100%;
+        }
+
+        & button {
+            cursor: pointer;
+            padding: 15px;
+            color: rgba(var(--color-secondary), .75);
+        }
+    }
+}
+
+/* ----- ADMIN TABLE ----- */
+
+/* .post-table {
+    border: 2px solid rgba(var(--turquoise-dark), 1);
+    width: 100%;
+    
+    & thead {
+        
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        
+    }
+} */
+
+
 /* ----- COMMON COMPONENTS----- */
 
 .tag {
@@ -79,6 +135,10 @@
     }
     &.gradient-right::after {
         background: linear-gradient(90deg, rgba(190,190,190, .1) 0%, rgba(57,204,204, .5) 100%); /*TODO -> Check colors */
+    }
+
+    &.gradient-mid::after {
+        background: linear-gradient(90deg, rgba(190,190,190, .1) 0%, rgba(57,204,204, .5) 50%, rgba(190,190,190, .1) 100%);
     }
 
     &.gradient-top::after {
