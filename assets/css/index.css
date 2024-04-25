@@ -38,6 +38,7 @@ header {
         height: 30px;
         --light: rgba(var(--color-secondary), 1);
         --dark: #28292c;
+        user-select: none;
 
         & .switch-label {
             position: absolute;
@@ -89,12 +90,17 @@ header {
             -webkit-box-shadow: none;
             box-shadow: none;
           }
+        & span:last-of-type {
+            display: none;
+        }
     }
 }
 
 /* ----- HERO ----- */
 
 .hero {
+    overflow: scroll;
+
     &::after {
         content: "";
         position: absolute;
@@ -486,4 +492,8 @@ footer {
     border-radius: 10px;
     padding: 20px 40px;
     background: rgba(var(--turquoise-dark-hover), 1);
+}
+
+.media-padding {
+    padding-inline: 20px;
 }
