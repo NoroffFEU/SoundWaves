@@ -24,31 +24,32 @@
         flex-direction: column;
 
         padding: var(--space-l);
-
-        & .tag {
-            font-family: 'Geist Mono';
-            font-size: var(--text-sm);
-            letter-spacing: .25rem;
-        }
     
         & .title {
-            font-size: var(--text-base);
+            font-size: var(--text-lg);
             font-weight: 700;
             color: rgba(var(--color-secondary), 1);
-            padding-block: var(--space-xs);
+            padding-top: var(--space-m);
         }
     
         & .text-content {
-            font-size: var(--text-sm);
+            font-size: var(--text-base);
             font-weight: 300;
             color: rgba(var(--color-secondary), .75);
+            padding-top: var(--space-xs);
         }
     
         & .date {
             font-family: 'Geist Mono';
             font-size: var(--text-sm);
             font-weight: 100;
+            letter-spacing: .05rem;
             color: rgba(var(--color-secondary), .75);
+        }
+
+        & .material-symbols-outlined {
+            font-size: var(--text-xl);
+            font-weight: 700;
         }
     }
 

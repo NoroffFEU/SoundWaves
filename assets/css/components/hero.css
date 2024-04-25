@@ -29,9 +29,7 @@
         padding: var(--space-xl-3xl);
 
         & .tag {
-            font-family: 'Geist Mono';
             z-index: 20;
-            letter-spacing: .25rem;
         }
 
         & .title{

@@ -1,5 +1,6 @@
 /* ----- HEADER ----- */
 header {
+  
     & svg {
         aspect-ratio: 58 / 7;
         width: 175px;
