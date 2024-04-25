@@ -1,0 +1,9 @@
+/* ----- POST FOOTER ----- */
+.share {
+    padding-bottom: var(--space-3xl);
+    font-weight: 600;
+
+    & div {
+        padding-top: var(--space-xs);
+    }
+}
