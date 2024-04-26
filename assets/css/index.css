@@ -24,6 +24,97 @@
 @import url("./pages/post/edit.css");
 
 
+/* ----- EDIT POST ----- */
+
+.form-editor {
+
+    & .form-top {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        color: rgba(var(--color-secondary), 1);
+
+        & label {
+            font-size: var(--text-sm);
+            padding-bottom: var(--space-2xs)
+        }
+
+        & #title {
+            color: rgba(var(--color-secondary), 1);
+
+            &::placeholder {
+                color: rgba(var(--color-secondary), .75);
+            }
+        }
+
+
+        & #category {
+            background-color: rgba(var(--color-primary), 1);
+            text-align: center;
+    
+            & option {
+                background-color: rgba(var(--color-primary), 1);
+                font-size: var(--text-sm);
+                font-weight: 300;
+            }
+        }
+    }
+
+    & .thumbnail-background {
+        background-image: url('../img/Placeholder 1.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        border: 2px solid rgba(var(--turquoise-dark-hover), 1);
+
+        & #thumbnail {
+            display: none;
+        }
+
+        & label {
+            position: relative;
+            display: grid;
+            place-content: center;
+            cursor: pointer;
+            padding: var(--space-2xl);
+
+            & span {
+                font-family: 'Geist Mono';
+                font-size: var(--text-sm);
+                font-weight: 300;
+                z-index: 10;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(var(--color-primary), .75);
+                border-radius: 10px;
+                z-index: 5;
+            }
+        }
+    }
+    
+    & input, #category {
+        font-size: var(--text-sm);
+        padding: var(--space-s);
+        border-radius: 10px;
+        border: 2px solid rgba(var(--turquoise-dark-hover), 1);
+    } 
+
+    & .form-buttons {
+        padding-top: var(--space-m);
+        padding-bottom: var(--space-3xl);
+        
+        & .btn, .delete-btn{
+            font-size: var(--text-sm);
+            max-width: 200px;
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+}
 
 
 
