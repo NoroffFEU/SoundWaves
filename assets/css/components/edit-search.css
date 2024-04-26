@@ -1,0 +1,24 @@
+/* ----- SEARCH IMPUT ----- */
+.search-edit {
+    padding: var(--space-3xl);
+    
+    & div {
+        border: 2px solid rgba(var(--turquoise-dark), 1);
+        border-radius: 10px;
+        max-width: 500px;
+        width: 100%;
+
+        & input {
+            font-size: var(--text-sm);
+            font-weight: 300;
+            padding: 15px;
+            width: 100%;
+        }
+
+        & button {
+            cursor: pointer;
+            padding: 15px;
+            color: rgba(var(--color-secondary), .75);
+        }
+    }
+}

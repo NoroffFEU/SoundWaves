@@ -1,0 +1,14 @@
+/* ----- SUMMARY ----- */
+.summary {
+    background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
+    border-radius: 10px;
+    padding: var(--space-l);
+
+    & div:first-of-type {
+        border-right: 2px solid rgba(var(--turquoise-dark), 1);
+    }
+
+    & div:last-of-type {
+        border-left: 2px solid rgba(var(--turquoise-dark), 1);
+    }
+}

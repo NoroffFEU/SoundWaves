@@ -1,0 +1,31 @@
+/* ----- ADMIN TABLE ----- */
+.table-border {
+    border: 2px solid rgba(var(--turquoise-dark), 1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.post-table {
+    width: 100%;
+    border-collapse: separate; 
+    
+    & th {
+        font-size: var(--text-sm);
+        padding: var(--space-l);
+
+        &:nth-child(1) {
+            text-align: left;
+        }
+    }
+
+    & td {
+        font-weight: 300;
+        font-size: var(--text-sm);
+        padding: var(--space-l);
+        border-top: 2px solid rgba(var(--turquoise-dark), 1);
+
+        &:nth-child(n+2) {
+            text-align: center;
+        }
+    }
+}
