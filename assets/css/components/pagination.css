@@ -20,3 +20,23 @@
         border-radius: 50%;
     }
 }
+
+.edit-pagination {
+
+    font-size: var(--text-sm);
+    padding-block: var(--space-3xl);
+
+    & button {
+        cursor: pointer;
+    }
+
+    & .material-symbols-outlined {
+        font-size: 30px;
+        padding: 15px;
+        background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
+        border-radius: 50%;
+    }
+
+    
+
+}
