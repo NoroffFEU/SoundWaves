@@ -5,8 +5,12 @@
         background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
         border-radius: 10px;
 
+        &[data-first-post="true"] header{
+            border-radius: 10px 0px 0px 10px;
+        }
+
         & header {
-            border-radius: 10px 10px   0px 0px;
+            border-radius: 10px 10px 0px 0px;
             overflow: hidden;
             height: 100%;
         }
@@ -30,13 +34,15 @@
             font-weight: 700;
             color: rgba(var(--color-secondary), 1);
             padding-top: var(--space-m);
+            text-wrap: balance;
         }
     
         & .text-content {
-            font-size: var(--text-base);
+            font-size: var(--text-sm);
             font-weight: 300;
             color: rgba(var(--color-secondary), .75);
             padding-top: var(--space-xs);
+            text-wrap: pretty;
         }
     
         & .date {

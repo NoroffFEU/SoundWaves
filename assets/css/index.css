@@ -135,6 +135,7 @@
 }
 
 .btn {
+    cursor: pointer;
     font-size: var(--text-sm);
     font-weight: 500;
     border-radius: 10px;
