@@ -13,7 +13,7 @@
     <!-- Facebook Meta tags -->
     <meta property="og:url" content=""> <!-- TODO -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SoundWaves Discoveries - Blog">
+    <meta property="og:title" content="SoundWaves Discoveries - New post">
     <meta property="og:description" content="Here is the description of the Open Graph"> <!-- TODO -->
     <meta property="og:image" content=""> <!-- TODO: must be a link -->
     <meta property="og:image:alt" content=""> <!-- TODO -->
@@ -32,6 +32,7 @@
     
 
     <!-- JavaScript-->
+    <script src="../assets/js/modules/tinymce/tinymce.min.js" referrerpolicy="origin" ></script>
 
 </head>
 <body>
@@ -128,131 +129,59 @@
                 <span>></span>
                 <a href="#">Blog</a>
                 <span>></span>
-                <p aria-current="page">Manage posts</p>
+                <a href="#">Manage Posts</a>
+                <span>></span>
+                <p aria-current="page">New post</p>
             </div>
         </section>
 
-        <section class="mw-1200">
-            <h1 class="heading">Manage posts</h1>
-            <article class="summary grid-3-col align-items-center text-center gradient gradient-mid">
-                <div role="presentation">
-                    <h2>32</h2>
-                    <span>Posts</span>
-                </div>
-                <div role="presentation"> <!-- TODO circle background -->
-                    <h2>57</h2>
-                    <span>Comments</span>
-                </div>
-                <div role="presentation">
-                    <h2>267</h2>
-                    <span>Posts views</span>
-                </div>
-            </article>
+        <h1 class="heading mw-1200">New post</h1>
 
-            <form action="#" method="get" class="search-edit flex-fw center" name="searchEdit">
-                <div class="flex">
-                    <label for="search-edit" class="hidden">Search</label>
-                    <input type="search" name="search-edit" id="search-edit" placeholder="Search by title">
-                    <button type="submit" aria-label="Submit search by title">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+        <section class="post-edit mw-1200">
+            
+            <form id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
+                <div class="form-top gap-30">
+                    <div>
+                        <label for="title">Title</label>
+                        <input class="width-100" type="text" id="title" name="title" placeholder="Title" required>
+                    </div>
+    
+                    <div>
+                        <label for="category">Category</label>
+                        <select class="width-100" name="category" id="category" name="category" required>
+                            <option value="">Select category</option>
+                            <option value="New releases">New releases</option>
+                            <option value="Artist spotlights">Artist spotlights</option>
+                            <option value="Music reviews">Music reviews</option>
+                            <option value="Music & wellness">Music & wellness</option>
+                            <option value="Concert coverage">Concert coverage</option>
+                            <option value="Music tech">Music tech</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="thumbnail-background">
+                        <label for="thumbnail">
+                            <span class="btn">Choose thumbnail</span>
+                        </label>
+                        <input class="width-100" type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+                    </div>
+                </div>
+
+                <div class="editor-border">
+                    <label for="editor" class="hidden">Edit</label>
+                    <textarea id="editor" name="editor" required>Este es un editor</textarea>
+                </div>
+
+
+                <div class="form-buttons flex center column gap-30">
+                    <button type="submit" class="btn">Create</button>
+                    <button type="submit" class="delete-btn">Discard</button>
                 </div>
             </form>
-
-            <div class="table-border">
-                <table class="post-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Category</th>
-                            <th>Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-cell="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </td>
-                            <td data-cell="category">Category</td>
-                            <td data-cell="date">2022-01-01</td>
-                            <td data-cell="actions" class="flex center align-items-center gap-30">
-                                <button type="button" aria-label="Edit" class="edit-btn">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
-                                <button type="button" aria-label="Delete" class="delete-btn">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-cell="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </td>
-                            <td data-cell="category">Category</td>
-                            <td data-cell="date">2022-01-01</td>
-                            <td data-cell="actions" class="flex center align-items-center gap-30">
-                                <button type="button" aria-label="Edit" class="edit-btn">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
-                                <button type="button" aria-label="Delete" class="delete-btn">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-cell="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </td>
-                            <td data-cell="category">Category</td>
-                            <td data-cell="date">2022-01-01</td>
-                            <td data-cell="actions" class="flex center align-items-center gap-30">
-                                <button type="button" aria-label="Edit" class="edit-btn">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
-                                <button type="button" aria-label="Delete" class="delete-btn">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-cell="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </td>
-                            <td data-cell="category">Category</td>
-                            <td data-cell="date">2022-01-01</td>
-                            <td data-cell="actions" class="flex center align-items-center gap-30">
-                                <button type="button" aria-label="Edit" class="edit-btn">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
-                                <button type="button" aria-label="Delete" class="delete-btn">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-cell="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </td>
-                            <td data-cell="category">Category</td>
-                            <td data-cell="date">2022-01-01</td>
-                            <td data-cell="actions" class="flex center align-items-center gap-30">
-                                <button type="button" aria-label="Edit" class="edit-btn">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
-                                <button type="button" aria-label="Delete" class="delete-btn">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-
-
-            <div class="edit-pagination flex center align-items-center gap-50">
-                <button type="button" aria-label="Load more stories">
-                    <span class="material-symbols-outlined gradient gradient-top">chevron_left</span>
-                </button>
-                <p>Page <span>1</span> of <span>10</span></p>
-                <button type="button" aria-label="Load more stories">
-                    <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
-                </button>
-            </div>
-
         </section>
-
+ 
         <div class="line"></div>
 
     </main>
@@ -365,5 +294,26 @@
         </div>
         
     </footer>
+    
 </body>
 </html>
+
+<script>
+    tinymce.init({
+      content_css: "../../assets/css/components/editor.css",
+      selector: '#editor',
+      skin: 'oxide-dark',
+      license_key: 'gpl',
+      branding: false,
+      menubar: false,
+      resize: false,
+      height: 750,
+      toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | image | bullist numlist',
+      plugins: 'image lists wordcount ',
+    });
+
+    
+
+</script>
+
+
