@@ -23,6 +23,102 @@
 @import url("./components/post-footer.css");
 @import url("./pages/post/edit.css");
 
+/* ----- ACCOUNT ----- */
+
+.account {
+    background: rgba(var(--elephant-darker), 1);
+    padding: var(--space-xl);
+    border-radius: 10px;
+    
+
+    & header {
+
+        & h1 {
+            text-align: center;
+            font-size: var(--text-base);
+            font-weight: 600;
+           
+        }
+
+        & .button-group-container {
+            background: rgba(var(--elephant-normal-active), 1);
+            padding: var(--space-xs);
+            border-radius: 10px;
+            margin-bottom: 40px;
+
+            & button {
+                flex: 1;
+                padding: var(--space-xs);
+                border-radius: 10px;
+                font-size: var(--text-base);
+                font-weight: 300;
+                color: rgba(var(--color-secondary), .75);
+                cursor: pointer;
+
+                &[data-is-active="true"] {
+                    background: rgba(var(--turquoise-dark-hover), 1);
+                    color: rgba(var(--color-secondary), 1);
+                    font-weight: 500;
+                }
+            }
+        }   
+    }
+
+    & .body {
+        
+        & input {
+            flex: 1;
+            padding: 20px;
+        }
+
+        & .border-bottom {
+            border-bottom: 2px solid rgba(var(--turquoise-dark-hover), 1);
+        }
+        
+        & input::placeholder {
+            font-weight: 300;
+            color: rgba(var(--color-secondary), 1);
+        }
+
+        & span {
+            font-weight: 200;
+            color: rgba(var(--color-secondary), .75);
+        }
+
+        & [data-visibility] {
+            cursor: pointer;
+        }
+
+        & input[type="checkbox"] + label {
+            cursor: pointer;
+            font-size: var(--text-sm);
+            font-weight: 300;
+            color: rgba(var(--color-secondary), .75);
+        }
+
+        & a {
+            font-size: var(--text-sm);
+            font-weight: 300;
+            color: rgba(var(--color-secondary), .5);
+        }
+
+    }
+
+    & footer {
+        max-width: 480px;
+
+        & p {
+            text-align: center;
+            font-size: var(--text-sm);
+            font-weight: 300;
+            color: rgba(var(--color-secondary), .5);
+        }
+    }
+}
+    
+
+
+
 
 /* ----- EDIT POST ----- */
 
@@ -188,6 +284,10 @@
 
     &.gradient-top::before {
         border-radius: 40px; 
+    }
+
+    &.gradient-login::after {
+        background: linear-gradient(90deg, rgba(57,204,204, .5) 0%, rgba(29,102,102, .5) 100%);
     }
     
 }

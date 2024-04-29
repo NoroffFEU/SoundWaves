@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundWaves Discoveries - Post</title>
+    <!-- HTML Meta tags -->
+    <meta name="description" content="Here is the description"> <!-- TODO -->
+    <meta name="author" content="Jesus A.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#16435A"> 
+
+    <!-- Facebook Meta tags -->
+    <meta property="og:url" content=""> <!-- TODO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SoundWaves Discoveries - New post">
+    <meta property="og:description" content="Here is the description of the Open Graph"> <!-- TODO -->
+    <meta property="og:image" content=""> <!-- TODO: must be a link -->
+    <meta property="og:image:alt" content=""> <!-- TODO -->
+
+    <!-- Twitter Meta tags -->
+
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg" href="../../assets/img/Favicon dark.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/index.css">
+    
+
+    <!-- JavaScript-->
+    <script src="../../modules/tinymce/tinymce.min.js" referrerpolicy="origin" ></script>
+
+</head>
+<body>
+    <main class="full-screen flex center align-items-center">
+        <section class="account gradient gradient-login">
+            <form action="../../controllers/account/login.php" method="post">
+                <div>
+                    <header class="flex column gap-50">
+                        <h1>Welcome back!</h1>
+                        <div class="button-group-container flex-fw justify-sb gap-30">
+                            <button type="button" data-is-active="false">Login</button>
+                            <button type="button" data-is-active="true">Register</button>
+                        </div>
+                    </header>
+                    <div class="body flex column gap-30">
+                        <div class="border-bottom flex-fw relative align-items-center">
+                            <label for="user-name">
+                                <span class="material-symbols-outlined">
+                                    person
+                                </span>
+                            </label>
+                            <input type="text" name="user-name" id="user-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="border-bottom flex-fw relative align-items-center">
+                            <label for="email">
+                                <span class="material-symbols-outlined">
+                                stacked_email
+                                </span>
+                            </label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="border-bottom flex-fw align-items-center relative">
+                            <label for="password">
+                                <span class="material-symbols-outlined">
+                                lock
+                                </span>
+                            </label>
+                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            <span data-visibility="false" class="material-symbols-outlined">
+                                visibility_off
+                            </span>
+                        </div>
+                        <div class="border-bottom flex-fw align-items-center relative">
+                            <label for="repeat-password">
+                                <span class="material-symbols-outlined">
+                                lock
+                                </span>
+                            </label>
+                            <input type="password" name="repeat-password" id="repeat-password" placeholder="Repeat your password" required>
+                            <span data-visibility="false" class="material-symbols-outlined">
+                                visibility_off
+                            </span>
+                        </div>
+                    </div>
+
+                    <footer class="flex column gap-40">
+                        <p>It's time to tune up your admin powers and make the world groove to new melodies and amazing rhythms!</p>
+                        <button type="submit" class="btn width-100">Log in</button>
+                    </footer>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
+
+
