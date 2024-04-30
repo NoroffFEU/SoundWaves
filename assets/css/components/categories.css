@@ -12,3 +12,41 @@
 
    
 }
+
+/* ----- MEDIA ----- */
+
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 600px) {
+    .categories {
+
+        & .grid-3-col {
+            grid-template-columns: 1fr;
+        }
+
+        & li::after {
+            background: linear-gradient(90deg, rgba(57,204,204, .5) 0%, rgba(190,190,190, .1) 100%) !important; 
+        }
+
+        & .circle-right::before {
+            display: none;
+        }
+    }
+}
+  
+/* MEDIUM screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .categories {
+
+        & .grid-3-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        & li:nth-child(2n + 1)::after {
+            background: linear-gradient(90deg, rgba(57,204,204, .5) 0%, rgba(190,190,190, .1) 100%) !important; 
+        }
+
+        & li:nth-child(2n)::after {
+            background: linear-gradient(90deg, rgba(190,190,190, .1) 0%, rgba(57,204,204, .5) 100%) !important; 
+        }
+    }    
+}

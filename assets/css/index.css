@@ -24,6 +24,8 @@
 @import url("./pages/post/edit.css");
 @import url("./components/login.css");
 @import url("./components/editor.css");
+@import url("./utils/hovers.css");
+@import url("./media.css");
 
 
 /* ----- COMMON COMPONENTS----- */

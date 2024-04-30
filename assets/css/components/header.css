@@ -20,6 +20,11 @@ header {
         --dark: #28292c;
         user-select: none;
 
+        &:hover .slider::before{
+            -webkit-box-shadow: inset 6px -4px 0px 0px rgba(var(--turquoise-normal), 1);
+            box-shadow: inset 6px -4px 0px 0px rgba(var(--turquoise-normal), 1);
+          }
+
         & .switch-label {
             position: absolute;
             width: 100%;
@@ -74,4 +79,22 @@ header {
             display: none;
         }
     }
+}
+
+
+
+/* ----- MEDIA ----- */
+
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 600px) {
+
+  header {
+    & .text {
+        display: none;
+    }
+
+    & ul  {
+      gap: 15px !important;
+    }
+  }
 }
