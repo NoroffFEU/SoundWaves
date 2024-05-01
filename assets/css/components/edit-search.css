@@ -1,6 +1,6 @@
 /* ----- SEARCH IMPUT ----- */
 .search-edit {
-    padding: var(--space-3xl);
+    padding-block: var(--space-3xl);
     
     & div {
         border: 2px solid rgba(var(--turquoise-dark), 1);
@@ -22,3 +22,4 @@
         }
     }
 }
+

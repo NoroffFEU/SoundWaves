@@ -4,13 +4,16 @@
     background: linear-gradient(180deg, rgba(var(--elephant-darker),1) 0%, rgba(34,99,133,.3) 40%, rgba(8,23,31,1) 75%, rgba(8,23,31,0) 100%);
     
         & header {
-
             padding-top: var(--space-xl);
 
             & h1 {
                 font-size: var(--text-2xl);
                 font-weight: 600;
                 padding-top: var(--space-s);
+            }
+
+            & .social {
+                margin-left: auto;
             }
         }
 
@@ -55,4 +58,22 @@
                 color: rgba(var(--color-secondary), .75);
             }
         }
+}
+
+/* ----- MEDIA ----- */
+
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 600px) {
+
+}
+  
+/* MEDIUM screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    
+
+}
+  
+/* LARGE screens (desktop) */
+ @media only screen and (min-width: 1025px) {
+    
 }
