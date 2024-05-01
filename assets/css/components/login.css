@@ -24,7 +24,7 @@
                 flex: 1;
                 padding: var(--space-xs);
                 border-radius: 10px;
-                font-size: var(--text-base);
+                font-size: var(--text-sm);
                 font-weight: 300;
                 color: rgba(var(--color-secondary), .75);
                 cursor: pointer;
@@ -43,15 +43,17 @@
         & input {
             flex: 1;
             padding: 20px;
-        }
+            font-size: var(--text-sm);
 
+            &::placeholder {
+                font-weight: 300;
+                color: rgba(var(--color-secondary), .75);
+            }
+
+        }
+            
         & .border-bottom {
             border-bottom: 2px solid rgba(var(--turquoise-dark-hover), 1);
-        }
-        
-        & input::placeholder {
-            font-weight: 300;
-            color: rgba(var(--color-secondary), 1);
         }
 
         & span {
@@ -89,3 +91,22 @@
         }
     }
 }
+
+/* ----- MEDIA ----- */
+
+
+/* MEDIUM screens (tablets) */
+@media only screen and (max-width: 1024px) {
+    .account-body {
+        background: rgba(var(--elephant-darker), 1);
+
+        & .account {
+            padding: 20px;
+        }
+
+        & .gradient-login::after {
+            background: none;
+        }
+    }
+}
+  
