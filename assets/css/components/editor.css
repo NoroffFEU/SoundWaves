@@ -97,3 +97,22 @@
     }
 
 }
+
+/* ----- MEDIA ----- */
+
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 800px) {
+
+    .breadcrumbs {
+        font-size: var(--text-xs);
+    }
+
+    .form-editor {
+
+        & .form-top {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+}

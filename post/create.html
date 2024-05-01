@@ -28,7 +28,7 @@
     <link rel="icon" type="image/svg" href="../../assets/img/Favicon dark.svg">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     
 
     <!-- JavaScript-->
@@ -37,7 +37,7 @@
 </head>
 <body>
     <header class="flex-fw justify-sb align-items-center pd-20">
-        <a href="#" aria-label="SoundWaves logo">
+        <a href="./index.html" aria-label="SoundWaves logo" class="hover-opacity">
             <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo">
                 <g id="logo">
                 <g id="waves">
@@ -102,13 +102,15 @@
         </a>
         <nav role="navigation">
             <ul class="flex align-items-center gap-20">
-                <li><a href="#" aria-label="Language selector" class="flex align-items-center gap-8">
+                <li><a href="#" aria-label="Language selector" class="flex align-items-center gap-8 hover-underline">
                     <span class="material-symbols-outlined">globe</span>
-                    EN</a>
+                    <span class="text">EN</span>
+                    </a>
                 </li>
-                <li><a href="#" aria-label="Search" class="flex align-items-center gap-8">
+                <li><a href="#" aria-label="Search" class="flex align-items-center gap-8 hover-underline">
                     <span class="material-symbols-outlined">search</span>
-                    Search</a>
+                    <span class="text">Search</span>
+                    </a>
                 </li>
                 <li class="toggle-switch">
                     <label class="switch-label">
@@ -135,9 +137,9 @@
             </div>
         </section>
 
-        <h1 class="heading mw-1200">New post</h1>
+        <h1 class="heading mw-1200 media-padding">New post</h1>
 
-        <section class="post-edit mw-1200">
+        <section class="post-edit mw-1200 media-padding">
             
             <form id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
                 <div class="form-top gap-30">
@@ -187,8 +189,8 @@
     </main>
 
     <footer class="mw-1200 media-padding">
-        <div class="flex-fw justify-sb align-items-center">
-            <a href="#" aria-label="Home" class="footer-logo">
+        <div class="header flex-fw justify-sb align-items-center">
+            <a href="./index.html" aria-label="Home" class="footer-logo">
                 <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo">
                     <g id="logo">
                     <g id="waves">
@@ -271,22 +273,24 @@
         </div>
 
         <div class="noroff">
-            <span>Student of</span>
-            <img src="../../assets/img/Noroff logo.svg" alt="">
+            <a href="https://www.noroff.no/index.php" target="_blank">
+                <span>Student of</span>
+                <img src="../assets/img/Noroff logo.svg" alt="Noroff logo">
+            </a>
         </div>
 
         <div class="footer-links flex center gap-10" role="navigation" aria-label="Footer navigation links">
-            <a href="#">Terms of use</a>
+            <a href="#" >Terms of use</a>
             <span>|</span>
-            <a href="#">Privacy policy</a>
+            <a href="#" >Privacy policy</a>
             <span>|</span>
-            <a href="#">Artist Submission Guidelines</a>
+            <a href="#" >Artist Submission Guidelines</a>
             <span>|</span>
-            <a href="#">Contributor Application & Guidelines</a>
+            <a href="#" >Contributor Application & Guidelines</a>
             <span>|</span>
-            <a href="#">Music Licensing & Usage Terms</a>
+            <a href="#" >Music Licensing & Usage Terms</a>
             <span>|</span>
-            <a href="#">Contact Us</a>
+            <a href="#" >Contact Us</a>
         </div>
 
         <div aria-label="Copyright notice" class="copyright text-center">
