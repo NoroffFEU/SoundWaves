@@ -1,12 +1,12 @@
 /* ----- NEWSLETTER ----- */
 .newsletter {
-    padding: var(--space-3xl);
     background: rgba(var(--elephant-darker), 1);
+    padding-block: var(--space-2xl);
 
     & h3 {
         font-size: var(--text-xl);
         font-weight: 600;
-        padding-block: var(--space-s);
+        
     }
 
     & p:first-of-type {
@@ -30,16 +30,25 @@
     }
 
     & .subscription-form-container {
-        padding: var(--space-xl);
+        display: flex;
+        gap: 20px;
+        margin: auto;
+        max-width: 600px;
+        padding-block: var(--space-l);
 
         & input {
+            display: inline-block;
+            width: 100%;
             font-size: var(--text-sm);
             background-color: transparent;
             border: 2px solid rgba(var(--turquoise-dark-hover), 1);
             border-radius: 10px;
-            padding-inline: var(--space-m);
-            max-width: 400px;
-            width: 100%;
+            padding-inline: 20px;
+            /* max-width: 400px; */
+        }
+
+        & button {
+            margin: auto;
         }
     }
     
@@ -50,21 +59,19 @@
 /* ----- MEDIA ----- */
 
 /* SMALL screens (mobile) */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
 
     .newsletter {
+        & .subscription-form-container {
+            flex-direction: column;
+      
 
+            & input {
+                width: 100%;
+                padding: 15px;
+            }
+        }
         
     }
 
-}
-  
-/* MEDIUM screens (tablets) */
-@media only screen and (min-width: 801px) and (max-width: 1024px) {
-    
-}
-  
-/* LARGE screens (desktop) */
- @media only screen and (min-width: 1025px) {
-    
 }

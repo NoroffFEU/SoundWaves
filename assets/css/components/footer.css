@@ -65,6 +65,10 @@ footer {
             }
         }
 
+        & .copyright{
+            padding-top: var(--space-xl);
+        }
+
     }
 
 }
