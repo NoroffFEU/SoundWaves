@@ -11,17 +11,16 @@ import { initializeLoginForm } from "./modules/components/loginForm.mjs";
 import { checkIfAdmin } from "./utils/checkIfAdmin.mjs";
 import { comingFeature } from "./utils/commingFeature.mjs";
 import { initializeAdminBar } from "./modules/components/adminBar.mjs";
+import { redirectAccessDenied } from "./utils/redirect.mjs";
 
 
 
 function main() {
-  checkIfAdmin()
-  
   initializeKonamiCode();
   initializeLoginForm();
   initializeAdminBar();
+  redirectAccessDenied();
   comingFeature();
-
 
 
 
