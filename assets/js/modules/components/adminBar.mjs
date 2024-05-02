@@ -1,10 +1,14 @@
 // Admin bar
 import { ADMIN_BAR } from "../../utils/constants.mjs";
+import { redirectToIndexPage } from "../../utils/redirect.mjs";
 
 export function initializeAdminBar() {
     const adminToken = localStorage.getItem('adminToken');
     const btn = document.querySelector('#logoutBtn');
-    btn?.addEventListener('click', logout) 
+    btn?.addEventListener('click', (event)=> {
+        logout();
+        redirectToIndexPage();
+    }) 
     adminToken ? login() : logout();
         
 }
