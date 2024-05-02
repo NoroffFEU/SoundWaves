@@ -2,12 +2,14 @@ import { BASE_URL, BLOG_ENDPOINTS } from "../../../utils/constants.mjs";
 import { loginUser } from "../auth/login.mjs";
 
 // Create post
-export async function createPost(name) {
+export async function createPost(name, title, body, tags, media) {
     const url = `${BASE_URL}${BLOG_ENDPOINTS.POSTS_BY_USER(name)}`;
     const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
     const data = {
-        title: "My 4 post",
-        body: "This is my first post on the blog",
+        title: title,
+        body: body,
+        tags: [tags],
+        media: media
     };
 
     const options = {
@@ -31,3 +33,4 @@ export async function createPost(name) {
         console.error(error);
     }
 }
+

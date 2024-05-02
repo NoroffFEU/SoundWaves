@@ -45,7 +45,8 @@ export async function loginUser(email, password) {
     const token = json.data.accessToken;
 
     login(token)
-    redirectToIndexPage()
+    return token;
+    // redirectToIndexPage()
     
   } catch (error) {
     console.error(error);

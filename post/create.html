@@ -34,6 +34,8 @@
     <!-- JavaScript-->
     <script src="../assets/js/modules/tinymce/tinymce.min.js" referrerpolicy="origin" ></script>
     <script type="module" src="../assets/js/main.mjs"></script>
+    <script type="module" src="../assets/js/modules/components/createEditor.mjs"></script>
+
 
 </head>
 <body>
@@ -177,7 +179,7 @@
 
         <section class="post-edit mw-1200 media-padding">
             
-            <form id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
+            <form name="createForm" id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
                 <div class="form-top gap-30">
                     <div>
                         <label for="title">Title</label>
@@ -198,14 +200,20 @@
                     </div>
                 </div>
 
-                <div>
+                <!-- <div>
                     <div class="thumbnail-background">
                         <label for="thumbnail">
                             <span class="btn">Choose thumbnail</span>
                         </label>
-                        <input class="width-100" type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+                        <input class="width-100" type="file" id="thumbnail" name="thumbnail" accept="image/*" >
                     </div>
-                </div>
+                </div> -->
+ 
+                <div>
+                    <label for="thumbnail">
+                        <input type="text" id="thumbnail">
+                    </label>
+                </div> 
 
                 <div class="editor-border">
                     <label for="editor" class="hidden">Edit</label>
@@ -214,8 +222,8 @@
 
 
                 <div class="form-buttons flex center column gap-30">
-                    <button type="submit" class="btn">Create</button>
-                    <button type="submit" class="delete-btn">Discard</button>
+                    <button id="create" type="submit" class="btn">Create</button>
+                    <button id="discard" class="delete-btn">Discard</button>
                 </div>
             </form>
         </section>
