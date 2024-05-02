@@ -12,3 +12,5 @@ export const BLOG_ENDPOINTS = {
   POSTS_BY_USER: (name) => `blog/posts/${name}`,
   POST_BY_ID: (name, id) => `blog/posts/${name}/${id}`,
 };
+
+export const ADMIN_BAR = document.querySelector('.admin-bar');

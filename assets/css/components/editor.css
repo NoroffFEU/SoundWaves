@@ -40,7 +40,7 @@
     }
 
     & .thumbnail-background {
-        background-image: url('../img/Placeholder 1.jpg');
+        background-image: url('../../img/placeholder1.webp');
         background-position: center;
         background-size: cover;
         border-radius: 10px;

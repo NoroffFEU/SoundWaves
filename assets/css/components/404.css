@@ -1,0 +1,18 @@
+/* ----- 404 ----- */
+
+.not-found {
+    min-height: calc(100dvh - 74px); 
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 40px;
+
+    & h1 {
+        font-size: var(--text-2xl);
+        font-weight: 600;
+    }
+
+    & a {
+        margin: auto;
+    }
+}

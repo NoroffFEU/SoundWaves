@@ -107,7 +107,7 @@
         </a>
         <nav role="navigation">
             <ul class="flex align-items-center gap-20">
-                <li><a href="#" aria-label="Language selector" class="flex align-items-center gap-8 hover-underline">
+                <li><a href="#" aria-label="Language selector" class="flex align-items-center gap-8 hover-underline coming-feature">
                     <span class="material-symbols-outlined">globe</span>
                     <span class="text">EN</span>
                     </a>
@@ -118,8 +118,8 @@
                     </a>
                 </li>
                 <li class="toggle-switch">
-                    <label class="switch-label">
-                        <input type="checkbox" class="checkbox">
+                    <label class="switch-label ">
+                        <input type="checkbox" class="checkbox coming-feature">
                         <span class="slider"></span>
                         <span>*</span>
                     </label>
@@ -128,6 +128,41 @@
     </header>
 
     <div class="line"></div>
+
+    <article class="admin-bar" data-admin-logged="false">
+        <nav class=" flex-fw align-items-center justify-sb">
+            <div class="left flex align-items-center gap-10">
+                <img src="./assets/img/Noroff logo.svg" alt="Noroff avatar">
+                <span class="uppercase">Admin</span>
+            </div>
+            <ul class="flex gap-30">
+                <li>
+                    <a href="./post/create.html" aria-label="Add post" class="flex align-items-center gap-5">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                        <span>Add post</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./post/admin-panel.html" aria-label="Manage posts" class="flex align-items-center gap-5">
+                        <span class="material-symbols-outlined">
+                            dashboard_customize
+                        </span>
+                        <span>Manage posts</span>
+                    </a>
+                </li>
+                <li>
+                    <button href="./index.html" aria-label="Logout" class="flex align-items-center gap-5" id="logoutBtn">
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                        <span>Logout</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </article>
 
     <section class="hero">
         <article aria-label="Featured posts" class="flex">

@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundWaves Discoveries - Post</title>
+    <title>SoundWaves Discoveries - Blog</title>
     <!-- HTML Meta tags -->
-    <meta name="description" content="Here is the description"> <!-- TODO -->
-    <meta name="author" content="Jesus A.">
+    <meta name="description" content="Explore a world of musical wonders with SoundWaves. Discover new artist, dive into curated playlist, and stay up-to-date with the latest releases. Join our community of music enthusiasts and embark on a sonic journey like no other.">
+    <meta name="author" content="Jesus A. Herrero">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#16435A"> 
 
     <!-- Facebook Meta tags -->
-    <meta property="og:url" content=""> <!-- TODO -->
+    <meta property="og:url" content="https://norofffeu.github.io/FED1-PE1-Whisperpiano/index.html"> 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SoundWaves Discoveries - New post">
-    <meta property="og:description" content="Here is the description of the Open Graph"> <!-- TODO -->
-    <meta property="og:image" content=""> <!-- TODO: must be a link -->
-    <meta property="og:image:alt" content=""> <!-- TODO -->
+    <meta property="og:title" content="SoundWaves Discoveries - Blog">
+    <meta property="og:description" content="Discover new artist, dive into curated playlist, and stay up-to-date with the latest releases. Join our community of music enthusiasts and embark on a sonic journey like no other.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/NoroffFEU/FED1-PE1-Whisperpiano/main/assets/img/logo-og.webp"> 
+    <meta property="og:image:alt" content="SoundWaves logo OG"> 
 
     <!-- Twitter Meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="norofffeu.github.io">
+    <meta property="twitter:url" content="https://norofffeu.github.io/FED1-PE1-Whisperpiano/index.html">
+    <meta name="twitter:title" content="SoundWaves Discoveries - Blog">
+    <meta name="twitter:description" content="Discover new artist, dive into curated playlist, and stay up-to-date with the latest releases. Join our community of music enthusiasts and embark on a sonic journey like no other.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/NoroffFEU/FED1-PE1-Whisperpiano/main/assets/img/logo-og.webp">
 
     <!-- Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg" href="../../assets/img/Favicon dark.svg">
+    <link rel="icon" type="image/svg" href="../assets/img/Favicon dark.svg">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/index.css">
     
-
     <!-- JavaScript-->
-    <script src="../assets/js/modules/tinymce/tinymce.min.js" referrerpolicy="origin" ></script>
     <script type="module" src="../assets/js/main.mjs"></script>
 
 </head>
@@ -126,68 +130,15 @@
     <div class="line"></div>
 
     <main>
-        <section class="breadcrumbs pd-30" role="navigation" aria-label="Breadcrumb navigation">
-            <div class="mw-1200 flex gap-10">
-                <a href="#">SoundWaves</a>
-                <span>></span>
-                <a href="#">Blog</a>
-                <span>></span>
-                <a href="#">Manage Posts</a>
-                <span>></span>
-                <p aria-current="page">New post</p>
-            </div>
+        <section class="not-found">
+            <h1>404</h1>
+            <h2>Oops! Looks like you've stumbled upon an uncharted territory in our musical universe. But fear not, there's plenty more to discover!</h2>
+            <a href="../index.html" class="btn">Back to home</a>
         </section>
-
-        <h1 class="heading mw-1200 media-padding">New post</h1>
-
-        <section class="post-edit mw-1200 media-padding">
-            
-            <form id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
-                <div class="form-top gap-30">
-                    <div>
-                        <label for="title">Title</label>
-                        <input class="width-100" type="text" id="title" name="title" placeholder="Title" required>
-                    </div>
-    
-                    <div>
-                        <label for="category">Category</label>
-                        <select class="width-100" name="category" id="category" name="category" required>
-                            <option value="">Select category</option>
-                            <option value="New releases">New releases</option>
-                            <option value="Artist spotlights">Artist spotlights</option>
-                            <option value="Music reviews">Music reviews</option>
-                            <option value="Music & wellness">Music & wellness</option>
-                            <option value="Concert coverage">Concert coverage</option>
-                            <option value="Music tech">Music tech</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="thumbnail-background">
-                        <label for="thumbnail">
-                            <span class="btn">Choose thumbnail</span>
-                        </label>
-                        <input class="width-100" type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
-                    </div>
-                </div>
-
-                <div class="editor-border">
-                    <label for="editor" class="hidden">Edit</label>
-                    <textarea id="editor" name="editor" required>Este es un editor</textarea>
-                </div>
-
-
-                <div class="form-buttons flex center column gap-30">
-                    <button type="submit" class="btn">Create</button>
-                    <button type="submit" class="delete-btn">Discard</button>
-                </div>
-            </form>
-        </section>
- 
-        <div class="line"></div>
-
+        
     </main>
+
+    <div class="line"></div>
 
     <footer class="mw-1200 media-padding">
         <div class="header flex-fw justify-sb align-items-center">
@@ -301,23 +252,3 @@
     </footer>
 </body>
 </html>
-
-<script>
-    tinymce.init({
-      content_css: "../../assets/css/components/editor.css",
-      selector: '#editor',
-      skin: 'oxide-dark',
-      license_key: 'gpl',
-      branding: false,
-      menubar: false,
-      resize: false,
-      height: 750,
-      toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | image | bullist numlist',
-      plugins: 'image lists wordcount ',
-    });
-
-    
-
-</script>
-
-

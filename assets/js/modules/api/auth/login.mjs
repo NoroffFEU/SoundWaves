@@ -1,5 +1,7 @@
 import { BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
 import { EmailError, PasswordError, APIError } from "../../../utils/errorHandling.mjs";
+import { redirectToIndexPage } from "../../../utils/redirect.mjs";
+import { login } from "../../components/adminBar.mjs";
 
 // Login User
 export async function loginUser(email, password) {
@@ -41,8 +43,10 @@ export async function loginUser(email, password) {
     }
     const json = await response.json();
     const token = json.data.accessToken;
-    console.log(token);
-    return token;
+
+    login(token)
+    redirectToIndexPage()
+    
   } catch (error) {
     console.error(error);
   }
