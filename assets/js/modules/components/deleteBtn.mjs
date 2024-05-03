@@ -1,5 +1,4 @@
 import { deletePost } from "../api/blog/deletePost.mjs";
-import { getPostByID } from "../api/blog/getPostByID.mjs";
 import { loadFivePosts } from "./adminPanel.mjs";
 
 export function loadDeleteBtn() {
@@ -18,18 +17,3 @@ async function removePost(event) {
         console.error(error);
     } 
 }
-
-
-
-
-
-// export function loadDeleteBtn() {
-//     const deleteButtons = document.querySelectorAll(".delete-btn");
-//     deleteButtons.forEach((button) => {
-//       button.addEventListener("click", (event) => {
-//         const dataID = button.getAttribute("data-post-id");
-//         console.log(dataID);
-//       });
-//     });
-//   }
-  

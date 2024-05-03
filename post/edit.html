@@ -34,6 +34,7 @@
     <!-- JavaScript-->
     <script src="../assets/js/modules/tinymce/tinymce.min.js" referrerpolicy="origin" ></script>
     <script type="module" src="../assets/js/main.mjs"></script>
+    <script type="module" src="../assets/js/modules/components/editEditor.mjs"></script>
 
 </head>
 <body>
@@ -177,7 +178,7 @@
 
         <section class="post-edit mw-1200 media-padding">
             
-            <form id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
+            <form name="editForm" id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
                 <div class="form-top gap-30">
                     <div>
                         <label for="title">Title</label>
@@ -197,15 +198,21 @@
                         </select>
                     </div>
                 </div>
-
+                
                 <div>
+                    <label for="thumbnail">
+                        <input type="text" id="thumbnail">
+                    </label>
+                </div> 
+
+                <!-- <div>
                     <div class="thumbnail-background">
                         <label for="thumbnail">
                             <span class="btn">Choose thumbnail</span>
                         </label>
                         <input class="width-100" type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="editor-border">
                     <label for="editor" class="hidden">Edit</label>
@@ -214,8 +221,8 @@
 
 
                 <div class="form-buttons flex center column gap-30">
-                    <button type="submit" class="btn">Create</button>
-                    <button type="submit" class="delete-btn">Discard</button>
+                    <button type="submit" class="btn" id="updateBtn">Update</button>
+                    <button class="delete-btn" id="discardBtn">Discard</button>
                 </div>
             </form>
         </section>
@@ -350,9 +357,5 @@
       toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | image | bullist numlist',
       plugins: 'image lists wordcount ',
     });
-
-    
-
 </script>
-
 

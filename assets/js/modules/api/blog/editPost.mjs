@@ -3,13 +3,15 @@ import { loginUser } from "../auth/login.mjs";
 
 // Edit post
 
-export async function editPost(id, name){
+export async function editPost(name, id, title, body, tags, media){
     const url = `${BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID(name, id)}`;
     const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
 
     const data = {
-        title: "My updated post",
-        body: "This is an updated post on the bloooooog",
+        title: title,
+        body: body,
+        tags: [tags],
+        media: media
     };
     const options = {
         method: "PUT",

@@ -35,11 +35,14 @@ formulario.addEventListener('submit', async (event)=> {
     const title = formulario.title.value;
     const category = formulario.category.value;
     const thumbnail = formulario.thumbnail.value;
-
+    
     const media = { url : thumbnail}
     
    await createPost('Jesus_AH', title, content, category, media)
 
+   window.location.href = "/post/admin-panel.html"
+
 })
 
+console.log(tinymce.activeEditor.getContent('#editor'))
 
