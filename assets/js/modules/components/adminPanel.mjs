@@ -1,4 +1,3 @@
-import { adminPaginationTemplate } from "../../templates/paginationAdminPanel.mjs";
 import { tableRowTemplate, tableRowTemplateError } from "../../templates/tableRow.mjs";
 import { getPostsByUser } from "../api/blog/getAllPosts.mjs";
 
