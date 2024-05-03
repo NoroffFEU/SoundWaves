@@ -25,7 +25,7 @@ import { createPost } from "../api/blog/createPost.mjs";
 // }
 
 // printData()
-
+//TODO : Try catch block
 
 const formulario = document.forms.createForm;
 

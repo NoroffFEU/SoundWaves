@@ -3,9 +3,15 @@ import { APIError } from "../../../utils/errorHandling.mjs";
 import { loginUser } from "../auth/login.mjs";
 
 // Get all posts by user
-export async function getPostsByUser() {
-    const url = `${BASE_URL}${BLOG_ENDPOINTS.POSTS_BY_USER("Jesus_AH")}`;
+export async function getPostsByUser(limit = null, page = null) {
+    let url = `${BASE_URL}${BLOG_ENDPOINTS.POSTS_BY_USER("Jesus_AH")}`;
+
+    if (limit !== null && page !== null) {
+      url += `?limit=${limit}&page=${page}`;
+    }
+
     const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+    
     const options = {
       headers: {
         "Content-Type": "application/json",

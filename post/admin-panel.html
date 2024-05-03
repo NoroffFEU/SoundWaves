@@ -33,6 +33,7 @@
 
     <!-- JavaScript-->
     <script type="module" src="../assets/js/main.mjs"></script>
+    <script type="module" src="../assets/js/modules/components/adminPanel.mjs"></script>
 
 </head>
 <body>
@@ -207,7 +208,7 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="responsive-body">
+                    <tbody id="table-content" class="responsive-body">
                         <tr class="responsive-tr">
                             <td data-cell="title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit. </td>
                             <td data-cell="category">Music & wellness</td>
@@ -279,12 +280,12 @@
             </div>
 
 
-            <div class="edit-pagination flex center align-items-center gap-50">
-                <button type="button" aria-label="Load more stories">
+            <div id="table-pagination" class="edit-pagination flex center align-items-center gap-50">
+                <button id="prevBtn" type="button" aria-label="Load more stories">
                     <span class="material-symbols-outlined gradient gradient-top">chevron_left</span>
                 </button>
-                <p>Page <span>1</span> of <span>10</span></p>
-                <button type="button" aria-label="Load more stories">
+                <p id="pagination-text-container">Page <span id="current-page" data-current-page="1"></span> of <span id="page-count"></span></p>
+                <button id="nextBtn" type="button" aria-label="Load more stories">
                     <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
                 </button>
             </div>
