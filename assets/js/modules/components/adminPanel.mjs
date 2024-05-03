@@ -88,50 +88,68 @@ import { getPostsByUser } from "../api/blog/getAllPosts.mjs";
 let currentPage = 1;
 
 async function loadFivePosts() {
-    const posts = await getPostsByUser(5, currentPage);
-    const nextBtn = document.querySelector("#nextBtn");
-    nextBtn.addEventListener('click', nextFunction)
-    const prevBtn = document.querySelector("#prevBtn");
-    prevBtn.addEventListener('click', previousFunction)
     const table = document.querySelector("#table-content");
+    const paginationContainer = document.querySelector("#table-pagination");
     let template = "";
-    posts.data.forEach((post) => {
-        template += tableRowTemplate(post);
-    });
-    table.innerHTML = template;
-    paginationText(posts.meta.currentPage, posts.meta.pageCount)
-    console.log(posts)
+    try {
+        const posts = await getPostsByUser(5, currentPage);
+        posts.data.forEach((post) => {
+            template += tableRowTemplate(post);
+        });
+        table.innerHTML = template;
+        paginationText(posts.meta.currentPage, posts.meta.pageCount)
+
+    } catch (error) {
+        console.log(error)
+    }
 }
 
-function nextFunction() {
-        currentPage++;
-        loadFivePosts()
+function loadPaginationButtons() {
+    const nextBtn = document.querySelector("#nextBtn");
+    const prevBtn = document.querySelector("#prevBtn");
+    nextBtn.addEventListener('click', nextButtonFunction)
+    prevBtn.addEventListener('click', previousButtonFunction)
 }
 
-function previousFunction() {
+async function nextButtonFunction() {
+    nextBtn.disabled = true;
+    currentPage++;
+    await loadFivePosts()
+    nextBtn.disabled = false;
+}
+
+async function previousButtonFunction() {
+    prevBtn.disabled = true;
     currentPage--;
-    loadFivePosts()
+    await loadFivePosts()
+    prevBtn.disabled = false;
 }
 
 function paginationText(currentPage, pageCount) {
     const currentPageElement = document.querySelector("#current-page");
     const pageCountElement = document.querySelector("#page-count");
     const textContainer = document.querySelector("#pagination-text-container");
-    currentPageElement.textContent = currentPage;
-    pageCountElement.textContent = pageCount;
     const prevBtn = document.querySelector("#prevBtn");
     const nextBtn = document.querySelector("#nextBtn");
+
+    currentPageElement.textContent = currentPage;
+    pageCountElement.textContent = pageCount;
+
+    // Hide previous button if currentPage is 1
     if (currentPage === 1) {
         prevBtn.style.visibility = "hidden";
     } else {
         prevBtn.style.visibility = "visible";
     }
+
+    // Hide next button if currentPage is equal to pageCount
     if (currentPage === pageCount) {
         nextBtn.style.visibility = "hidden";
     } else {
         nextBtn.style.visibility = "visible";
     }
 
+    
     if (!currentPage && !pageCount) {
         textContainer.style.visibility = "hidden";
     } else {
@@ -140,6 +158,7 @@ function paginationText(currentPage, pageCount) {
 }
 
 loadFivePosts()
+loadPaginationButtons()
 
 
 
@@ -163,4 +182,7 @@ loadFivePosts()
 
 
 // console.log(posts)
+
+
+
 
