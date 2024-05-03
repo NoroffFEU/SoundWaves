@@ -153,6 +153,10 @@
     border-radius: 10px;
     background: rgba(var(--turquoise-dark), 1);
     color: rgba(var(--color-secondary), 1);
+
+    & i {
+        pointer-events: none;
+    }
 }
 
 .delete-btn {
@@ -161,6 +165,10 @@
     border-radius: 10px;
     background: rgba(var(--red-warning), 1);
     color: rgba(var(--color-secondary), 1);
+    
+    & i {
+        pointer-events: none;
+    }
 }
 
 .media-padding {

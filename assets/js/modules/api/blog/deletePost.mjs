@@ -3,8 +3,8 @@ import { loginUser } from "../auth/login.mjs";
 
 
 // Delete post
-export async function deletePost(id, name) {
-    const url = `${BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID(name, id)}`;
+export async function deletePost(id) {
+    const url = `${BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID("Jesus_AH", id)}`;
     const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
     const options = {
       method: "DELETE",
@@ -15,9 +15,7 @@ export async function deletePost(id, name) {
     };
     try {
       const response = await fetch(url, options);
-      const json = await response.json();
-      console.log(json);
-      return json;
+      
     } catch (error) {
       console.error(error);
     }

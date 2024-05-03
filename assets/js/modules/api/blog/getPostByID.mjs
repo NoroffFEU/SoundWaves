@@ -3,7 +3,7 @@ import { APIError } from "../../../utils/errorHandling.mjs";
 import { loginUser } from "../auth/login.mjs";
 
 // Get one post by ID
-export async function getPostByID(id, name) {
+export async function getPostByID(id) {
     const url = `${BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID("Jesus_AH", id)}`;
     const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
     const options = {
@@ -19,7 +19,6 @@ export async function getPostByID(id, name) {
         throw new APIError("Failed to fetch post");
       }
       const json = await response.json();
-      console.log(json.data.title);
       return json;
     } catch (error) {
       console.error(error);
