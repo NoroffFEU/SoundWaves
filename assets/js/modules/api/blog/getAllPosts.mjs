@@ -1,10 +1,10 @@
-import { BASE_URL, BLOG_ENDPOINTS } from "../../../utils/constants.mjs";
+import { API_BASE_URL, BLOG_ENDPOINTS } from "../../../utils/constants.mjs";
 import { APIError } from "../../../utils/errorHandling.mjs";
 import { loginUser } from "../auth/login.mjs";
 
 // Get all posts by user
 export async function getPostsByUser(limit = null, page = null) {
-    let url = `${BASE_URL}${BLOG_ENDPOINTS.POSTS_BY_USER("Jesus_AH")}`;
+    let url = `${API_BASE_URL}${BLOG_ENDPOINTS.POSTS_BY_USER("Jesus_AH")}`;
 
     if (limit !== null && page !== null) {
       url += `?limit=${limit}&page=${page}`;

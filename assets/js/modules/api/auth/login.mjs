@@ -1,5 +1,9 @@
-import { BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
-import { EmailError, PasswordError, APIError } from "../../../utils/errorHandling.mjs";
+import { API_BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
+import {
+  EmailError,
+  PasswordError,
+  APIError,
+} from "../../../utils/errorHandling.mjs";
 import { redirectToIndexPage } from "../../../utils/redirect.mjs";
 import { login } from "../../components/adminBar.mjs";
 
@@ -20,7 +24,7 @@ export async function loginUser(email, password) {
     );
   }
 
-  const url = `${BASE_URL}${AUTH_ENDPOINTS.LOGIN}`;
+  const url = `${API_BASE_URL}${AUTH_ENDPOINTS.LOGIN}`;
 
   const userData = {
     email: `${email}`,
@@ -44,10 +48,9 @@ export async function loginUser(email, password) {
     const json = await response.json();
     const token = json.data.accessToken;
 
-    login(token)
+    login(token);
     return token;
     // redirectToIndexPage()
-    
   } catch (error) {
     console.error(error);
   }

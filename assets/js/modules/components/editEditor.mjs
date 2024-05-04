@@ -1,3 +1,4 @@
+import { BASE_URL, URLs } from "../../utils/constants.mjs";
 import { getURL } from "../../utils/getURL.mjs";
 import { editPost } from "../api/blog/editPost.mjs";
 import { getPostByID } from "../api/blog/getPostByID.mjs";
@@ -42,7 +43,7 @@ formulita.addEventListener('submit', async (event)=> {
     const postID = getURL("id");
     await editPost('Jesus_AH', postID, title, content, category, media)
 
-    window.location.href = "/post/admin-panel.html"
+    window.location.href = `${BASE_URL}${URLs.adminPanel}`
 })
 
 

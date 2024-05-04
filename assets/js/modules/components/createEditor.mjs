@@ -4,6 +4,7 @@
 //     const category = createForm.category.value;
 //     const content = tinymce.activeEditor.getContent();
 
+import { BASE_URL, URLs } from "../../utils/constants.mjs";
 import { createPost } from "../api/blog/createPost.mjs";
 
 //     return {
@@ -40,7 +41,7 @@ formulario.addEventListener('submit', async (event)=> {
     
    await createPost('Jesus_AH', title, content, category, media)
 
-   window.location.href = "/post/admin-panel.html"
+   window.location.href = `${BASE_URL}${URLs.adminPanel}`;
 
 })
 

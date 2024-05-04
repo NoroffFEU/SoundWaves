@@ -1,4 +1,4 @@
-import { BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
+import { API_BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
 import { NameError, EmailError, PasswordError, APIError } from "../../../utils/errorHandling.mjs";
 
 // Register new ADMIN
@@ -27,7 +27,7 @@ export async function registerUser(name, email, password) {
   }
 
   // API data
-  const url = `${BASE_URL}${AUTH_ENDPOINTS.REGISTER}`;
+  const url = `${API_BASE_URL}${AUTH_ENDPOINTS.REGISTER}`;
 
   const data = {
     name: `${name}`,

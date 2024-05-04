@@ -1,5 +1,5 @@
 import {
-  BASE_URL,
+  API_BASE_URL,
   AUTH_ENDPOINTS,
   BLOG_ENDPOINTS,
 } from "./utils/constants.mjs";
@@ -21,7 +21,6 @@ function main() {
   initializeKonamiCode();
   initializeLoginForm();
   initializeAdminBar();
-  redirectIfAccessDenied();
   comingFeature();
 
   // registerUser();
