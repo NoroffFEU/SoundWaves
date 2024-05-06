@@ -1,5 +1,5 @@
 // Admin bar
-import { ADMIN_BAR } from "../../utils/constants.mjs";
+import { ADMIN_BAR, BASE_URL, URLs } from "../../utils/constants.mjs";
 import { redirectToIndexPage } from "../../utils/redirect.mjs";
 
 export function initializeAdminBar() {

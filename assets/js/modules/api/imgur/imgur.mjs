@@ -34,7 +34,8 @@ file.addEventListener('change', (event) => {
   fetch('https://api.imgur.com/3/image', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${ACCESS_TOKEN}`
+      Authorization: `Bearer ${ACCESS_TOKEN}`,
+      referrer: '',
     },
     body: formData
   })

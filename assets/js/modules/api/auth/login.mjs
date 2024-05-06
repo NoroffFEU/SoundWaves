@@ -1,4 +1,4 @@
-import { API_BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
+import { API_BASE_URL, AUTH_ENDPOINTS, BASE_URL, URLs } from "../../../utils/constants.mjs";
 import {
   EmailError,
   PasswordError,
@@ -49,6 +49,8 @@ export async function loginUser(email, password) {
     const token = json.data.accessToken;
 
     login(token);
+    
+   
     return token;
     // redirectToIndexPage()
   } catch (error) {

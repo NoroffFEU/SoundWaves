@@ -36,6 +36,8 @@
                 bottom: 0;
                 width: 100%;
                 padding: var(--space-l);
+                
+                opacity: 1;
 
                 & .tag {
                     font-weight: 800;
@@ -87,6 +89,7 @@
         z-index: 20;
         opacity: 1;
         /* mask: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); */
+
     }
 
     & .slider-buttons {
