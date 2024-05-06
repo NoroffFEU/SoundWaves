@@ -36,24 +36,7 @@ console.log(thumbnailBackground, thumbnailInput)
 
 //TODO : Try catch block
 
-// const formulario = document.forms.createForm;
 
-// formulario.addEventListener('submit', async (event)=> {
-//     event.preventDefault();
-//     const content  = tinymce.activeEditor.getContent();
-//     const title = formulario.title.value;
-//     const category = formulario.category.value;
-//     const thumbnail = formulario.thumbnail.value;
-    
-//     const media = { url : thumbnail}
-    
-//    await createPost('Jesus_AH', title, content, category, media)
-
-//    window.location.href = `${BASE_URL}${URLs.adminPanel}`;
-
-// })
-
-// console.log(tinymce.activeEditor.getContent('#editor'))
 
 
 const file = document.getElementById('file');
@@ -108,3 +91,24 @@ file.addEventListener('change', (event) => {
     console.error('Error uploading image to Imgur:', error);
   });
 });
+
+
+const formulario = document.forms.createForm;
+
+formulario.addEventListener('submit', async (event)=> {
+    const imgUrl = document.querySelector('#url').textContent;
+    event.preventDefault();
+    const content  = tinymce.activeEditor.getContent();
+    const title = formulario.title.value;
+    const category = formulario.category.value;
+    const thumbnail = formulario.thumbnail.value;
+    
+    const media = { url : thumbnail}
+    
+   await createPost('Jesus_AH', title, content, category, media)
+
+   window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+
+})
+
+console.log(tinymce.activeEditor.getContent('#editor'))
