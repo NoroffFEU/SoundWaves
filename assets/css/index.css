@@ -28,7 +28,7 @@
 @import url("./media.css");
 @import url("./components/admin-bar.css");
 @import url("./components/404.css");
-
+@import url("./components/slider.css");
 
 /* ----- COMMON COMPONENTS----- */
 
@@ -169,6 +169,18 @@
     & i {
         pointer-events: none;
     }
+}
+
+.read-btn {
+    cursor: pointer;
+    font-family: 'Geist Mono';
+    font-size: var(--text-sm);
+    letter-spacing: .25rem;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: var(--space-xs);
+    background: rgba(var(--turquoise-dark-hover), 1);
+    border: 2px solid rgba(var(--turquoise-dark-hover), 1);
 }
 
 .media-padding {

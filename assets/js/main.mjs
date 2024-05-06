@@ -16,12 +16,14 @@ import { checkIfAdmin } from "./utils/checkIfAdmin.mjs";
 import { comingFeature } from "./utils/commingFeature.mjs";
 import { initializeAdminBar } from "./modules/components/adminBar.mjs";
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
+import { loadSlider } from "./modules/components/slider.mjs";
 
 function main() {
   initializeKonamiCode();
   initializeLoginForm();
   initializeAdminBar();
   comingFeature();
+  loadSlider();
 
   // registerUser();
 
