@@ -5,34 +5,34 @@ const thumbnailInput = document.getElementById('thumbnail');
 const thumbnailBackground = document.querySelector('.thumbnail-background');
 console.log(thumbnailBackground, thumbnailInput)
 
-const CLIENT_ID = 'd7ac36c85a3852a';
-const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
+// const CLIENT_ID = 'd7ac36c85a3852a';
+// const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
 
-thumbnailInput.addEventListener('change', async (event) => {
-    try {
-        const formData = new FormData();
-        formData.append('image', event.target.files[0]);
+// thumbnailInput.addEventListener('change', async (event) => {
+//     try {
+//         const formData = new FormData();
+//         formData.append('image', event.target.files[0]);
     
-        const response = await fetch('https://api.imgur.com/3/image', {
-            method: 'POST',
-            headers: {
-                Authorization: `Client-ID ${CLIENT_ID}` // Utiliza el ID de cliente aquí
-            },
-            body: formData,
-        });
+//         const response = await fetch('https://api.imgur.com/3/image', {
+//             method: 'POST',
+//             headers: {
+//                 Authorization: `Client-ID ${CLIENT_ID}` // Utiliza el ID de cliente aquí
+//             },
+//             body: formData,
+//         });
     
-        const data = await response.json();
+//         const data = await response.json();
     
-        if (data.success) {
-            thumbnailBackground.style.backgroundImage = data.data.link;
-            // url.innerText = data.data.link;
-        } else {
-            console.error('Error uploading image to Imgur:', data);
-        }
-    } catch (error) {
-        console.error('Error uploading image to Imgur:', error);
-    }
-});
+//         if (data.success) {
+//             thumbnailBackground.style.backgroundImage = data.data.link;
+//             // url.innerText = data.data.link;
+//         } else {
+//             console.error('Error uploading image to Imgur:', data);
+//         }
+//     } catch (error) {
+//         console.error('Error uploading image to Imgur:', error);
+//     }
+// });
 
 //TODO : Try catch block
 
@@ -56,3 +56,55 @@ thumbnailInput.addEventListener('change', async (event) => {
 // console.log(tinymce.activeEditor.getContent('#editor'))
 
 
+const file = document.getElementById('file');
+const img = document.getElementById('img');
+const url = document.getElementById('url')
+
+
+// const CLIENT_ID = 'd7ac36c85a3852a';
+// const CLIENT_SECRET = '7c656c7e69236a558d27b666225ed536b4831e05';
+// const IMGUR_API = 'https://api.imgur.com/3';
+
+// file.addEventListener('change', (event)=> {
+//   const formdata = new FormData()
+//   formdata.append("image", event.target.files[0])
+//   fetch('https://api.imgur.com/3/image', {
+//     method: "post",
+//     headers: {
+//       Authorization: "Client-ID d7ac36c85a3852a"
+//     },
+//     body: formdata
+//   }).then(data => data.json()).then(data => {
+//     img.src = data.data.link
+//     url.innerText = data.data.link
+//   })
+// })
+
+
+const CLIENT_ID = 'd7ac36c85a3852a'; // Reemplaza esto con tu propio Client ID
+const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659'; // Reemplaza esto con tu propio Access Token
+
+file.addEventListener('change', (event) => {
+ // const formData = new FormData();
+ // formData.append('image', event.target.files[0]);
+  
+  fetch('https://api.imgur.com/3/image', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${ACCESS_TOKEN}`
+    },
+    body: event.target.files[0],
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      img.src = data.data.link;
+      url.innerText = data.data.link;
+    } else {
+      console.error('Error uploading image to Imgur:', data);
+    }
+  })
+  .catch(error => {
+    console.error('Error uploading image to Imgur:', error);
+  });
+});
