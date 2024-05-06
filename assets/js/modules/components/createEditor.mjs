@@ -96,12 +96,12 @@ file.addEventListener('change', (event) => {
 const formulario = document.forms.createForm;
 
 formulario.addEventListener('submit', async (event)=> {
-    const imgUrl = document.querySelector('#url').textContent;
     event.preventDefault();
+    const imgUrl = document.querySelector('#url').textContent;
     const content  = tinymce.activeEditor.getContent();
     const title = formulario.title.value;
     const category = formulario.category.value;
-    const thumbnail = formulario.thumbnail.value;
+    const thumbnail = imgUrl;
     
     const media = { url : thumbnail}
     
