@@ -1,9 +1,6 @@
 import { BASE_URL, URLs } from "../../utils/constants.mjs";
 import { createPost } from "../api/blog/createPost.mjs";
 
-const thumbnailInput = document.getElementById('thumbnail');
-const thumbnailBackground = document.querySelector('.thumbnail-background');
-console.log(thumbnailBackground, thumbnailInput)
 
 // const CLIENT_ID = 'd7ac36c85a3852a';
 // const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
@@ -39,9 +36,6 @@ console.log(thumbnailBackground, thumbnailInput)
 
 
 
-const file = document.getElementById('file');
-const img = document.getElementById('img');
-const url = document.getElementById('url')
 
 
 // const CLIENT_ID = 'd7ac36c85a3852a';
@@ -64,10 +58,20 @@ const url = document.getElementById('url')
 // })
 
 
+const thumbBackground = document.querySelector('.thumbnail-background');
+const thumbnailInput = document.querySelector('#thumbnail');
+
+
+
+const file = document.getElementById('file');
+const img = document.getElementById('img');
+const url = document.getElementById('url')
+
+
 const CLIENT_ID = 'd7ac36c85a3852a'; // Reemplaza esto con tu propio Client ID
 const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659'; // Reemplaza esto con tu propio Access Token
 
-file.addEventListener('change', (event) => {
+thumbnailInput.addEventListener('change', (event) => {
  // const formData = new FormData();
  // formData.append('image', event.target.files[0]);
   
@@ -81,7 +85,9 @@ file.addEventListener('change', (event) => {
   .then(response => response.json())
   .then(data => {
     if (data.success) {
-      img.src = data.data.link;
+      // img.src = data.data.link;
+      // url.innerText = data.data.link;
+      thumbBackground.style.backgroundImage = `url(${data.data.link})`;
       url.innerText = data.data.link;
     } else {
       console.error('Error uploading image to Imgur:', data);

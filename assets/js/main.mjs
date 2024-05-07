@@ -23,7 +23,7 @@ function main() {
   initializeLoginForm();
   initializeAdminBar();
   comingFeature();
-  loadSlider();
+  
 
   // registerUser();
 
