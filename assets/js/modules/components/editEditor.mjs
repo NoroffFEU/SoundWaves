@@ -4,9 +4,6 @@ import { handleThumbnailUpload } from "../../utils/handleThumbnailUpload.mjs";
 import { editPost } from "../api/blog/editPost.mjs";
 import { getPostByID } from "../api/blog/getPostByID.mjs";
 
-const thumbnailInput = document.querySelector('#thumbnail');
-const thumbnailBackground = document.querySelector('.thumbnail-background');
-const thumbnailButton = document.querySelector('.thumbnail-background span');
 
 handleThumbnailUpload();
 
@@ -15,6 +12,7 @@ async function fetchPostData() {
     const postID = getURL("id");
     
     try{
+        const thumbnailBackground = document.querySelector('.thumbnail-background');
         const imageUrl = document.querySelector('.image-url');
         const getPost = await getPostByID(postID);
         const post = getPost.data;
