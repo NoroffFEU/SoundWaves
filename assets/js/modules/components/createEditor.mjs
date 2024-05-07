@@ -60,12 +60,14 @@ import { createPost } from "../api/blog/createPost.mjs";
 
 const thumbBackground = document.querySelector('.thumbnail-background');
 const thumbnailInput = document.querySelector('#thumbnail');
+const span = document.querySelector('.thumbnail-background span');
 
 
 
 const file = document.getElementById('file');
 const img = document.getElementById('img');
 const url = document.getElementById('url')
+console.log(span)
 
 
 const CLIENT_ID = 'd7ac36c85a3852a'; // Reemplaza esto con tu propio Client ID
@@ -89,6 +91,11 @@ thumbnailInput.addEventListener('change', (event) => {
       // url.innerText = data.data.link;
       thumbBackground.style.backgroundImage = `url(${data.data.link})`;
       url.innerText = data.data.link;
+      
+      if (thumbBackground.style.backgroundImage) {
+        span.textContent = 'Change thumbnail';
+      }
+
     } else {
       console.error('Error uploading image to Imgur:', data);
     }
