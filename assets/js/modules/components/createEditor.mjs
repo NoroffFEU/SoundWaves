@@ -2,6 +2,102 @@ import { BASE_URL, URLs } from "../../utils/constants.mjs";
 import { createPost } from "../api/blog/createPost.mjs";
 
 
+const thumbnailBackground = document.querySelector('.thumbnail-background');
+const thumbnailInput = document.querySelector('#thumbnail');
+const thumbnailButton = document.querySelector('.thumbnail-background span');
+
+
+
+
+const CLIENT_ID = 'd7ac36c85a3852a'; 
+const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659'; 
+
+// thumbnailInput.addEventListener('change', (event) => {
+  
+//   fetch('https://api.imgur.com/3/image', {
+//     method: 'POST',
+//     headers: {
+//       Authorization: `Bearer ${ACCESS_TOKEN}`
+//     },
+//     body: event.target.files[0],
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//     if (data.success) {
+//       thumbnailBackground.style.backgroundImage = `url(${data.data.link})`;
+      
+//       if (thumbnailBackground.style.backgroundImage) {
+//         thumbnailButton.textContent = 'Change thumbnail';
+//       }
+
+//     } else {
+//       console.error('Error uploading image to Imgur:', data);
+//     }
+//   })
+//   .catch(error => {
+//     console.error('Error uploading image to Imgur:', error);
+//   });
+// });
+
+thumbnailInput.addEventListener('change', async (event) => {
+  try {
+    const response = await fetch('https://api.imgur.com/3/image', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN}`
+      },
+      body: event.target.files[0],
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      thumbnailBackground.style.backgroundImage = `url(${data.data.link})`;
+      
+      if (thumbnailBackground.style.backgroundImage) {
+        thumbnailButton.textContent = 'Change thumbnail';
+      }
+    } else {
+      console.error('Error uploading image to Imgur:', data);
+    }
+  } catch (error) {
+    console.error('Error uploading image to Imgur:', error);
+  }
+});
+
+
+
+const formulario = document.forms.createForm;
+
+formulario.addEventListener('submit', async (event)=> {
+    event.preventDefault();
+    const imgUrl = document.querySelector('#url').textContent;
+    const content  = tinymce.activeEditor.getContent();
+    const title = formulario.title.value;
+    const category = formulario.category.value;
+    const thumbnail = imgUrl;
+    
+    const media = { url : thumbnail}
+    
+   await createPost('Jesus_AH', title, content, category, media)
+
+   window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+
+})
+
+
+
+
+
+
+
+// const file = document.getElementById('file');
+// const img = document.getElementById('img');
+// const url = document.getElementById('url')
+// console.log(span)
+
+
+
 // const CLIENT_ID = 'd7ac36c85a3852a';
 // const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
 
@@ -56,72 +152,3 @@ import { createPost } from "../api/blog/createPost.mjs";
 //     url.innerText = data.data.link
 //   })
 // })
-
-
-const thumbBackground = document.querySelector('.thumbnail-background');
-const thumbnailInput = document.querySelector('#thumbnail');
-const span = document.querySelector('.thumbnail-background span');
-
-
-
-const file = document.getElementById('file');
-const img = document.getElementById('img');
-const url = document.getElementById('url')
-console.log(span)
-
-
-const CLIENT_ID = 'd7ac36c85a3852a'; // Reemplaza esto con tu propio Client ID
-const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659'; // Reemplaza esto con tu propio Access Token
-
-thumbnailInput.addEventListener('change', (event) => {
- // const formData = new FormData();
- // formData.append('image', event.target.files[0]);
-  
-  fetch('https://api.imgur.com/3/image', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${ACCESS_TOKEN}`
-    },
-    body: event.target.files[0],
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      // img.src = data.data.link;
-      // url.innerText = data.data.link;
-      thumbBackground.style.backgroundImage = `url(${data.data.link})`;
-      // url.innerText = data.data.link;
-      
-      if (thumbBackground.style.backgroundImage) {
-        span.textContent = 'Change thumbnail';
-      }
-
-    } else {
-      console.error('Error uploading image to Imgur:', data);
-    }
-  })
-  .catch(error => {
-    console.error('Error uploading image to Imgur:', error);
-  });
-});
-
-
-const formulario = document.forms.createForm;
-
-formulario.addEventListener('submit', async (event)=> {
-    event.preventDefault();
-    const imgUrl = document.querySelector('#url').textContent;
-    const content  = tinymce.activeEditor.getContent();
-    const title = formulario.title.value;
-    const category = formulario.category.value;
-    const thumbnail = imgUrl;
-    
-    const media = { url : thumbnail}
-    
-   await createPost('Jesus_AH', title, content, category, media)
-
-   window.location.href = `${BASE_URL}${URLs.adminPanel}`;
-
-})
-
-console.log(tinymce.activeEditor.getContent('#editor'))
