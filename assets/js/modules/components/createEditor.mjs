@@ -1,10 +1,10 @@
 import { BASE_URL, URLs } from "../../utils/constants.mjs";
 import { createPost } from "../api/blog/createPost.mjs";
 
-
-const thumbnailInput = document.querySelector('#thumbnail');
 const CLIENT_ID = 'd7ac36c85a3852a'; 
 const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659'; 
+
+const thumbnailInput = document.querySelector('#thumbnail');
 
 
 thumbnailInput.addEventListener('change', async (event) => {

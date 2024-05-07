@@ -1,22 +1,30 @@
 import { BASE_URL, URLs } from "../../utils/constants.mjs";
 import { getURL } from "../../utils/getURL.mjs";
+import { handleThumbnailUpload } from "../../utils/handleThumbnailUpload.mjs";
 import { editPost } from "../api/blog/editPost.mjs";
 import { getPostByID } from "../api/blog/getPostByID.mjs";
 
+const thumbnailInput = document.querySelector('#thumbnail');
+const thumbnailBackground = document.querySelector('.thumbnail-background');
+const thumbnailButton = document.querySelector('.thumbnail-background span');
+
+handleThumbnailUpload();
 
 
 async function fetchPostData() {
     const postID = getURL("id");
     
     try{
+        const imageUrl = document.querySelector('.image-url');
         const getPost = await getPostByID(postID);
         const post = getPost.data;
-        console.log(post.body)
         tinymce.activeEditor.setContent(post.body)
         const form = document.forms.editForm;
         form.title.value = post.title;
         form.category.value = post.tags;
-        form.thumbnail.value = post.media.url;
+        thumbnailBackground.style.backgroundImage = `url(${post.media.url})`;
+        imageUrl.textContent = post.media.url;
+
         return post;
         
 
@@ -28,15 +36,18 @@ async function fetchPostData() {
 
 fetchPostData()
 
-const formulita = document.forms.editForm;
+const editPostForm = document.forms.editForm;
 
 
-formulita.addEventListener('submit', async (event)=> {
+editPostForm.addEventListener('submit', async (event)=> {
+
+
     event.preventDefault();
+
     const content  = tinymce.activeEditor.getContent();
-    const title = formulita.title.value;
-    const category = formulita.category.value;
-    const thumbnail = formulita.thumbnail.value;
+    const title = editPostForm.title.value;
+    const category = editPostForm.category.value;
+    const thumbnail = document.querySelector('.image-url').textContent;
     console.log(content, title, category, thumbnail)
     console.log(content)
     const media = { url : thumbnail}
