@@ -1,5 +1,11 @@
 /* ----- HEADER ----- */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000000;
+  background: rgba(var(--elephant-darker), .5);
+ 
+  backdrop-filter: blur(20px);
   
     & svg {
         aspect-ratio: 58 / 7;
