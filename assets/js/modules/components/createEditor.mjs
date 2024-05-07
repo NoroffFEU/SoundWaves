@@ -45,18 +45,43 @@ const createPostForm = document.forms.createForm;
 
 createPostForm.addEventListener('submit', async (event)=> {
     event.preventDefault();
-    const imageUrl = document.querySelector('.image-url').textContent;
-    const content  = tinymce.activeEditor.getContent();
-    const title = createPostForm.title.value;
-    const category = createPostForm.category.value;
-    const media = { url : imageUrl}
-    
-    await createPost('Jesus_AH', title, content, category, media)
 
-    window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+    const { title, category } = createPostForm;
+    const imageUrl = document.querySelector('.image-url').textContent;
+    const body  = tinymce.activeEditor.getContent();
+    const media = { url : imageUrl}
+
+    try {
+      if (!title.value || !category.value || !body || !imageUrl) {
+        throw new Error('All fields are required');
+      }
+      
+      await createPost('Jesus_AH', title.value, body, category.value , media)
+      window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+
+    } catch (error) {
+      console.error('Error creating post:', error);
+    }
 })
 
 
+
+
+// const createPostForm = document.forms.createForm;
+
+// createPostForm.addEventListener('submit', async (event)=> {
+//     event.preventDefault();
+    
+//     const imageUrl = document.querySelector('.image-url').textContent;
+//     const content  = tinymce.activeEditor.getContent();
+//     const title = createPostForm.title.value;
+//     const category = createPostForm.category.value;
+//     const media = { url : imageUrl}
+    
+//     await createPost('Jesus_AH', title, content, category, media)
+
+//     window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+// })
 
 // thumbnailInput.addEventListener('change', (event) => {
   
