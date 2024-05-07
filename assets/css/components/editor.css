@@ -85,6 +85,10 @@
             }
         }
     }
+
+    & .image-url {
+        display: none;
+    }
     
     & input, #category {
         font-size: var(--text-sm);
