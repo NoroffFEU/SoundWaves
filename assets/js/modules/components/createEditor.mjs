@@ -90,7 +90,7 @@ thumbnailInput.addEventListener('change', (event) => {
       // img.src = data.data.link;
       // url.innerText = data.data.link;
       thumbBackground.style.backgroundImage = `url(${data.data.link})`;
-      url.innerText = data.data.link;
+      // url.innerText = data.data.link;
       
       if (thumbBackground.style.backgroundImage) {
         span.textContent = 'Change thumbnail';
