@@ -185,8 +185,8 @@
                         <label for="title">Title</label>
                         <input class="width-100" type="text" id="title" name="title" placeholder="Title" required>
                     </div>
-    
-                    <div>
+            
+                    <div class="relative">
                         <label for="category">Category</label>
                         <select class="width-100" name="category" id="category" name="category" required>
                             <option value="">Select category</option>
@@ -197,6 +197,9 @@
                             <option value="Concert coverage">Concert coverage</option>
                             <option value="Music tech">Music tech</option>
                         </select>
+                        <span class="drop-down-icon material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
                     </div>
                 </div>
 
@@ -354,7 +357,7 @@
 
 <script>
     tinymce.init({
-      content_css: "../../assets/css/components/editor.css",
+      content_css: "../../assets/js/modules/tinymce/skins/ui/oxide-dark/style.css",
       selector: '#editor',
       skin: 'oxide-dark',
       license_key: 'gpl',
@@ -368,3 +371,4 @@
 </script>
 
 
+assets\js\modules\tinymce\skins\ui\oxide-dark\style.css
