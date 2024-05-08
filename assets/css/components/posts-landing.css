@@ -57,6 +57,7 @@
 
     & footer {
         display: flex;
+        
         align-items: center;
         justify-content: space-between;
         padding-top: var(--space-l);
@@ -66,9 +67,14 @@
     
 
     & .first-post {
-        grid-column: span 2;
         display: grid;
-        grid-template-columns: 1.5fr 1fr;
+        grid-column: span 2;
+
+        & a {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+        }
+        
 
         & header img {
             border-radius: 10px 0px 0px 10px;
