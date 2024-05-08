@@ -246,22 +246,31 @@
 
     <section class="hero">
         <article aria-label="Featured posts" class="flex">
-            <a href="./post/index.html" class="featured-post width-100">
+            <a href="./post/index.html" class="featured-post width-100" data-position="first" data-active="true" data-transform="100">
                 <span class="tag">Music tech</span>
                 <h1 class="title">Lorem ipsum, door sit amet consectetur.</h1>
                 <span class="date">10/20/2024</span>
             </a>
-            <a href="./post/index.html" class="featured-post width-100">
+            <a href="./post/index.html" class="featured-post width-100" data-position="second" data-active="false" data-transform="200">
                 <span class="tag">Music tech</span>
                 <h2 class="title">Lorem ipsum, door sit amet consectetur.</h1>
                 <span class="date">10/20/2024</span>
             </a>
-            <a href="./post/index.html" class="featured-post width-100">
+            <a href="./post/index.html" class="featured-post width-100" data-position="third" data-active="false" data-transform="300">
                 <span class="tag">Music tech</span>
                 <h2 class="title">Lorem ipsum, door sit amet consectetur.</h2>
                 <span class="date">10/20/2024</span>
             </a>
         </article>
+
+        <div class="carousel-controller">
+            <button type="button" class="prev-slide">
+                <span class="material-symbols-outlined">skip_previous</span>
+            </button>
+            <button type="button" class="next-slide">
+                <span class="material-symbols-outlined">skip_next</span>
+            </button>
+        </div>
 
         <div class="carousel-dots flex align-items-center gap-20 pd-40" aria-hidden="true">
             <span class="dot selected"></span>

@@ -17,12 +17,15 @@ import { comingFeature } from "./utils/commingFeature.mjs";
 import { initializeAdminBar } from "./modules/components/adminBar.mjs";
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 import { loadSlider } from "./modules/components/slider.mjs";
+import { loadCarousel } from "./modules/components/carousel.mjs";
+
 
 function main() {
   initializeKonamiCode();
   initializeLoginForm();
   initializeAdminBar();
   comingFeature();
+  loadCarousel();
   
 
   // registerUser();
