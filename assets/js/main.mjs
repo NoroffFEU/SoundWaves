@@ -24,12 +24,21 @@ async function loadPostsAndProcess() {
       const posts = await getPostsByUser(12, 1);
       const carouselPosts = posts.data.slice(0, 3);
       const remainingPosts = posts.data.slice(3);
+     
 
       renderCarousel(carouselPosts);
       renderRemainingPosts(remainingPosts);
   }
   catch (error) {
       console.error(error);
+  }
+}
+
+function checkIfIsLastPage(isLastPage) {
+  const loadMoreButton = document.querySelector(".load-more");
+  console.log(isLastPage)
+  if (isLastPage) {
+    loadMoreButton.style.display = "none";
   }
 }
 
@@ -48,32 +57,66 @@ function renderCarousel(posts) {
   })
 }
 
+function checkIfIsFirstPost() {
+  const posts = document.querySelectorAll(".post");
+  console.log(posts)
+
+}
+
+const loadMoreButton = document.querySelector(".load-more");
+loadMoreButton.addEventListener("click", loadMorePosts);
+let page = 1;
+
+async function loadMorePosts() {
+  page++;
+  try {
+    const posts = await getPostsByUser(12, page);
+    
+    
+    // if (posts.data.length === 0) {
+    //   loadMoreButton.style.display = "none";
+    //   return;
+    // }
+    await renderRemainingPosts(posts.data);
+    checkIfIsLastPage(posts.meta.isLastPage);
+    console.log(page)
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
+
+
+
 function renderRemainingPosts(posts) {
   const container = document.querySelector(".all-post");
   const template = document.querySelector("#post-template").content;
   const fragment = document.createDocumentFragment();
- 
+
   console.log(template)
   posts.forEach((post, index, array)=> {
     const clone = template.cloneNode(true);
 
-    if(index === 0){
-      clone.querySelector(".post").dataset.firstPost = true;
+    if (index === 0 && page === 1) {
       clone.querySelector(".post").classList.add("first-post");
+      clone.querySelector(".post").setAttribute("data-first-post", "true");
     } else {
-      clone.querySelector(".post").dataset.firstPost = false;
+      clone.querySelector(".post").setAttribute("data-first-post", "false");
     }
 
     clone.querySelector(".title").textContent = post.title;
     clone.querySelector(".tag").textContent = post.tags;
     clone.querySelector(".date").textContent = post.created;
-    clone.querySelector("img").src = post.media.url;
+    clone.querySelector("img").src = post.media.url;  // TODO poner ternario para si no tiene imagen, que ponga un placeholder
     fragment.appendChild(clone);
   })
+
 
   container.appendChild(fragment);
 
 }
+
+
 
 
 function main() {
@@ -84,6 +127,7 @@ function main() {
   loadCarousel();
   
   loadPostsAndProcess();
+  checkIfIsFirstPost();
   
 
   // registerUser();
