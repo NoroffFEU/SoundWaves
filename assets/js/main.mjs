@@ -18,6 +18,7 @@ import { initializeAdminBar } from "./modules/components/adminBar.mjs";
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 import { loadSlider } from "./modules/components/slider.mjs";
 import { loadCarousel } from "./modules/components/carousel.mjs";
+import { getURL } from "./utils/getURL.mjs";
 
 async function loadPostsAndProcess() {
   try {
@@ -103,7 +104,9 @@ function renderRemainingPosts(posts) {
     } else {
       clone.querySelector(".post").setAttribute("data-first-post", "false");
     }
-
+    
+    clone.querySelector(".post").setAttribute("id", post.id);
+    clone.querySelector(".link").href = `/post/index.html?id=${post.id}`;
     clone.querySelector(".title").textContent = post.title;
     clone.querySelector(".tag").textContent = post.tags;
     clone.querySelector(".date").textContent = post.created;
@@ -115,6 +118,9 @@ function renderRemainingPosts(posts) {
   container.appendChild(fragment);
 
 }
+
+
+
 
 
 
