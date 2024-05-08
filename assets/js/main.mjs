@@ -1,7 +1,9 @@
 import {
   API_BASE_URL,
   AUTH_ENDPOINTS,
+  BASE_URL,
   BLOG_ENDPOINTS,
+  URLs,
 } from "./utils/constants.mjs";
 import { registerUser } from "./modules/api/auth/register.mjs";
 import { loginUser } from "./modules/api/auth/login.mjs";
@@ -106,7 +108,7 @@ function renderRemainingPosts(posts) {
     }
     
     clone.querySelector(".post").setAttribute("id", post.id);
-    clone.querySelector(".link").href = `/post/index.html?id=${post.id}`;
+    clone.querySelector(".link").href = `${BASE_URL}${URLs.post}?id=${post.id}`;
     clone.querySelector(".title").textContent = post.title;
     clone.querySelector(".tag").textContent = post.tags;
     clone.querySelector(".date").textContent = post.created;
