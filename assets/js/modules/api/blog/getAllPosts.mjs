@@ -10,12 +10,12 @@ export async function getPostsByUser(limit = null, page = null) {
       url += `?limit=${limit}&page=${page}`;
     }
 
-    const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+    // const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
     
     const options = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        // Authorization: `Bearer ${token}`,
       },
     };
   

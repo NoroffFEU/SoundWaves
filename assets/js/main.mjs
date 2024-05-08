@@ -19,6 +19,34 @@ import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 import { loadSlider } from "./modules/components/slider.mjs";
 import { loadCarousel } from "./modules/components/carousel.mjs";
 
+async function loadPostsAndProcess() {
+  try {
+      const posts = await getPostsByUser(12, 1);
+      const carouselPosts = posts.data.slice(0, 3);
+      const remainingPosts = posts.data.slice(3);
+
+      renderCarousel(carouselPosts);
+  }
+  catch (error) {
+      console.error(error);
+  }
+}
+
+function renderCarousel(posts) {
+  const container = document.querySelector(".hero article");
+  posts.forEach((post, index, array)=> {
+    const title = document.querySelectorAll(".hero article .title")[index];
+    const tag = document.querySelectorAll(".hero article .tag")[index];
+    const date = document.querySelectorAll(".hero article .date")[index];
+    const image = document.querySelectorAll(".hero article .featured-post")[index];
+  
+    title.textContent = post.title;
+    tag.textContent = post.tags;
+    date.textContent = post.created;
+    image.style.backgroundImage = `url(${post.media.url})`;
+  })
+}
+
 
 function main() {
   initializeKonamiCode();
@@ -26,6 +54,8 @@ function main() {
   initializeAdminBar();
   comingFeature();
   loadCarousel();
+  
+  loadPostsAndProcess();
   
 
   // registerUser();

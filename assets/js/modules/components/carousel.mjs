@@ -1,3 +1,5 @@
+import { getPostsByUser } from "../api/blog/getAllPosts.mjs";
+
 export function loadCarousel() {
   const prevButton = document.querySelector(".prev-slide");
   const nextButton = document.querySelector(".next-slide");
@@ -58,3 +60,5 @@ function handlePrevSlide() {
         container.style.transform = 'translateX(-100%)';
     }
 }
+
+
