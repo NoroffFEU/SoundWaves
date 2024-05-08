@@ -338,7 +338,7 @@
             <h3 class="heading text-center">All posts</h3>
 
             <div class="all-post grid-2-col">
-                <article data-first-post="true" class="first-post gradient gradient-left">
+                <!-- <article data-first-post="true" class="first-post gradient gradient-left">
                     <a href="./post/index.html" class="grid">
                         <header>
                             <img src="./assets/img/placeholder1.webp" alt="Placeholder 1">
@@ -483,7 +483,31 @@
                             </footer>
                         </div>
                     </a>
-                </article>
+                </article> -->
+
+                <template id="post-template">
+                    <article class="post gradient gradient-right">
+                        <a href="./post/index.html">
+                            <header>
+                                <img />
+                            </header>
+                            <div class="post-body">
+                                <div>
+                                    <span class="tag"></span>
+                                    <h4 class="title"></h4>
+                                    <p class="text-content"></p>
+                                </div>
+                                <footer class="">
+                                    <span class="date"></span>
+                                    <a href="./post/index.html">
+                                        <span class="material-symbols-outlined">arrow_forward</span>
+                                    </a>
+                                </footer>
+                            </div>
+                        </a>
+                    </article>
+
+                </template>
 
             </div>
             

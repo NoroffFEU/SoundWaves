@@ -26,6 +26,7 @@ async function loadPostsAndProcess() {
       const remainingPosts = posts.data.slice(3);
 
       renderCarousel(carouselPosts);
+      renderRemainingPosts(remainingPosts);
   }
   catch (error) {
       console.error(error);
@@ -45,6 +46,33 @@ function renderCarousel(posts) {
     date.textContent = post.created;
     image.style.backgroundImage = `url(${post.media.url})`;
   })
+}
+
+function renderRemainingPosts(posts) {
+  const container = document.querySelector(".all-post");
+  const template = document.querySelector("#post-template").content;
+  const fragment = document.createDocumentFragment();
+ 
+  console.log(template)
+  posts.forEach((post, index, array)=> {
+    const clone = template.cloneNode(true);
+
+    if(index === 0){
+      clone.querySelector(".post").dataset.firstPost = true;
+      clone.querySelector(".post").classList.add("first-post");
+    } else {
+      clone.querySelector(".post").dataset.firstPost = false;
+    }
+
+    clone.querySelector(".title").textContent = post.title;
+    clone.querySelector(".tag").textContent = post.tags;
+    clone.querySelector(".date").textContent = post.created;
+    clone.querySelector("img").src = post.media.url;
+    fragment.appendChild(clone);
+  })
+
+  container.appendChild(fragment);
+
 }
 
 
