@@ -57,6 +57,9 @@ function renderCarousel(posts) {
     tag.textContent = post.tags;
     date.textContent = post.created;
     image.style.backgroundImage = `url(${post.media.url})`;
+    image.setAttribute("id", post.id);  
+    image.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
+    
   })
 }
 
