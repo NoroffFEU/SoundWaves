@@ -19,7 +19,7 @@ import { comingFeature } from "./utils/commingFeature.mjs";
 import { initializeAdminBar } from "./modules/components/adminBar.mjs";
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 import { loadSlider } from "./modules/components/slider.mjs";
-import { loadCarousel } from "./modules/components/carousel.mjs";
+import { loadCarouselFunctionallity } from "./modules/components/carousel.mjs";
 import { getURL } from "./utils/getURL.mjs";
 
 // async function loadPostsAndProcess() {
@@ -27,7 +27,6 @@ import { getURL } from "./utils/getURL.mjs";
 //       const posts = await getPostsByUser(12, 1);
 //       const carouselPosts = posts.data.slice(0, 3);
 //       const remainingPosts = posts.data.slice(3);
-     
 
 //       renderCarousel(carouselPosts);
 //       renderRemainingPosts(remainingPosts);
@@ -52,14 +51,14 @@ import { getURL } from "./utils/getURL.mjs";
 //     const tag = document.querySelectorAll(".hero article .tag")[index];
 //     const date = document.querySelectorAll(".hero article .date")[index];
 //     const image = document.querySelectorAll(".hero article .featured-post")[index];
-  
+
 //     title.textContent = post.title;
 //     tag.textContent = post.tags;
 //     date.textContent = post.created;
 //     image.style.backgroundImage = `url(${post.media.url})`;
-//     image.setAttribute("id", post.id);  
+//     image.setAttribute("id", post.id);
 //     image.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
-    
+
 //   })
 // }
 
@@ -77,8 +76,7 @@ import { getURL } from "./utils/getURL.mjs";
 //   page++;
 //   try {
 //     const posts = await getPostsByUser(12, page);
-    
-    
+
 //     // if (posts.data.length === 0) {
 //     //   loadMoreButton.style.display = "none";
 //     //   return;
@@ -91,8 +89,6 @@ import { getURL } from "./utils/getURL.mjs";
 //     console.error(error);
 //   }
 // }
-
-
 
 // function renderRemainingPosts(posts) {
 //   const container = document.querySelector(".all-post");
@@ -109,7 +105,7 @@ import { getURL } from "./utils/getURL.mjs";
 //     } else {
 //       clone.querySelector(".post").setAttribute("data-first-post", "false");
 //     }
-    
+
 //     clone.querySelector(".post").setAttribute("id", post.id);
 //     clone.querySelector(".link").href = `${BASE_URL}${URLs.post}?id=${post.id}`;
 //     clone.querySelector(".title").textContent = post.title;
@@ -119,16 +115,9 @@ import { getURL } from "./utils/getURL.mjs";
 //     fragment.appendChild(clone);
 //   })
 
-
 //   container.appendChild(fragment);
 
 // }
-
-
-
-
-
-
 
 function main() {
   initializeKonamiCode();
@@ -136,10 +125,9 @@ function main() {
   initializeAdminBar();
   comingFeature();
   // loadCarousel();
-  
+
   // loadPostsAndProcess();
   // checkIfIsFirstPost();
-  
 
   // registerUser();
 
