@@ -57,7 +57,7 @@ createPostForm.addEventListener('submit', async (event)=> {
       }
       
       await createPost('Jesus_AH', title.value, body, category.value , media)
-      window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+      // window.location.href = `${BASE_URL}${URLs.adminPanel}`;
 
     } catch (error) {
       console.error('Error creating post:', error);

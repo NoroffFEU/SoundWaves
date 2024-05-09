@@ -1,3 +1,4 @@
+import { BASE_URL, URLs } from '../../utils/constants.mjs';
 import { loginUser } from '../api/auth/login.mjs';
 
 
@@ -9,6 +10,10 @@ export function initializeLoginForm() {
         const email = loginForm.email.value;
         const password = loginForm.password.value;
         const response = await loginUser(email, password);
+        
+        if (response) {
+            window.location.href = `${BASE_URL}${URLs.index}`
+        }
     })
 }
 
