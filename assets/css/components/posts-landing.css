@@ -113,7 +113,6 @@
     }
     
     & .material-symbols-outlined {
-        transition: all .3s ease-in-out;
         transform: translateX(10px);
         background: transparent;
         color: rgba(var(--turquoise-normal), 1);
