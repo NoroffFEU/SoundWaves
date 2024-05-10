@@ -1,0 +1,36 @@
+.search-panel {
+    font-size: var(--text-sm);
+    max-height: 0px;
+
+
+    & form {
+        padding-top: var(--space-2xl);
+        border-bottom: 2px solid rgba(var(--turquoise-dark-hover), 1);
+
+        & input {
+            flex: 1;
+            padding: var(--space-s);
+            outline: none;
+        }
+    }
+
+    & .latest-posts{
+        padding-block: var(--space-2xl);
+        
+
+        & h2 {
+            color: rgba(var(--color-secondary), .75);
+            font-weight: 300;
+        }
+        
+        & ul {
+           margin: 30px;
+
+           & li {
+            font-weight: 300;
+
+           }
+        }
+
+    }
+}

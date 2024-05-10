@@ -91,9 +91,33 @@ function renderRemainingPosts(posts) {
   container.appendChild(fragment);
 }
 
+// const CLIENT_ID = 'd7ac36c85a3852a'; 
+// const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659'; 
+
+// async function feedIMG() {
+//     try {
+//         const response = await fetch('https://api.imgur.com/3/image/IsfYhkU', {
+//             method: 'GET',
+//             headers: {
+//                 Authorization: `Bearer ${ACCESS_TOKEN}`,
+//             }
+//         })
+
+//         const data = await response.json();
+
+//         console.log(data.link)
+
+//     } catch {
+
+//     }
+// }
+
+// feedIMG()
+
 function loadHomePage() {
-  loadPostsAndProcess();
+  // loadPostsAndProcess();
   loadCarouselFunctionallity();
 }
 
 loadHomePage();
+
