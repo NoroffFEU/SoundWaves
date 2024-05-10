@@ -91,6 +91,7 @@ function renderRemainingPosts(posts) {
   container.appendChild(fragment);
 }
 
+
 // const CLIENT_ID = 'd7ac36c85a3852a';
 // const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
 
