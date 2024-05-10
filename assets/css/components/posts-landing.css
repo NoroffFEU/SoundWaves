@@ -62,6 +62,7 @@
                 }
         
                 & .material-symbols-outlined {
+                    position:relative;
                     font-size: var(--text-xl);
                     font-weight: 700;
                 }
@@ -90,10 +91,8 @@
         .first-post {
             grid-column: span 1 !important;
 
-            & header {
-                & img {
+            & header img {
                     border-radius: 10px 10px 0px 0px !important;
-                }
             }
 
             & a {
@@ -104,4 +103,21 @@
     }
   
 }
-  
+
+/* ----- HOVER ----- */
+
+.post:hover {
+    
+    & header img {
+        scale: 1.1;
+    }
+    
+    & .material-symbols-outlined {
+        transition: all .3s ease-in-out;
+        transform: translateX(10px);
+        background: transparent;
+        color: rgba(var(--turquoise-normal), 1);
+        border-radius: 50%;
+    }
+
+}

@@ -89,6 +89,10 @@
         background: linear-gradient(90deg, rgba(190,190,190, .1) 0%, rgba(57,204,204, .5) 100%); 
     } */
 
+    &:hover.gradient-right::after {
+        background: rgba(var(--turquoise-normal), 1);
+    }
+
     &.gradient-right::after {
         background: rgba(var(--color-secondary), .3);  /*TODO -> Check colors */
     }
