@@ -28,14 +28,14 @@ function renderCarousel(posts) {
   posts.forEach((post, index, array) => {
     const title = document.querySelectorAll(".hero article .title")[index];
     const tag = document.querySelectorAll(".hero article .tag")[index];
-    const date = document.querySelectorAll(".hero article .date")[index];
+   
     const image = document.querySelectorAll(".hero article .featured-post")[
       index
     ];
 
     title.textContent = post.title;
     tag.textContent = post.tags;
-    date.textContent = post.created;
+   
     image.style.backgroundImage = `url(${post.media.url})`;
     image.setAttribute("id", post.id);
     image.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
@@ -115,7 +115,7 @@ function renderRemainingPosts(posts) {
 // feedIMG()
 
 function loadHomePage() {
-  // loadPostsAndProcess();
+  loadPostsAndProcess();
   loadCarouselFunctionallity();
 }
 

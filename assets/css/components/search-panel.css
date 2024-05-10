@@ -1,6 +1,7 @@
 .search-panel {
     font-size: var(--text-sm);
     max-height: 0px;
+    visibility: hidden;
 
 
     & form {
