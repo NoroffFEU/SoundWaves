@@ -90,3 +90,51 @@
     }
 
 }
+
+.pagination {
+      & button:hover {
+        scale: 1.1;
+
+        & span::after {
+            box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 1);
+        }
+      } 
+}
+
+.carousel-controller {
+
+    & button {
+        box-shadow: 0 0 10px rgba(var(--turquoise-normal), 0);
+        transition: border .1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background .1s cubic-bezier(0.25, 0.46, 0.45, 0.94), color .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), scale .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+
+        &:hover {
+            color: rgba(var(--turquoise-normal), 1);
+            border: 2px solid rgba(var(--turquoise-normal), 1);
+            background: rgba(var(--turquoise-normal), .1);
+            scale: 1.2;
+            
+            &::before {
+                position: absolute;
+                content: "";
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: rgba(var(--turquoise-normal), .1);
+                z-index: -1;
+                filter: blur(20px);
+                box-shadow: 0 0 10px rgba(var(--turquoise-normal), 1);
+            }
+        }
+    }
+}
+
+.btn {
+    transition: background .3s ease, color .3s ease, scale .3s ease;
+
+    &:hover {
+        background: rgba(var(--turquoise-dark), 1);
+        color: rgba(var(--color-white), 1);
+    }
+}
+
