@@ -9,6 +9,7 @@
         opacity: 1;
         visibility: visible;
         transition: max-height .3s ease, opacity .5s ease;
+
     }
     &[data-search-is-closed="true"] {
         max-height: 0;
@@ -16,9 +17,6 @@
         visibility: hidden;
         transition: max-height .3s ease, opacity .5s ease;
     }
-
-    
-
 
     & form {
         padding-top: var(--space-2xl);

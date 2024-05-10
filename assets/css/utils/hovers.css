@@ -4,7 +4,7 @@
     transition: opacity .2s ease-in-out;
 
     &:hover {
-        opacity: .8;
+        opacity: .7;
         transition: opacity .3s ease-in-out;
     }
 }
@@ -44,3 +44,35 @@
     }
 
 }
+
+.hover-media {
+    position: relative;
+    display: grid;
+    place-content: center;
+    transition: color .3s ease, scale .3s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        transform: translateX(-14%);
+        filter: blur(15px);
+        opacity: 0; /* Initially hidden */
+        transition: opacity .5s ease; /* Transition after 1s delay */
+        inset: 0;
+        width: 140%;
+        height: 100%;
+        background-color: rgba(var(--turquoise-normal-hover), 1);
+        border-radius: 50%;
+        z-index: -1;
+
+    }
+  
+    &:hover {
+      scale: 1.2;
+      color: rgba(var(--turquoise-normal-hover), 1);
+  
+      &::before {
+        opacity: .6;
+      }
+    }
+  }
