@@ -90,6 +90,12 @@
         .first-post {
             grid-column: span 1 !important;
 
+            & header {
+                & img {
+                    border-radius: 10px 10px 0px 0px !important;
+                }
+            }
+
             & a {
                 grid-template-columns: 1fr !important;
             }
