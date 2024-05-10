@@ -94,6 +94,7 @@
     }
 
     &.gradient-right::after {
+        transition: background .5s cubic-bezier(0.25, 0.8, 0.25, 1);
         background: rgba(var(--color-secondary), .3);  /*TODO -> Check colors */
     }
 

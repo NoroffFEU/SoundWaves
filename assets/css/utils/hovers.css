@@ -64,7 +64,6 @@
         background-color: rgba(var(--turquoise-normal-hover), 1);
         border-radius: 50%;
         z-index: -1;
-
     }
   
     &:hover {
@@ -76,3 +75,18 @@
       }
     }
   }
+
+  .post:hover {
+    
+    & header img {   
+        scale: 1.1;
+    }
+    
+    & .material-symbols-outlined {
+        transform: translateX(10px);
+        background: transparent;
+        color: rgba(var(--turquoise-normal), 1);
+        border-radius: 50%;
+    }
+
+}
