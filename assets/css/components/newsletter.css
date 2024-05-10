@@ -1,7 +1,7 @@
 /* ----- NEWSLETTER ----- */
 .newsletter {
     background: rgba(var(--elephant-darker), 1);
-    padding-block: var(--space-2xl);
+    padding-block: var(--space-3xl);
     position: relative;
 
     & h3 {
@@ -54,12 +54,66 @@
     }
 
     & .waves-effect {
+
+        & img {
+
+            position: absolute;
+            inset: 0;
+            margin: auto auto 0 auto;  
+            min-width: 1200px;
+            max-width: 1920px;
+            width: 100%; 
+            mask-image: linear-gradient(to right, transparent 0%, rgba(var(--color-primary), 1) 10%, rgba(var(--color-primary), 1) 90%, transparent 100%);
+
+        }
+    }
+
+    & .notes-left {
         position: absolute;
         inset: 0;
-        margin: auto auto 0 auto;  
-        min-width: 1200px;
-        max-width: 1920px;
-        width: 100%; 
+
+        & img {
+            position:absolute;
+            left: 20%;
+            bottom: 0;
+            opacity: 0;
+
+            &:nth-child(1) {
+                animation: notesToLeft 3s linear 4s infinite;
+            }
+
+            &:nth-child(2) {
+                animation: notesToLeft 1.5s linear 0s infinite;
+            }
+
+            &:nth-child(3) {
+                animation: notesToLeft 2s linear 2s infinite;
+            }
+        }
+    }
+
+    & .notes-right {
+        position: absolute;
+        inset: 0;
+
+        & img {
+            position:absolute;
+            right: 20%;
+            bottom: 0;
+            opacity: 0;
+
+            &:nth-child(1) {
+                animation: notesToRight 1.5s linear 0s infinite;
+            }
+
+            &:nth-child(2) {
+                animation: notesToRight 2s linear 2s infinite;
+            }
+
+            &:nth-child(3) {
+                animation: notesToRight 3s linear 4s infinite;
+            }
+        }
     }
     
 }
@@ -81,7 +135,52 @@
                 padding: 15px;
             }
         }
-        
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .notes-left {
+        display: none;
+    }
+    .notes-right {
+        display: none;
+    }
+}
+
+/* ----- ANIMATIONS ----- */
+
+@keyframes notesToRight {
+    0% {
+        right: 20%;
+        bottom: 0;
+        opacity: 0;
     }
 
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        right: 10%;
+        bottom: 50%;
+        opacity: 0;
+    }
+}
+
+@keyframes notesToLeft {
+    0% {
+        left: 20%;
+        bottom: 0;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 10%;
+        bottom: 50%;
+        opacity: 0;
+    }
 }
