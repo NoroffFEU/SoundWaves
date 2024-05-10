@@ -85,8 +85,12 @@
     &.gradient-mid::after {
         background: linear-gradient(90deg, rgba(190,190,190, .2) 0%, rgba(190,190,190, .1) 100%); /*TODO -> Check colors */
     }
+    /* &.gradient-right::after {
+        background: linear-gradient(90deg, rgba(190,190,190, .1) 0%, rgba(57,204,204, .5) 100%); 
+    } */
+
     &.gradient-right::after {
-        background: linear-gradient(90deg, rgba(190,190,190, .1) 0%, rgba(57,204,204, .5) 100%); /*TODO -> Check colors */
+        background: rgba(var(--color-secondary), .3);  /*TODO -> Check colors */
     }
 
     &.gradient-mid::after {
