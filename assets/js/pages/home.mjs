@@ -79,11 +79,20 @@ function renderRemainingPosts(posts) {
       clone.querySelector(".post").setAttribute("data-first-post", "false");
     }
 
+    //convert date to Month Day, Year
+    const date = new Date(post.created);
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    const formattedDate = month + " " + (day < 10 ? "0" + day : day) + ", " + year;
+
     clone.querySelector(".post").setAttribute("id", post.id);
     clone.querySelector(".link").href = `${BASE_URL}${URLs.post}?id=${post.id}`;
     clone.querySelector(".title").textContent = post.title;
     clone.querySelector(".tag").textContent = post.tags;
-    clone.querySelector(".date").textContent = post.created;
+    clone.querySelector(".date").textContent = formattedDate;
     clone.querySelector("img").src = post.media.url; // TODO poner ternario para si no tiene imagen, que ponga un placeholder
     fragment.appendChild(clone);
   });
