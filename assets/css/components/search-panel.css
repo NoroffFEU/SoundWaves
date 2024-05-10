@@ -7,11 +7,13 @@
     &[data-search-is-closed="false"] {
         max-height: auto;
         opacity: 1;
+        visibility: visible;
         transition: max-height .3s ease, opacity .5s ease;
     }
     &[data-search-is-closed="true"] {
         max-height: 0;
         opacity: 0;
+        visibility: hidden;
         transition: max-height .3s ease, opacity .5s ease;
     }
 
