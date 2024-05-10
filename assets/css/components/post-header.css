@@ -1,6 +1,6 @@
 /* ----- POST HEADER ----- */
 .post-header {
-
+    margin-top: 72px;
     background: linear-gradient(180deg, rgba(var(--elephant-darker),1) 0%, rgba(34,99,133,.3) 40%, rgba(8,23,31,1) 75%, rgba(8,23,31,0) 100%);
     
         & header {
@@ -8,7 +8,7 @@
 
             & h1 {
                 font-size: var(--text-2xl);
-                font-weight: 600;
+                font-weight: 200;
                 padding-top: var(--space-s);
             }
 
@@ -47,7 +47,7 @@
 
             & p {
                 font-size: var(--text-sm);
-                font-weight: 500;
+                font-weight: 150;
             }
 
             & .date {

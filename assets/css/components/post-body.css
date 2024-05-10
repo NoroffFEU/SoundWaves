@@ -7,11 +7,16 @@
         line-height: 1.75;
         padding-block: var(--space-m);
         text-wrap: pretty;
+        font-weight: 90;
+    }
+
+    & h1 {
+        font-weight: 100;
     }
 
     & h2 {
         font-size: var(--text-xl);
-        font-weight: 600;
+        font-weight: 120;
         padding-block: var(--space-l);
     }
 
