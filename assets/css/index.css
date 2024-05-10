@@ -53,7 +53,7 @@
 
 .heading {
     font-size: var(--text-xl);
-    font-weight: 600;
+    font-weight: 150;
     padding-block: var(--space-3xl);
 }
 
@@ -153,7 +153,7 @@
 .btn {
     cursor: pointer;
     font-size: var(--text-sm);
-    font-weight: 500;
+    font-weight: 120;
     border-radius: 10px;
     padding: 20px 40px;
     background: rgba(var(--turquoise-dark-hover), 1);
@@ -188,7 +188,7 @@
     font-family: 'Geist Mono';
     font-size: var(--text-sm);
     letter-spacing: .25rem;
-    font-weight: 500;
+    font-weight: 150;
     border-radius: 10px;
     padding: var(--space-xs);
     background: rgba(var(--turquoise-dark-hover), 1);

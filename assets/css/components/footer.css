@@ -13,9 +13,8 @@ footer {
         padding: var(--space-s);
         
         & span {
-            font-family: 'Geist Mono';
-            font-size: var(--text-sm);
-            font-weight: 300;
+            font-size: var(--text-xs);
+            font-weight: 80;
         }
 
         & img {
@@ -32,10 +31,13 @@ footer {
     & .footer-links {
         flex-wrap: wrap;
         padding: var(--space-l);
+
+        font-weight: 100;
     }
 
     & .copyright {
         padding-bottom: var(--space-s);
+        font-weight: 100;
     }
 }
 

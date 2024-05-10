@@ -35,16 +35,10 @@
 
         & h2 {
             color: rgba(var(--color-secondary), .75);
-            font-weight: 300;
         }
         
         & ul {
            margin: 30px;
-
-           & li {
-            font-weight: 300;
-
-           }
         }
 
     }

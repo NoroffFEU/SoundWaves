@@ -6,25 +6,25 @@
 
     & h3 {
         font-size: var(--text-xl);
-        font-weight: 600;
+        font-weight: 150;
         
     }
 
     & p:first-of-type {
         font-size: var(--text-sm);
-        font-weight: 300;
+        font-weight: 100;
         color: rgba(var(--color-secondary), 1);
         padding-block: var(--space-xs);
     }
 
     & p:last-of-type {
         font-size: var(--text-xs);
-        font-weight: 300;
+        font-weight: 80;
         color: rgba(var(--color-secondary), .75);
         padding-block: var(--space-xs);
 
         & a {
-            font-weight: 600;
+            font-weight: 120;
             text-decoration: underline;
             color: rgba(var(--turquoise-dark), 1);
         }
