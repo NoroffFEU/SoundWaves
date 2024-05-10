@@ -156,6 +156,20 @@ window.addEventListener("scroll", () => {
 
 })
 
+const headerSearchButton = document.querySelector(".header-search-btn");
+
+headerSearchButton.addEventListener("click", () => {
+  const searchPanel = document.querySelector(".search-panel");
+  const isClosed = searchPanel.getAttribute("data-search-is-closed");
+
+  if (isClosed === "true") {
+    searchPanel.setAttribute("data-search-is-closed", "false");
+  } else if (isClosed === "false") {
+    searchPanel.setAttribute("data-search-is-closed", "true");
+  }
+});
+
+
 function main() {
   initializeKonamiCode();
   initializeLoginForm();

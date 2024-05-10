@@ -1,7 +1,21 @@
 .search-panel {
+    position: relative;
     font-size: var(--text-sm);
-    max-height: 0px;
-    visibility: hidden;
+    z-index: 120;
+    transition: max-height .3s ease, opacity .3s ease;
+
+    &[data-search-is-closed="false"] {
+        max-height: auto;
+        opacity: 1;
+        transition: max-height .3s ease, opacity .5s ease;
+    }
+    &[data-search-is-closed="true"] {
+        max-height: 0;
+        opacity: 0;
+        transition: max-height .3s ease, opacity .5s ease;
+    }
+
+    
 
 
     & form {

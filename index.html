@@ -49,6 +49,7 @@
 
     <header class="local-header" data-interactive="false">
         <div class="wrapper">
+            <div class="wrapper-background"></div>
             <div class="header-content media-padding flex-fw justify-sb align-items-center pd-20 relative">
                 <a href="./index.html" aria-label="SoundWaves logo" class="hover-opacity">
                     <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo">
@@ -115,15 +116,15 @@
                 </a>
                 <nav role="navigation">
                     <ul class="flex align-items-center gap-20">
-                        <li><a href="#" aria-label="Language selector" class="flex align-items-center gap-8 hover-underline coming-feature">
+                        <li><button type="button" aria-label="Language selector" class="flex align-items-center gap-8 hover-underline coming-feature">
                             <span class="material-symbols-outlined">category</span>
                             <span class="text">Categories</span>
-                            </a>
+                            </>
                         </li>
-                        <li><a href="#" aria-label="Search" class="flex align-items-center gap-8 hover-underline">
+                        <li><button type="button" aria-label="Search" class="header-search-btn flex align-items-center gap-8 hover-underline">
                             <span class="material-symbols-outlined">search</span>
                             <span class="text">Search</span>
-                            </a>
+                            </button>
                         </li>
                         <li class="toggle-switch">
                             <label class="switch-label ">
@@ -136,45 +137,46 @@
                 </nav>
             </div>
             <div class="line"></div>
+            <div class="search-panel mw-1000 media-padding" data-search-is-closed="true">
+                <form action="#" class="flex align-items-center">
+                    <label for="search" class="search-btn">
+                        <span class="material-symbols-outlined">search</span>
+                    </label>
+                    <input type="search" name="search" id="search" placeholder="Search by title">
+                    <button type="button">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </form>
+                <div class="latest-posts">
+                    <h2>Latest post</h2>
+                    <ul class="flex column gap-30">
+                        <li>
+                            <a href="#" class="flex align-items-center gap-20">
+                                <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex align-items-center gap-20">
+                                <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex align-items-center gap-20">
+                                <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
             
         </div>
     </header>
 
-    <div class="search-panel mw-1000 media-padding" data-is-closed="true">
-        <form action="#" class="flex align-items-center">
-            <label for="search" class="search-btn">
-                <span class="material-symbols-outlined">search</span>
-            </label>
-            <input type="search" name="search" id="search" placeholder="Search by title">
-            <button type="button">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </form>
-        <div class="latest-posts">
-            <h2>Latest post</h2>
-            <ul class="flex column gap-30">
-                <li>
-                    <a href="#" class="flex align-items-center gap-20">
-                        <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex align-items-center gap-20">
-                        <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex align-items-center gap-20">
-                        <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
 
     <article class="admin-bar" data-admin-logged="false">
         <nav class=" flex-fw align-items-center justify-sb">
