@@ -19,7 +19,6 @@ import { comingFeature } from "./utils/commingFeature.mjs";
 import { initializeAdminBar } from "./modules/components/adminBar.mjs";
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 import { loadSlider } from "./modules/components/slider.mjs";
-import { loadCarouselFunctionallity } from "./modules/components/carousel.mjs";
 import { getURL } from "./utils/getURL.mjs";
 
 // async function loadPostsAndProcess() {
@@ -118,6 +117,44 @@ import { getURL } from "./utils/getURL.mjs";
 //   container.appendChild(fragment);
 
 // }
+
+// // Get the header element
+// const header = document.querySelector("header");
+
+// window.addEventListener("scroll", () => {
+//   const scrollPosition = window.scrollY;
+
+//   // Check if the scroll position is greater than or equal to 100vh
+//   if (scrollPosition >= window.innerHeight) {
+//     header.style.top = "0rem";
+//   } else if (scrollPosition >= window.innerHeight / 2) {
+//     header.setAttribute("data-interactive", "true");
+//   } 
+  
+//   else {
+//     header.style.top = "-5rem";
+//     header.setAttribute("data-interactive", "false");
+//   }
+// });
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition >= window.innerHeight / 2) {
+    header.setAttribute("data-interactive", "true");
+  } else {
+    header.setAttribute("data-interactive", "false");
+  }
+
+  if (scrollPosition >= window.innerHeight) {
+    header.style.top = "0rem";
+  } else {
+    header.style.top = "-5rem";
+  }
+
+})
 
 function main() {
   initializeKonamiCode();

@@ -1,11 +1,19 @@
 /* ----- HEADER ----- */
+
+
 .local-header {
   position: sticky;
-  top: 0;
-  z-index: 1000000;
+  transition: top .3s ease;
+  top: -5rem;
+  z-index: 100;
   background: rgba(var(--elephant-darker), .5);
   box-shadow: 0px 15px 15px rgba(var(--color-primary), .3);
   backdrop-filter: blur(20px);
+
+    &[data-interactive="true"] .header-content{
+      max-width: 1000px;
+      margin: auto;
+    }
   
     & svg {
         aspect-ratio: 58 / 7;
