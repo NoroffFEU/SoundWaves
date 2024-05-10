@@ -2,6 +2,7 @@
 .newsletter {
     background: rgba(var(--elephant-darker), 1);
     padding-block: var(--space-2xl);
+    position: relative;
 
     & h3 {
         font-size: var(--text-xl);
@@ -50,6 +51,15 @@
         & button {
             margin: auto;
         }
+    }
+
+    & .waves-effect {
+        position: absolute;
+        inset: 0;
+        margin: auto auto 0 auto;  
+        min-width: 1200px;
+        max-width: 1920px;
+        width: 100%; 
     }
     
 }

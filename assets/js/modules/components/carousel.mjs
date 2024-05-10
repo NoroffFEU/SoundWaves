@@ -2,7 +2,7 @@ import { getPostsByUser } from "../api/blog/getAllPosts.mjs";
 
 let intervalId;
 
-export function loadCarouselFunctionallity() {
+export function loadCarouselFunctionality() {
   const prevButton = document.querySelector(".prev-slide");
   const nextButton = document.querySelector(".next-slide");
 
@@ -20,7 +20,7 @@ export function loadCarouselFunctionallity() {
 }
 
 function startInterval() {
-  intervalId = setInterval(handleNextSlide, 2000);
+  intervalId = setInterval(handleNextSlide, 5000);
 }
 
 function restartInterval() {

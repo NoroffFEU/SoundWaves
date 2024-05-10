@@ -1,4 +1,4 @@
-import { loadCarouselFunctionallity } from "../modules/components/carousel.mjs";
+import { loadCarouselFunctionality } from "../modules/components/carousel.mjs";
 import { getPostsByUser } from "../modules/api/blog/getAllPosts.mjs";
 import { BASE_URL, URLs } from "../utils/constants.mjs";
 
@@ -28,14 +28,14 @@ function renderCarousel(posts) {
   posts.forEach((post, index, array) => {
     const title = document.querySelectorAll(".hero article .title")[index];
     const tag = document.querySelectorAll(".hero article .tag")[index];
-   
+
     const image = document.querySelectorAll(".hero article .featured-post")[
       index
     ];
 
     title.textContent = post.title;
     tag.textContent = post.tags;
-   
+
     image.style.backgroundImage = `url(${post.media.url})`;
     image.setAttribute("id", post.id);
     image.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
@@ -91,8 +91,8 @@ function renderRemainingPosts(posts) {
   container.appendChild(fragment);
 }
 
-// const CLIENT_ID = 'd7ac36c85a3852a'; 
-// const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659'; 
+// const CLIENT_ID = 'd7ac36c85a3852a';
+// const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
 
 // async function feedIMG() {
 //     try {
@@ -116,8 +116,7 @@ function renderRemainingPosts(posts) {
 
 function loadHomePage() {
   loadPostsAndProcess();
-  loadCarouselFunctionallity();
+  loadCarouselFunctionality();
 }
 
 loadHomePage();
-
