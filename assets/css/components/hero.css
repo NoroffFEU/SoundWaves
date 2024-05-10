@@ -62,7 +62,7 @@
             margin: auto;
         }
 
-        &:nth-child(1) {
+        /* &:nth-child(1) {
             background-image: url("../../img/hero-placeholder1.webp");
         }
 
@@ -72,7 +72,7 @@
 
         &:nth-child(3) {
             background-image: url("../../img/hero-placeholder2.webp");
-        }
+        } */
     }
 
     & .carousel-controller {
@@ -116,27 +116,40 @@
         }
     }
 
-    & .carousel-dots {
+    & .scroll-downs {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         justify-content: center;
-        z-index: 20;
+        z-index: 50;
 
-        & .dot {
-            border-radius: 50%;
+        & .mousey {
+            width: 3px;
+            padding: 10px 15px;
+            height: 35px;
+            border: 2px solid rgba(var(--color-secondary), 1);
+            border-radius: 25px;
+            opacity: 0.75;
+            box-sizing: content-box;
+          }
+        & .scroller {
+            width: 3px;
             height: 10px;
-            width: 10px;
-            background: rgba(var(--color-secondary), 1);
-            cursor: pointer;
-        }
-
-        & .selected {
-            height: 15px;
-            width: 15px;
-            background: rgba(var(--turquoise-normal-active), 1);
-            outline: 4px solid rgba(var(--turquoise-darker), .75);
-        }
+            border-radius: 25%;
+            background-color: rgba(var(--color-secondary), 1);
+            animation-name: scroll;
+            animation-duration: 2.2s;
+            animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+            animation-iteration-count: infinite;
+          }
     }
 }
+
+
+ 
+  @keyframes scroll {
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0;}
+  }
