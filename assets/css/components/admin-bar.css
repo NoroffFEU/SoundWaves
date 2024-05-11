@@ -15,16 +15,23 @@
         backdrop-filter: blur(5px);
 
         & .left {
+            font-size: var(--text-base);
+
             img {
                 border-radius: 50%;
                 background-color: rgba(var(--color-primary), 1);
                 aspect-ratio: 1 / 1;
                 width: var(--space-xl);
+                
             }
         }
 
         & a, button {
             cursor: pointer;
+        }
+
+        & .text {
+            font-size: var(--text-sm);
         }
     }
 
@@ -33,3 +40,16 @@
 [data-admin-logged="false"] {
     display: none;
 }
+
+/* ----- MEDIA ----- */
+
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 600px) {
+
+    .admin-bar {
+        & .text {
+            display: none;
+        }
+    }
+}
+  

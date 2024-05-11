@@ -169,30 +169,42 @@ headerSearchButton.addEventListener("click", () => {
   }
 });
 
-// window.navigation.addEventListener('navigate', (event)=> {
-//   const toUrl= new URL(event.destination.url);
-//   if(location.origin !== toUrl.origin) return;
 
-//   event.intercept({
-//     async handler() {
-//       const response = await fetch(toUrl.pathname);
-//       const text = await response.text();
-//       const [, data] = text.match(/<body>([\s\S]*)<\/body>/i);
-//       document.startViewTransition(()=> {
-//         document.body.innerHTML = data;
-//         document.documentElement.scrollTop = 0;
-//       })
-//     }
-//   })
-
+async function loadLatestPostsSearchBar() {
+  const latestPosts = document.querySelectorAll(".latest-posts p");
   
-// })
+
+  try {
+    const posts = await getPostsByUser(3, 1);
+    const postsData = posts.data;
+
+    postsData.forEach((post, index)=> {
+      latestPosts[index].textContent = post.title;
+      latestPosts[index].setAttribute("data-post-id", post.id);
+    })
+
+    latestPosts.forEach((post)=> {
+      post.addEventListener('click', (event)=> {
+        const postId = post.getAttribute("data-post-id");
+        window.location.href = `${BASE_URL}${URLs.post}?id=${postId}`;
+      })
+      
+    })
+  } catch (error) {
+    console.error(error);
+  }
+
+}
+
+loadLatestPostsSearchBar();
+
 
 
 function main() {
   initializeKonamiCode();
   initializeLoginForm();
   initializeAdminBar();
+  loadLatestPostsSearchBar();
   comingFeature();
   // loadCarousel();
 
