@@ -62,7 +62,4 @@ function loadSocialMediaShare() {
 
 loadSocialMediaShare();
 
-
-
-console.log(link);
 loadPostPage();
