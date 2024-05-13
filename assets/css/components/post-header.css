@@ -4,16 +4,40 @@
     background: linear-gradient(180deg, rgba(var(--elephant-darker),1) 0%, rgba(34,99,133,.3) 40%, rgba(8,23,31,1) 75%, rgba(8,23,31,0) 100%);
     
         & header {
-            padding-top: var(--space-xl);
+            padding-top: var(--space-2xl);
 
             & h1 {
                 font-size: var(--text-2xl);
                 font-weight: 200;
-                padding-top: var(--space-s);
+                padding-top: var(--space-xs);
             }
 
             & .social {
                 margin-left: auto;
+
+                & a {
+                    cursor: pointer;
+                }
+
+                & i {
+                    position: relative;
+                }
+                & .tooltip {
+                    position: absolute;
+                    opacity: 0;
+                    font-size: var(--text-xs);
+                    color: rgba(var(--color-secondary), 1);
+                    font-weight: 100;
+                    top: -40px;
+                    left: -40px;
+                    transform: translateX(-50%);
+                    padding: 6px 10px;
+                    background-color: rgba(var(--elephant-darker), 1);
+                    border-radius: 10px;
+                    visibility: hidden;
+                    min-width: 127px;
+                    transition: opacity .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                }
             }
         }
 

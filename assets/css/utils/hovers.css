@@ -65,8 +65,16 @@
         border-radius: 50%;
         z-index: -1;
     }
+
+    &.tp:hover {
+        color: rgba(var(--turquoise-normal-hover), 1);
+        
+        &::before {
+            opacity: .6;
+        }
+    }
   
-    &:hover {
+    &:hover:not(.tp) {
       scale: 1.2;
       color: rgba(var(--turquoise-normal-hover), 1);
   

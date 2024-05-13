@@ -55,7 +55,16 @@ function loadSocialMediaShare() {
 
   clipboard.forEach((element) => {
     element.addEventListener('click', () => {
+      const tooltip = element.querySelector('.tooltip');
+      tooltip.style.visibility = 'visible';
+      tooltip.style.opacity = '1';
+      setTimeout(() => {
+        tooltip.style.visibility = 'hidden';
+        tooltip.style.opacity = '0';
+
+      }, 1000);
       navigator.clipboard.writeText(link);
+
     });
   });
 }

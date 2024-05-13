@@ -3,6 +3,30 @@
     padding-bottom: var(--space-3xl);
     font-weight: 120;
 
+    & button {
+        cursor: pointer;
+    }
+
+    & i {
+        position: relative;
+    }
+    & .tooltip {
+        position: absolute;
+        opacity: 0;
+        font-size: var(--text-xs);
+        color: rgba(var(--color-secondary), 1);
+        font-weight: 100;
+        bottom: -40px;
+        left: -40px;
+        transform: translateX(-50%);
+        padding: 6px 10px;
+        background-color: rgba(var(--elephant-darker), 1);
+        border-radius: 10px;
+        visibility: hidden;
+        min-width: 127px;
+        transition: opacity .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
     & div {
         padding-top: var(--space-xs);
     }
