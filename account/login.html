@@ -43,9 +43,13 @@
                 <div>
                     <header class="flex column gap-50">
                         <h1>Welcome back!</h1>
+                        <div class="error">
+                            <h2 class="fw-120">Wrong credentials</h2>
+                            <p class="fw-80">Invalid email or password</p>
+                        </div>
                         <div class="button-group-container flex-fw justify-sb gap-30">
-                            <button type="button" data-is-active="true">Login</button>
-                            <button type="button">Register</button>
+                            <button type="button" data-is-active="true" class="login-btn">Login</button>
+                            <button type="button" data-is-active="false" class="register-btn">Register</button>
                         </div>
                     </header>
                     <div class="body flex column gap-50">
@@ -55,7 +59,7 @@
                                 stacked_email
                                 </span>
                             </label>
-                            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                            <input class="fw-100" type="email" name="email" id="email" placeholder="Enter your email" required>
                         </div>
                         <div class="border-bottom flex-fw align-items-center relative">
                             <label for="password">
@@ -63,7 +67,7 @@
                                 lock
                                 </span>
                             </label>
-                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            <input class="fw-100" type="password" name="password" id="password" placeholder="Enter your password" required>
                             <span data-visibility="false" class="material-symbols-outlined">
                                 visibility_off
                             </span>
@@ -82,7 +86,7 @@
 
                     <footer class="flex column gap-40">
                         <p>It's time to tune up your admin powers and make the world groove to new melodies and amazing rhythms!</p>
-                        <button type="submit" class="btn width-100">Log in</button>
+                        <button id="login" type="submit" class="btn width-100">Log in</button>
                     </footer>
                 </div>
             </form>

@@ -56,8 +56,8 @@
         position: absolute;
         transform: translateX(-14%);
         filter: blur(15px);
-        opacity: 0; /* Initially hidden */
-        transition: opacity .5s ease; /* Transition after 1s delay */
+        opacity: 0;
+        transition: opacity .5s ease; 
         inset: 0;
         width: 140%;
         height: 100%;

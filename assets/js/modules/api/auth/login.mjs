@@ -6,22 +6,20 @@ import {
 } from "../../../utils/errorHandling.mjs";
 import { redirectToIndexPage } from "../../../utils/redirect.mjs";
 import { login } from "../../components/adminBar.mjs";
+import { displayError } from "../../components/errorDisplay.mjs";
 
 // Login User
 export async function loginUser(email, password) {
   // Handling email errors
-  const emailError = new EmailError(
-    "The email value must be a valid stud.noroff.no email address."
-  );
+  const emailError = new EmailError("The email value must be a valid stud.noroff.no email address.");
   if (!email || !emailError.regex.test(email)) {
-    throw emailError;
+    displayError(emailError);
   }
 
   // Handling password errors
+  const passwordError = new PasswordError("The password value must be at least 8 characters.");
   if (!password || password.length < 8) {
-    throw new PasswordError(
-      "The password value must be at least 8 characters."
-    );
+    displayError(passwordError);
   }
 
   const url = `${API_BASE_URL}${AUTH_ENDPOINTS.LOGIN}`;
@@ -49,10 +47,7 @@ export async function loginUser(email, password) {
     const token = json.data.accessToken;
 
     login(token);
-    
-   
     return token;
-    // redirectToIndexPage()
   } catch (error) {
     console.error(error);
   }
