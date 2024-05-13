@@ -184,6 +184,7 @@
     background: rgba(var(--red-warning), 1);
     color: rgba(var(--color-secondary), 1);
     transition: background .3s cubic-bezier(0.25, 0.8, 0.25, 1), filter .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 100;
     
     & i {
         pointer-events: none;

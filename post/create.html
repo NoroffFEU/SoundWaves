@@ -182,13 +182,13 @@
             <form name="createForm" id="form_editor" class="form-editor flex column gap-60" action="/save-post" method="POST" enctype="multipart/form-data">
                 <div class="form-top gap-30">
                     <div>
-                        <label for="title">Title</label>
-                        <input class="width-100" type="text" id="title" name="title" placeholder="Title" required>
+                        <label for="title" class="fw-200">Title</label>
+                        <input class="width-100 fw-120" type="text" id="title" name="title" placeholder="Title" required>
                     </div>
             
                     <div class="relative">
-                        <label for="category">Category</label>
-                        <select class="width-100" name="category" id="category" name="category" required>
+                        <label for="category" class="fw-200">Category</label>
+                        <select class="width-100 fw-120" name="category" id="category" name="category" required>
                             <option value="">Select category</option>
                             <option value="New releases">New releases</option>
                             <option value="Artist spotlights">Artist spotlights</option>
@@ -215,19 +215,10 @@
                 </div>
 
                 <span class="image-url"></span>
-                <!-- <input type="file" id="file">
-                <img src="" alt="" id="img">
-                <p id="url"></p> -->
-                <!-- <div>
-                    <label for="thumbnail">
-                        <input type="text" id="thumbnail">
-                    </label>
-                </div>  -->
 
                 <div class="editor-border">
                     <label for="editor" class="hidden">Edit</label>
                     <textarea id="editor" name="editor" required>
-                        <h1>holaa</h1>
                     </textarea>
                 </div>
 
