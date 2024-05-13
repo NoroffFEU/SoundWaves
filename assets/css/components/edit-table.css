@@ -12,6 +12,7 @@
     & th {
         font-size: var(--text-sm);
         padding: var(--space-l);
+        font-weight: 150;
 
         &:nth-child(1) {
             text-align: left;
@@ -19,13 +20,17 @@
     }
 
     & td {
-        font-weight: 300;
+        font-weight: 80;
         font-size: var(--text-sm);
         padding: var(--space-l);
         border-top: 2px solid rgba(var(--turquoise-dark), 1);
 
         &:nth-child(n+2) {
             text-align: center;
+        }
+
+        &[data-cell="title"] {
+            font-weight: 120;
         }
 
         &[data-cell="category"] {

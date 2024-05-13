@@ -1,18 +1,30 @@
 /* ----- SEARCH IMPUT ----- */
 .search-edit {
     padding-block: var(--space-3xl);
+
+    &:focus-within {
+        & div {
+            border: 2px solid rgba(var(--turquoise-normal), 1);
+        }
+    }
     
     & div {
         border: 2px solid rgba(var(--turquoise-dark), 1);
         border-radius: 10px;
         max-width: 500px;
         width: 100%;
+        transition: border .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        &:hover {
+            border: 2px solid rgba(var(--turquoise-dark), .75);
+        }
 
         & input {
             font-size: var(--text-sm);
-            font-weight: 300;
+            font-weight: 80;
             padding: 15px;
             width: 100%;
+            outline: none;
         }
 
         & button {

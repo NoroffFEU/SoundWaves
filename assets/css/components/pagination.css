@@ -29,17 +29,26 @@
 }
 
 .edit-pagination {
-
     font-size: var(--text-sm);
     padding-block: var(--space-3xl);
+    font-weight: 100;
 
     & button {
-        cursor: pointer;;
+        cursor: pointer;
+        transition: scale .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
+    & button:hover {
+        scale: 1.1;
+
+        & span::after {
+            box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 1);
+        }
+      } 
+
     & .material-symbols-outlined {
-        font-size: 30px;
-        padding: var(--space-xs);
+        font-size: 20px;
+        padding: var(--space-2xs);
         background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
         border-radius: 50%;
     }

@@ -165,9 +165,15 @@
     border-radius: 10px;
     background: rgba(var(--turquoise-dark), 1);
     color: rgba(var(--color-secondary), 1);
+    transition: background .3s cubic-bezier(0.25, 0.8, 0.25, 1), filter .3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     & i {
         pointer-events: none;
+    }
+
+    &:hover {
+        background: rgba(var(--turquoise-dark), 1);
+        filter: drop-shadow(0px 0px 10px rgba(var(--turquoise-normal), 1));
     }
 }
 
@@ -177,9 +183,15 @@
     border-radius: 10px;
     background: rgba(var(--red-warning), 1);
     color: rgba(var(--color-secondary), 1);
+    transition: background .3s cubic-bezier(0.25, 0.8, 0.25, 1), filter .3s cubic-bezier(0.25, 0.8, 0.25, 1);
     
     & i {
         pointer-events: none;
+    }
+
+    &:hover {
+        background: rgba(var(--red-warning), 1);
+        filter: drop-shadow(0px 0px 10px rgba(var(--red-warning), 1));
     }
 }
 

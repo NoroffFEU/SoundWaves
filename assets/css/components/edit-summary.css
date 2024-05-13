@@ -1,4 +1,8 @@
 /* ----- SUMMARY ----- */
+.admin-panel-heading.heading {
+    margin-top: var(--space-2xl);
+}
+
 .summary {
     background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
     border-radius: 10px;
@@ -6,7 +10,7 @@
 
     & h2 {
         font-size: var(--text-xl);
-        font-weight: 600;
+        font-weight: 200;
         padding-block: var(--space-3xs);
     }
 
