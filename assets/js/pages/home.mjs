@@ -2,91 +2,61 @@ import { loadCarouselFunctionality } from "../modules/components/carousel.mjs";
 import { getPostsByUser } from "../modules/api/blog/getAllPosts.mjs";
 import { BASE_URL, URLs } from "../utils/constants.mjs";
 import { formData } from "../utils/formDate.mjs";
+import { checkIfIsLastPage } from "../utils/checkIsLastPage.mjs";
+
+let page = 1; 
 
 async function loadPostsAndProcess() {
-  
   try {
+    const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
+    const name = userData?.name; 
 
-    if (localStorage.getItem("userData")){
-      const storedUser = localStorage.getItem("userData");
-      const userData = JSON.parse(storedUser);
-      const name = userData.name;
+    const posts = await getPostsByUser(12, 1, name);
+    const carouselPosts = posts.data.slice(0, 3);
+    const remainingPosts = posts.data.slice(3);
 
-      const posts = await getPostsByUser(12, 1, name);
-      const carouselPosts = posts.data.slice(0, 3);
-      const remainingPosts = posts.data.slice(3);
-
-      renderCarousel(carouselPosts);
-      renderRemainingPosts(remainingPosts);
-    } else {
-      const posts = await getPostsByUser(12, 1);
-      const carouselPosts = posts.data.slice(0, 3);
-      const remainingPosts = posts.data.slice(3);
-
-      renderCarousel(carouselPosts);
-      renderRemainingPosts(remainingPosts);
-    }
+    renderCarousel(carouselPosts);
+    renderRemainingPosts(remainingPosts);
+    checkIfIsLastPage(posts.meta.isLastPage)
 
   } catch (error) {
     console.error(error);
   }
 }
-
-function checkIfIsLastPage(isLastPage) {
-  const loadMoreButton = document.querySelector(".load-more");
-  console.log(isLastPage);
-  if (isLastPage) {
-    loadMoreButton.style.display = "none";
-  }
-}
-
 function renderCarousel(posts) {
-  const container = document.querySelector(".hero article");
   posts.forEach((post, index) => {
     const title = document.querySelectorAll(".hero article .title")[index];
     const tag = document.querySelectorAll(".hero article .tag")[index];
-
-    const image = document.querySelectorAll(".hero article .featured-post")[
-      index
-    ];
+    const image = document.querySelectorAll(".hero article .featured-post")[index];
 
     title.textContent = post.title;
     tag.textContent = post.tags;
-
     image.style.backgroundImage = `url(${post.media.url})`;
     image.setAttribute("id", post.id);
     image.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
   });
 }
 
-function checkIfIsFirstPost() {
-  const posts = document.querySelectorAll(".post");
-  console.log(posts);
-}
+async function handleLoadMore() {
+  const loadMoreButton = document.querySelector(".load-more");
 
-const loadMoreButton = document.querySelector(".load-more");
-loadMoreButton.addEventListener("click", loadMorePosts);
-let page = 1;
+  loadMoreButton.addEventListener("click", async () => {
+    page++; 
 
-async function loadMorePosts() {
-  page++;
-  try {
-    if(localStorage.getItem("userData")){
-      const storedUser = localStorage.getItem("userData");
-      const userData = JSON.parse(storedUser);
-      const name = userData.name;
+    try {
+      const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
+      const name = userData?.name; 
+
       const posts = await getPostsByUser(12, page, name);
       await renderRemainingPosts(posts.data);
-      checkIfIsLastPage(posts.meta.isLastPage);
-    } else {
-      const posts = await getPostsByUser(12, page);
-      await renderRemainingPosts(posts.data);
-      checkIfIsLastPage(posts.meta.isLastPage);
+      checkIfIsLastPage(posts.meta.isLastPage); 
+    } catch (error) {
+      console.error(error);
     }
-  } catch (error) {
-    console.error(error);
-  }
+  });
 }
+
+
 
 function renderRemainingPosts(posts) {
   const container = document.querySelector(".all-post");
@@ -110,7 +80,11 @@ function renderRemainingPosts(posts) {
     clone.querySelector(".title").textContent = post.title;
     clone.querySelector(".tag").textContent = post.tags;
     clone.querySelector(".date").textContent = formattedDate;
-    clone.querySelector("img").src = post.media.url; // TODO poner ternario para si no tiene imagen, que ponga un placeholder
+
+    const image = clone.querySelector("img");
+    image.src = post.media.url || "../../img/logo-og.webp"
+    
+
     fragment.appendChild(clone);
   });
 
@@ -121,6 +95,7 @@ function renderRemainingPosts(posts) {
 function loadHomePage() {
   loadPostsAndProcess();
   loadCarouselFunctionality();
+  handleLoadMore();
 }
 
 loadHomePage();

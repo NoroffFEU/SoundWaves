@@ -1,6 +1,5 @@
 import { API_BASE_URL, BLOG_ENDPOINTS } from "../../../utils/constants.mjs";
 import { APIError } from "../../../utils/errorHandling.mjs";
-import { loginUser } from "../auth/login.mjs";
 
 // Get all posts by user
 export async function getPostsByUser(limit = null, page = null, user = "Jesus_AH") {
@@ -19,11 +18,11 @@ export async function getPostsByUser(limit = null, page = null, user = "Jesus_AH
     try {
       const response = await fetch(url, options);
       if (!response.ok) {
-        throw new APIError("Failed to fetch posts");
+        throw new APIError('No posts created yet')
       }
       const json = await response.json();
       return json;
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
     }
   }

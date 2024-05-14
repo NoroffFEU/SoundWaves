@@ -20,7 +20,9 @@ export async function loadFivePosts() {
       const userData = JSON.parse(storedUser);
       const name = userData.name;
       const posts = await getPostsByUser(5, currentPage, name);
-
+      if (!posts) {
+        return
+      }
       if (posts.data.length === 0) {
         currentPage--;
         await loadFivePosts();
@@ -37,6 +39,10 @@ export async function loadFivePosts() {
       loadDeleteBtn();
     } else {
       const posts = await getPostsByUser(5, currentPage);
+
+      if(!posts) {
+        return
+      }
 
       if (posts.data.length === 0) {
         currentPage--;
@@ -55,7 +61,7 @@ export async function loadFivePosts() {
       loadDeleteBtn();
       }
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 }
 
