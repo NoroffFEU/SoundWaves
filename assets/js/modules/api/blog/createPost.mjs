@@ -2,9 +2,11 @@ import { API_BASE_URL, BLOG_ENDPOINTS } from "../../../utils/constants.mjs";
 import { loginUser } from "../auth/login.mjs";
 
 // Create post
-export async function createPost(name, title, body, tags, media) {
+export async function createPost(name, token, title, body, tags, media) {
   const url = `${API_BASE_URL}${BLOG_ENDPOINTS.POSTS_BY_USER(name)}`;
-  const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+  if(!token) {
+    const adminToken = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+  }
   const data = {
     title: title,
     body: body,
@@ -16,7 +18,7 @@ export async function createPost(name, title, body, tags, media) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${!token ? adminToken : token}`,
     },
     body: JSON.stringify(data),
   };

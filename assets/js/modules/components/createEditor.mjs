@@ -60,8 +60,9 @@ createPostForm.addEventListener('submit', async (event)=> {
         const storedUser = localStorage.getItem('userData');
         const userData = JSON.parse(storedUser);
         const name = userData.name;
+        const token = userData.token;
 
-        await createPost(name, title.value, body, category.value , media)
+        await createPost(name, token, title.value, body, category.value , media)
       } else {
         await createPost('Jesus_AH', title.value, body, category.value , media)
         // window.location.href = `${BASE_URL}${URLs.adminPanel}`;
