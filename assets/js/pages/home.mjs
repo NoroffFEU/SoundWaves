@@ -4,13 +4,29 @@ import { BASE_URL, URLs } from "../utils/constants.mjs";
 import { formData } from "../utils/formDate.mjs";
 
 async function loadPostsAndProcess() {
+  
   try {
-    const posts = await getPostsByUser(12, 1);
-    const carouselPosts = posts.data.slice(0, 3);
-    const remainingPosts = posts.data.slice(3);
 
-    renderCarousel(carouselPosts);
-    renderRemainingPosts(remainingPosts);
+    if (localStorage.getItem("userData")){
+      const storedUser = localStorage.getItem("userData");
+      const userData = JSON.parse(storedUser);
+      const name = userData.name;
+
+      const posts = await getPostsByUser(12, 1, name);
+      const carouselPosts = posts.data.slice(0, 3);
+      const remainingPosts = posts.data.slice(3);
+
+      renderCarousel(carouselPosts);
+      renderRemainingPosts(remainingPosts);
+    } else {
+      const posts = await getPostsByUser(12, 1);
+      const carouselPosts = posts.data.slice(0, 3);
+      const remainingPosts = posts.data.slice(3);
+
+      renderCarousel(carouselPosts);
+      renderRemainingPosts(remainingPosts);
+    }
+
   } catch (error) {
     console.error(error);
   }
@@ -26,7 +42,7 @@ function checkIfIsLastPage(isLastPage) {
 
 function renderCarousel(posts) {
   const container = document.querySelector(".hero article");
-  posts.forEach((post, index, array) => {
+  posts.forEach((post, index) => {
     const title = document.querySelectorAll(".hero article .title")[index];
     const tag = document.querySelectorAll(".hero article .tag")[index];
 
@@ -55,10 +71,18 @@ let page = 1;
 async function loadMorePosts() {
   page++;
   try {
-    const posts = await getPostsByUser(12, page);
-    await renderRemainingPosts(posts.data);
-    checkIfIsLastPage(posts.meta.isLastPage);
-    console.log(page);
+    if(localStorage.getItem("userData")){
+      const storedUser = localStorage.getItem("userData");
+      const userData = JSON.parse(storedUser);
+      const name = userData.name;
+      const posts = await getPostsByUser(12, page, name);
+      await renderRemainingPosts(posts.data);
+      checkIfIsLastPage(posts.meta.isLastPage);
+    } else {
+      const posts = await getPostsByUser(12, page);
+      await renderRemainingPosts(posts.data);
+      checkIfIsLastPage(posts.meta.isLastPage);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -69,8 +93,7 @@ function renderRemainingPosts(posts) {
   const template = document.querySelector("#post-template").content;
   const fragment = document.createDocumentFragment();
 
-  console.log(template);
-  posts.forEach((post, index, array) => {
+  posts.forEach((post, index) => {
     const clone = template.cloneNode(true);
 
     if (index === 0 && page === 1) {
@@ -93,31 +116,6 @@ function renderRemainingPosts(posts) {
 
   container.appendChild(fragment);
 }
-
-
-// const CLIENT_ID = 'd7ac36c85a3852a';
-// const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
-
-// async function feedIMG() {
-//     try {
-//         const response = await fetch('https://api.imgur.com/3/image/IsfYhkU', {
-//             method: 'GET',
-//             headers: {
-//                 Authorization: `Bearer ${ACCESS_TOKEN}`,
-//             }
-//         })
-
-//         const data = await response.json();
-
-//         console.log(data.link)
-
-//     } catch {
-
-//     }
-// }
-
-// feedIMG()
-
 
 
 function loadHomePage() {

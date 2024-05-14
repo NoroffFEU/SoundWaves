@@ -5,11 +5,20 @@ import { getPostByID } from '../api/blog/getPostByID.mjs';
 async function loadPostPage() {
   try {
     const postID = getURL('id');
-    const response = await getPostByID(postID);
-    const post = response.data;
 
-    renderPost(post);
+    if(localStorage.getItem('userData')) {
+      const storedUser = localStorage.getItem('userData');
+      const userData = JSON.parse(storedUser);
+      const name = userData.name;
 
+      const response = await getPostByID(postID, name);
+      const post = response.data;
+      renderPost(post);
+    } else {
+      const response = await getPostByID(postID);
+      const post = response.data;
+      renderPost(post);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -69,6 +78,6 @@ function loadSocialMediaShare() {
   });
 }
 
-loadSocialMediaShare();
 
+loadSocialMediaShare();
 loadPostPage();

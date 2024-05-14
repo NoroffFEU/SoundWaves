@@ -55,10 +55,17 @@ createPostForm.addEventListener('submit', async (event)=> {
       if (!title.value || !category.value || !body || !imageUrl) {
         throw new Error('All fields are required');
       }
-      
-      await createPost('Jesus_AH', title.value, body, category.value , media)
-      // window.location.href = `${BASE_URL}${URLs.adminPanel}`;
 
+      if(localStorage.getItem('userData')) {
+        const storedUser = localStorage.getItem('userData');
+        const userData = JSON.parse(storedUser);
+        const name = userData.name;
+
+        await createPost(name, title.value, body, category.value , media)
+      } else {
+        await createPost('Jesus_AH', title.value, body, category.value , media)
+        // window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+      }
     } catch (error) {
       console.error('Error creating post:', error);
     }

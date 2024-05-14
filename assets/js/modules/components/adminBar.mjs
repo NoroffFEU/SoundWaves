@@ -1,32 +1,22 @@
 // Admin bar
-import { ADMIN_BAR, BASE_URL, URLs } from "../../utils/constants.mjs";
+import { ADMIN_BAR } from "../../utils/constants.mjs";
 import { redirectToIndexPage } from "../../utils/redirect.mjs";
+import { logout } from "../../utils/loginLogout.mjs";
 
 export function initializeAdminBar() {
-    const adminToken = localStorage.getItem('adminToken');
-    const btn = document.querySelector('#logoutBtn');
-    btn?.addEventListener('click', (event)=> {
+    const storedToken = localStorage.getItem('userData');
+    const userData = JSON.parse(storedToken);
+    const token = userData?.token;
+
+    const logoutBtn = document.querySelector('#logoutBtn');
+    logoutBtn?.addEventListener('click', ()=> {
         logout();
         redirectToIndexPage();
     }) 
-    adminToken ? login() : logout();
+
+    token ? showAdminBar() : hideAdminBar();
         
 }
-
-// Login
-
-export function login(token) {
-    localStorage.setItem('adminToken', token);
-    showAdminBar();
-}
-
-// Logout
-
-export function logout() {
-    localStorage.removeItem('adminToken');
-    hideAdminBar();
-}
-
 
 // Show-Hide Admin Bar
 

@@ -1,27 +1,10 @@
-import { API_BASE_URL, AUTH_ENDPOINTS, BASE_URL, URLs } from "../../../utils/constants.mjs";
-import {
-  EmailError,
-  PasswordError,
-  APIError,
-} from "../../../utils/errorHandling.mjs";
-import { redirectToIndexPage } from "../../../utils/redirect.mjs";
-import { login } from "../../components/adminBar.mjs";
+import { API_BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
+import { APIError } from "../../../utils/errorHandling.mjs";
+import { login } from "../../../utils/loginLogout.mjs";
 import { displayError } from "../../components/errorDisplay.mjs";
 
 // Login User
 export async function loginUser(email, password) {
-  // Handling email errors
-  // const emailError = new EmailError("The email value must be a valid stud.noroff.no email address.");
-  // if (!email || !emailError.regex.test(email)) {
-  //   displayError(emailError);
-  // }
-
-  // Handling password errors
-  // const passwordError = new PasswordError("The password value must be at least 8 characters.");
-  // if (!password || password.length < 8) {
-  //   displayError(passwordError);
-  // }
-
   const url = `${API_BASE_URL}${AUTH_ENDPOINTS.LOGIN}`;
 
   const userData = {
@@ -44,10 +27,10 @@ export async function loginUser(email, password) {
       throw new APIError("Invalid email or password");
     }
     const json = await response.json();
-    const token = json.data.accessToken;
+    const userData = json.data;
 
-    login(token);
-    return token;
+    login(userData);
+    return userData;
   } catch (error) {
     displayError(error);
     console.error(error);

@@ -3,13 +3,12 @@ import { APIError } from "../../../utils/errorHandling.mjs";
 import { loginUser } from "../auth/login.mjs";
 
 // Get one post by ID
-export async function getPostByID(id) {
-    const url = `${API_BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID("Jesus_AH", id)}`;
-    const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+export async function getPostByID(id, user = "Jesus_AH") {
+    const url = `${API_BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID(user, id)}`;
+
     const options = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },    
     };
 
