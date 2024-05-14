@@ -3,9 +3,8 @@ import { loginUser } from "../auth/login.mjs";
 
 // Edit post
 
-export async function editPost(name, id, title, body, tags, media) {
+export async function editPost(name, token, id, title, body, tags, media) {
   const url = `${API_BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID(name, id)}`;
-  const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
 
   const data = {
     title: title,

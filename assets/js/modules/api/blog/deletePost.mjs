@@ -3,9 +3,9 @@ import { loginUser } from "../auth/login.mjs";
 
 
 // Delete post
-export async function deletePost(id) {
-    const url = `${API_BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID("Jesus_AH", id)}`;
-    const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+export async function deletePost(id, name, token) {
+    const url = `${API_BASE_URL}${BLOG_ENDPOINTS.POST_BY_ID(name, id)}`;
+   
     const options = {
       method: "DELETE",
       headers: {

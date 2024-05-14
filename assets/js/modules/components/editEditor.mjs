@@ -14,17 +14,33 @@ async function fetchPostData() {
     try{
         const thumbnailBackground = document.querySelector('.thumbnail-background');
         const imageUrl = document.querySelector('.image-url');
-        const getPost = await getPostByID(postID);
-        const post = getPost.data;
-        tinymce.activeEditor.setContent(post.body)
-        const form = document.forms.editForm;
-        form.title.value = post.title;
-        form.category.value = post.tags;
-        thumbnailBackground.style.backgroundImage = `url(${post.media.url})`;
-        imageUrl.textContent = post.media.url;
 
-        return post;
-        
+        if(localStorage.getItem('userData')) {
+            const storedUser = localStorage.getItem('userData');
+            const userData = JSON.parse(storedUser);
+            const name = userData.name;
+            const getPost = await getPostByID(postID, name);
+            const post = getPost.data;
+            tinymce.activeEditor.setContent(post.body)
+            const form = document.forms.editForm;
+            form.title.value = post.title;
+            form.category.value = post.tags;
+            thumbnailBackground.style.backgroundImage = `url(${post.media.url})`;
+            imageUrl.textContent = post.media.url;
+
+            return post;
+        } else {
+            const getPost = await getPostByID(postID);
+            const post = getPost.data;
+            tinymce.activeEditor.setContent(post.body)
+            const form = document.forms.editForm;
+            form.title.value = post.title;
+            form.category.value = post.tags;
+            thumbnailBackground.style.backgroundImage = `url(${post.media.url})`;
+            imageUrl.textContent = post.media.url;
+
+            return post;
+        }
 
     } catch (error) {
         console.error(error);
@@ -38,210 +54,35 @@ const editPostForm = document.forms.editForm;
 
 
 editPostForm.addEventListener('submit', async (event)=> {
-
-
     event.preventDefault();
 
-    const content  = tinymce.activeEditor.getContent();
-    const title = editPostForm.title.value;
-    const category = editPostForm.category.value;
-    const thumbnail = document.querySelector('.image-url').textContent;
-    console.log(content, title, category, thumbnail)
-    console.log(content)
-    const media = { url : thumbnail}
-    const postID = getURL("id");
-    await editPost('Jesus_AH', postID, title, content, category, media)
+    if(localStorage.getItem('userData')) {
+        const storedUser = localStorage.getItem('userData');
+        const userData = JSON.parse(storedUser);
+        const name = userData.name;
+        const token = userData.token;
 
-    window.location.href = `${BASE_URL}${URLs.adminPanel}`
+        const content  = tinymce.activeEditor.getContent();
+        const title = editPostForm.title.value;
+        const category = editPostForm.category.value;
+        const thumbnail = document.querySelector('.image-url').textContent;
+        const media = { url : thumbnail }
+        const postID = getURL("id");
+        await editPost(name, token, postID, title, content, category, media)
+        window.location.href = `${BASE_URL}${URLs.adminPanel}`
+
+    } else {
+        const token = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+        const content  = tinymce.activeEditor.getContent();
+        const title = editPostForm.title.value;
+        const category = editPostForm.category.value;
+        const thumbnail = document.querySelector('.image-url').textContent;
+        console.log(content, title, category, thumbnail)
+        console.log(content)
+        const media = { url : thumbnail}
+        const postID = getURL("id");
+        await editPost('Jesus_AH', token, postID, title, content, category, media)
+
+        window.location.href = `${BASE_URL}${URLs.adminPanel}`
+    }
 })
-
-
-
-// async function fetchPostData() {
-//     const postID = getURL("id");
-//     try{
-//         const getPost = await getPostByID(postID);
-//         const post = getPost.data;
-//         console.log(post)
-//         return post;
-        
-
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
-
-// async function initializeEditor(postId) {
-//     try {
-//       const post = await fetchPostData(postId);
-//       tinymce.init({
-//         content_css: "../../assets/css/components/editor.css",
-//         selector: '#editor',
-//         skin: 'oxide-dark',
-//         license_key: 'gpl',
-//         branding: false,
-//         menubar: false,
-//         resize: false,
-//         height: 750,
-//         toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | image | bullist numlist',
-//         plugins: 'image lists wordcount ',
-//         setup: function (editor) {
-//           editor.on('init', function () {
-//             editor.setContent(post.body); // Set initial content from fetched data
-//           });
-//         }
-//       });
-//     } catch (error) {
-//       console.error("Error initializing editor:", error);
-//       // Handle errors gracefully (e.g., display error message to user)
-//     }
-//   }
-
-
-//   function loadCreateButton() {
-//     const button = document.querySelector("#updateBtn");
-//     button.addEventListener("click", updatePost);
-//   }
-  
-//   async function updatePost() {
-//     const postId = getURL("id");
-//     const editForm = document.forms.editForm;
-//     const title = editForm.title.value;
-//     const category = editForm.category.value;
-//     const thumbnail = editForm.thumbnail.value;
-//     const media = { url: thumbnail };
-//     const content = tinymce.get('editor').getContent();
-  
-//     try {
-//       const response = await fetch(`/api/post/${postId}`, {
-//         method: 'PUT', // Use PUT for updating existing content
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//           author: 'Jesus_AH', // Replace with actual author info
-//           postID: postId,
-//           title,
-//           content,
-//           category,
-//           media,
-//         })
-//       });
-  
-//       if (!response.ok) {
-//         throw new Error(`Error updating post: ${response.statusText}`);
-//       }
-  
-//       // Handle success (e.g., show confirmation message, redirect to success page)
-//       console.log("Post updated successfully!");
-//     } catch (error) {
-//       console.error("Error updating post:", error);
-//       // Handle errors gracefully (e.g., display error message to user)
-//     }
-//   }
-
-//   // Assuming postId is available (e.g., from URL query string)
-//   const postId = getURL("id"); // Replace with your logic to retrieve postId
-//   initializeEditor(postId);
-//   loadCreateButton();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   const ID = getURL("id");
-//     initializeEditor(ID);
-
-// async function loadEditEditor() {
-//   const postID = getURL("id");
-//   const form = document.forms.editForm;
-
-//   try {
-//     const getPost = await getPostByID(postID);
-//     const post = getPost.data;
-//     form.title.value = post.title;
-//     form.category.value = post.tags;
-//     form.thumbnail.value = post.media.url;
-
-//     tinymce.init({
-//         content_css: "../../assets/css/components/editor.css",
-//         selector: '#editor',
-//         skin: 'oxide-dark',
-//         license_key: 'gpl',
-//         branding: false,
-//         menubar: false,
-//         resize: false,
-//         height: 750,
-//         toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | image | bullist numlist',
-//         plugins: 'image lists wordcount ',
-//         setup: function (editor) {
-//           editor.on('init', function () {
-//             editor.setContent(post.body);
-//           });
-//         }
-//       });
-
-//   } catch (error) {
-//     console.error(error);
-//   }
-  
-// }
-
-// loadEditEditor()
-// loadCreateButton()
-
-
-
-
-// function loadCreateButton() {
-//   const button = document.querySelector("#updateBtn");
-//   button.addEventListener("click", updatePost);
-// }
-
-// async function updatePost(content){
-// const postID = getURL("id");
-//   const editForm = document.forms.editForm;
-//   const title = editForm.title.value;
-//   const category = editForm.category.value;
-//   const thumbnail = editForm.thumbnail.value;
-//   const media = { url : thumbnail}
-//   await editPost('Jesus_AH', postID, title, content, category, media)
-// }
-
-// function loadDiscardButton() {
-
-// }
-
-
-// const formulario = document.forms.createForm;
-
-// formulario.addEventListener('submit', async (event)=> {
-//     event.preventDefault();
-//     const content  = tinymce.activeEditor.getContent();
-//     const title = formulario.title.value;
-//     const category = formulario.category.value;
-//     const thumbnail = formulario.thumbnail.value;
-    
-//     const media = { url : thumbnail}
-    
-//    await createPost('Jesus_AH', title, content, category, media)
-
-// })
-
-// console.log(tinymce.activeEditor.getContent('#editor'))
