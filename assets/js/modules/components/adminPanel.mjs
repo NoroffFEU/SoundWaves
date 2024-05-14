@@ -15,22 +15,45 @@ export async function loadFivePosts() {
   const paginationContainer = document.querySelector("#table-pagination");
   let template = "";
   try {
-    const posts = await getPostsByUser(5, currentPage);
+    if(localStorage.getItem('userData')) {
+      const storedUser = localStorage.getItem('userData');
+      const userData = JSON.parse(storedUser);
+      const name = userData.name;
+      const posts = await getPostsByUser(5, currentPage, name);
 
-    if (posts.data.length === 0) {
+      if (posts.data.length === 0) {
         currentPage--;
         await loadFivePosts();
         return;
-    }
+      }
+      posts.data.forEach((post) => {
+        template += tableRowTemplate(post);
+      });
+
+      table.innerHTML = template;
+      paginationText(posts.meta.currentPage, posts.meta.pageCount);
+      summaryText()
+      loadEditBtn();
+      loadDeleteBtn();
+    } else {
+      const posts = await getPostsByUser(5, currentPage);
+
+      if (posts.data.length === 0) {
+        currentPage--;
+        await loadFivePosts();
+        return;
+      }
     
-    posts.data.forEach((post) => {
-      template += tableRowTemplate(post);
-    });
-    table.innerHTML = template;
-    paginationText(posts.meta.currentPage, posts.meta.pageCount);
-    summaryText()
-    loadEditBtn();
-    loadDeleteBtn();
+      posts.data.forEach((post) => {
+        template += tableRowTemplate(post);
+      });
+
+      table.innerHTML = template;
+      paginationText(posts.meta.currentPage, posts.meta.pageCount);
+      summaryText()
+      loadEditBtn();
+      loadDeleteBtn();
+      }
   } catch (error) {
     console.log(error);
   }
@@ -95,9 +118,18 @@ function paginationText(currentPage, pageCount) {
 // Summary text
 async function summaryText() {
     try{
+      if(localStorage.getItem('userData')) {
+        const storedUser = localStorage.getItem('userData');
+        const userData = JSON.parse(storedUser);
+        const name = userData.name;
+        const posts = await getPostsByUser( null ,currentPage, name)
+        const totalPosts = document.querySelector('#total-posts')
+        totalPosts.textContent = posts.data.length;
+      } else {
         const posts = await getPostsByUser()
         const totalPosts = document.querySelector('#total-posts')
         totalPosts.textContent = posts.data.length;
+      }
 
     } catch (error) {
         console.log(error);
