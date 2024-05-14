@@ -1,5 +1,6 @@
 import { API_BASE_URL, AUTH_ENDPOINTS } from "../../../utils/constants.mjs";
 import { NameError, EmailError, PasswordError, APIError } from "../../../utils/errorHandling.mjs";
+import { displayError } from "../../components/errorDisplay.mjs";
 
 // Register new ADMIN
 export async function registerUser(name, email, password) {

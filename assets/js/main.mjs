@@ -202,7 +202,7 @@ loadLatestPostsSearchBar();
 
 function main() {
   initializeKonamiCode();
-  initializeLoginForm();
+
   initializeAdminBar();
   loadLatestPostsSearchBar();
   comingFeature();

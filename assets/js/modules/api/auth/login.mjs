@@ -11,16 +11,16 @@ import { displayError } from "../../components/errorDisplay.mjs";
 // Login User
 export async function loginUser(email, password) {
   // Handling email errors
-  const emailError = new EmailError("The email value must be a valid stud.noroff.no email address.");
-  if (!email || !emailError.regex.test(email)) {
-    displayError(emailError);
-  }
+  // const emailError = new EmailError("The email value must be a valid stud.noroff.no email address.");
+  // if (!email || !emailError.regex.test(email)) {
+  //   displayError(emailError);
+  // }
 
   // Handling password errors
-  const passwordError = new PasswordError("The password value must be at least 8 characters.");
-  if (!password || password.length < 8) {
-    displayError(passwordError);
-  }
+  // const passwordError = new PasswordError("The password value must be at least 8 characters.");
+  // if (!password || password.length < 8) {
+  //   displayError(passwordError);
+  // }
 
   const url = `${API_BASE_URL}${AUTH_ENDPOINTS.LOGIN}`;
 
@@ -49,6 +49,7 @@ export async function loginUser(email, password) {
     login(token);
     return token;
   } catch (error) {
+    displayError(error);
     console.error(error);
   }
 }

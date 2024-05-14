@@ -52,28 +52,48 @@
                             <button type="button" data-is-active="false" class="register-btn">Register</button>
                         </div>
                     </header>
-                    <div class="body flex column gap-50">
-                        <div class="border-bottom flex-fw relative align-items-center">
-                            <label for="email">
-                                <span class="material-symbols-outlined">
-                                stacked_email
-                                </span>
-                            </label>
-                            <input class="fw-100" type="email" name="email" id="email" placeholder="Enter your email" required>
+                    <div class="body flex column gap-20">
+                        <div class="container">
+                            <div class="border-bottom flex-fw relative align-items-center" data-border-error="false">
+                                <label for="email">
+                                    <span class="material-symbols-outlined">
+                                    stacked_email
+                                    </span>
+                                </label>
+                                <input 
+                                class="fw-100" 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                placeholder="Enter your email" 
+                                required>
+                            </div>
+                            <p id="loginEmailError" class="login-error">Email value must be a valid Noroff email address</p>
                         </div>
-                        <div class="border-bottom flex-fw align-items-center relative">
-                            <label for="password">
-                                <span class="material-symbols-outlined">
-                                lock
+
+                        <div class="container">
+                            <div class="border-bottom flex-fw align-items-center relative" data-border-error="false">
+                                <label for="password">
+                                    <span class="material-symbols-outlined">
+                                    lock
+                                    </span>
+                                </label>
+                                <input 
+                                class="fw-100" 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                placeholder="Enter your password"
+                                minlength="8" 
+                                required>
+                                <span id="showPassword" data-visibility="false" class="material-symbols-outlined">
+                                    visibility_off
                                 </span>
-                            </label>
-                            <input class="fw-100" type="password" name="password" id="password" placeholder="Enter your password" required>
-                            <span data-visibility="false" class="material-symbols-outlined">
-                                visibility_off
-                            </span>
+                            </div>
+                            <p id="loginPasswordError" class="login-error">Password must be at least 8 characters</p>
                         </div>
     
-                        <div class="flex-fw justify-sb align-items-center">
+                        <div class="remember flex-fw justify-sb align-items-center">
                             <div class="flex align-items-center gap-10">
                                 <input type="checkbox" name="remember" id="remember">
                                 <label for="remember">Remember me</label>
@@ -86,7 +106,7 @@
 
                     <footer class="flex column gap-40">
                         <p>It's time to tune up your admin powers and make the world groove to new melodies and amazing rhythms!</p>
-                        <button id="login" type="submit" class="btn width-100">Log in</button>
+                        <button id="loginBtn" type="submit" class="btn width-100">Log in</button>
                     </footer>
                 </div>
             </form>
