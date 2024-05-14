@@ -1,4 +1,5 @@
 import { BASE_URL, URLs } from "../../utils/constants.mjs";
+import { loginUser } from "../api/auth/login.mjs";
 import { createPost } from "../api/blog/createPost.mjs";
 
 const CLIENT_ID = 'd7ac36c85a3852a'; 
@@ -64,7 +65,8 @@ createPostForm.addEventListener('submit', async (event)=> {
 
         await createPost(name, token, title.value, body, category.value , media)
       } else {
-        await createPost('Jesus_AH', title.value, body, category.value , media)
+        const adminToken = await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+        await createPost('Jesus_AH', adminToken, title.value, body, category.value , media)
         // window.location.href = `${BASE_URL}${URLs.adminPanel}`;
       }
     } catch (error) {
