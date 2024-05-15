@@ -3,7 +3,6 @@
     background: rgba(var(--elephant-darker), 1);
     padding: var(--space-xl);
     border-radius: 10px;
-    
 
     & header {
 
@@ -12,7 +11,6 @@
             font-size: var(--text-base);
             font-weight: 200;
             visibility: visible;
-           
         }
 
         & .error {
@@ -85,10 +83,6 @@
 
             &:moz-autofill {
                 background-color: transparent;
-            }
-
-            &:internal-autofill-selected {
-                background: red;
             }
 
             &::placeholder {
