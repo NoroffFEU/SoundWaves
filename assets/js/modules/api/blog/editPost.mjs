@@ -24,7 +24,6 @@ export async function editPost(name, token, id, title, body, tags, media) {
   try {
     const response = await fetch(url, options);
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.error(error);

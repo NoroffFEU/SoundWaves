@@ -27,7 +27,6 @@ export async function createPost(name, token, title, body, tags, media) {
       throw new Error("Failed to create post");
     }
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.error(error);
