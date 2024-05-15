@@ -33,27 +33,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg" href="./assets/img/Favicon dark.svg">
+    <link rel="icon" type="image/svg" href="../assets/img/Favicon dark.svg">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     
     <!-- JavaScript-->
-    <script type="module" src="./assets/js/main.mjs"></script>
-    <script type="module" src="./assets/js/pages/homePage.mjs"></script>
+    <script type="module" src="../assets/js/main.mjs"></script>
+    <script type="module" src="../assets/js/pages/searchPage.mjs"></script>
 
 </head>
 <body>
-    <div class="main-loader">
-        <img src="./assets/img/logo-loader.svg" alt="SoundWaves logo for loading page">
-        <span class="loader"></span>
-    </div>
-
     <header class="local-header" data-interactive="false">
         <div class="wrapper">
             <div class="wrapper-background"></div>
             <div class="header-content media-padding flex-fw justify-sb align-items-center pd-20 relative">
-                <a href="./index.html" aria-label="SoundWaves logo" class="hover-opacity">
+                <a href="../index.html" aria-label="SoundWaves logo" class="hover-opacity">
                     <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo" class="logo-header">
                         <g id="logo">
                         <g id="waves">
@@ -181,7 +176,7 @@
     <article class="admin-bar" data-admin-logged="false">
         <nav class=" flex-fw align-items-center justify-sb">
             <div class="left flex align-items-center gap-10">
-                <img src="./assets/img/Noroff logo.svg" alt="Noroff avatar">
+                <img src="../assets/img/Noroff logo.svg" alt="Noroff avatar">
                 <span class="uppercase fw-150">Admin</span>
             </div>
             <ul class="flex gap-30">
@@ -213,110 +208,49 @@
         </nav>
     </article>
 
-    <section class="hero">
-        <article aria-label="Featured posts" class="flex">
-            <a class="featured-post width-100" data-position="first" data-active="true" data-transform="100">
-                <span class="tag fw-120"></span>
-                <h1 class="title"></h1>
-                <button type="button" class="btn hover-media fw-150">Read more</button> 
-            </a>
-            <a class="featured-post width-100" data-position="second" data-active="false" data-transform="200">
-                <span class="tag fw-120"></span>
-                <h2 class="title"></h1>
-                <button type="button" class="btn hover-media fw-150">Read more</button> 
-            </a>
-            <a class="featured-post width-100" data-position="third" data-active="false" data-transform="300">
-                <span class="tag fw-120"></span>
-                <h2 class="title"></h2>
-                <button type="button" class="btn hover-media fw-150">Read more</button> 
-            </a>
-        </article>
-
-        <div class="carousel-controller">
-            <button type="button" class="prev-slide">
-                <span class="material-symbols-outlined">skip_previous</span>
-            </button>
-            <button type="button" class="next-slide">
-                <span class="material-symbols-outlined">skip_next</span>
-            </button>
-        </div>
-
-        <div class="scroll-downs flex align-items-center gap-20 pd-40" aria-hidden="true">
-                <div class="mousey">
-                <div class="scroller"></div>
-                </div>
-        </div>
-    </section>
 
     <div class="line"></div>
 
     <main class="overflow-hidden">
-        <section class="posts mw-1000 media-padding">
 
-            <h3 class="heading text-center">All posts</h3>
+        <section class="search-zone mw-1000 media-padding">
+            <div class="search-heading ">
+                <h1>1 results found</h1>
+            </div>
+            <article class="flex column gap-30">
+                <a class="search-result flex align-items-center gap-30">
+                    <div class="search-result-img">
+                        <img src="../assets/img/placeholder 1.jpg" alt="Placeholder image">
+                    </div>
+                    <div class="search-result-content flex column gap-20">
+                        <span class="tag">Music Tech</span>
+                        <h2 class="title">Titulo Lorem ipsum dolor sit amet consectetur adipisicing elit. </h2>
+                        <h2 class="date">April 30, 2020</h2>
+                    </div>
+                </a>
+                <a class="search-result flex align-items-center gap-30">
+                    <div class="search-result-img">
+                        <img src="../assets/img/placeholder 1.jpg" alt="Placeholder image">
+                    </div>
+                    <div class="search-result-content flex column gap-20">
+                        <span class="tag">Music Tech</span>
+                        <h2 class="title">Titulo Lorem ipsum dolor sit amet consectetur adipisicing elit. </h2>
+                        <h2 class="date">April 30, 2020</h2>
+                    </div>
+                </a>
+                <a class="search-result flex align-items-center gap-30">
+                    <div class="search-result-img">
+                        <img src="../assets/img/placeholder 1.jpg" alt="Placeholder image">
+                    </div>
+                    <div class="search-result-content flex column gap-20">
+                        <span class="tag">Music Tech</span>
+                        <h2 class="title">Titulo Lorem ipsum dolor sit amet consectetur adipisicing elit. </h2>
+                        <h2 class="date">April 30, 2020</h2>
+                    </div>
+                </a>
 
-            <div class="all-post">
-
-                <template id="post-template">
-                    <article class="post gradient gradient-right">
-                        <a class="link">
-                            <header>
-                                <img class="img-transition-small"/>
-                            </header>
-                            <div class="post-body">
-                                <div>
-                                    <span class="tag fw-120"></span>
-                                    <h4 class="title"></h4>
-                                </div>
-                                <footer class="">
-                                    <span class="date"></span>
-                                    <button type="button">
-                                        <span class="material-symbols-outlined">arrow_forward</span>
-                                    </button>
-                                </footer>
-                            </div>
-                        </a>
-                    </article>
-                </template>
-
-            </div>
-            
-    
-            <div class="pagination">
-                <button type="button" aria-label="Load more stories" class="load-more fw-120">
-                    Load more stories
-                    <span class="material-symbols-outlined gradient gradient-top">expand_more</span>
-                </button>
-            </div>
-        </section>
-
-        <div class="line"></div>
-    
-        <section class="newsletter text-center">
-            <h3 class="media-padding">Don't miss a beat!</h3>
-            <p class="media-padding">Subscribe to our newsletter and be the first to know about new releases, upcoming concerts, and insider music news.</p>
-            <div class="subscription-form-container media-padding">
-                <label for="news-email" class="hidden">Email</label>
-                <input type="email" id="news-email" placeholder="Email address" aria-label="Email address" class="hover-opacity fw-80">
-                <button type="submit" class="btn">Subscribe</button>
-            </div>
-            <p class="media-padding">Your information will be used in accordance with our
-                <a href="#" class="hover-opacity">privacy policy</a>
-            </p>
-
-            <div class="notes-left">
-                <img src="./assets/img/corchea-left-reverse.svg" alt="">
-                <img src="./assets/img/corchea-left.svg" alt="">
-                <img src="./assets/img/negra-left.svg" alt="">
-            </div>
-            <div class="notes-right">
-                <img src="./assets/img/corchea-left-reverse.svg" alt="">
-                <img src="./assets/img/corchea-left.svg" alt="">
-                <img src="./assets/img/negra-left.svg" alt="">
-            </div>
-            <div class="waves-effect">
-                <img src="./assets/img/waves.svg" alt="Waves effect">
-            </div>
+            </article>
+        
         </section>
 
         <div class="line"></div>
@@ -410,7 +344,7 @@
         <div class="noroff" class="">
             <a href="https://www.noroff.no/index.php" target="_blank" class="hover-opacity">
                 <span>Student of</span>
-                <img src="./assets/img/Noroff logo.svg" alt="Noroff logo">
+                <img src="../assets/img/Noroff logo.svg" alt="Noroff logo">
             </a>
         </div>
 

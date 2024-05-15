@@ -4,17 +4,30 @@ import { getUserFromLocalStorage } from "../../utils/getLocalStorages.mjs";
 
 export function headerSearchButtonInteractivity() {
     const headerSearchButton = document.querySelector(".header-search-btn");
+    const searchPanel = document.querySelector(".search-panel");
+    const mainSearchForm = document.forms.mainSearch;
+    const searchInput = mainSearchForm.querySelector("input[name='search']");
+    const deleteTextButton = mainSearchForm.querySelector("#deleteText");
 
     headerSearchButton.addEventListener("click", () => {
-    const searchPanel = document.querySelector(".search-panel");
     const isClosed = searchPanel.getAttribute("data-search-is-closed");
 
     if (isClosed === "true") {
         searchPanel.setAttribute("data-search-is-closed", "false");
+        searchInput.focus();
+        deleteTextButton.style.display = "none";
     } else if (isClosed === "false") {
         searchPanel.setAttribute("data-search-is-closed", "true");
+        searchInput.value = "";
     }
     });
+
+    window.addEventListener("scroll", ()=> {
+    searchPanel.setAttribute("data-search-is-closed", "true");
+    searchInput.value = "";
+    deleteTextButton.style.display = "none";
+    })
+    
 }
 
 export async function loadLatestPostsSearchBar() {

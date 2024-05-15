@@ -2,25 +2,30 @@
     position: relative;
     font-size: var(--text-sm);
     z-index: 120;
-    transition: max-height .3s ease, opacity .3s ease;
+    transition: max-height .3s ease, opacity .3s ease, visibility .3s ease;
 
     &[data-search-is-closed="false"] {
         max-height: auto;
         opacity: 1;
         visibility: visible;
-        transition: max-height .3s ease, opacity .5s ease;
+        transition: max-height .3s ease, opacity .3s ease, visibility .3s ease;
 
     }
     &[data-search-is-closed="true"] {
         max-height: 0;
         opacity: 0;
         visibility: hidden;
-        transition: max-height .3s ease, opacity .5s ease;
+        transition: max-height .3s ease, opacity .3s ease, visibility .3s ease;
     }
 
     & form {
         padding-top: var(--space-2xl);
         border-bottom: 2px solid rgba(var(--turquoise-dark-hover), 1);
+
+        & .search-btn {
+            cursor: pointer;
+        }
+
 
         & input {
             flex: 1;

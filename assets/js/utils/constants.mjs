@@ -33,6 +33,7 @@ export const URLs = {
   edit: `/post/edit.html`,
   create: `/post/create.html`,
   adminPanel: `/post/admin-panel.html`,
+  search: `/post/search.html`,
   // Account
   login: `/account/login.html`,
   register: `/account/register.html`,

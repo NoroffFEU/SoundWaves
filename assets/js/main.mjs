@@ -4,6 +4,7 @@ import { comingFeature } from "./utils/commingFeature.mjs";
 import { initializeAdminBar } from "./modules/components/adminBar.mjs";
 import { headerSearchButtonInteractivity, loadLatestPostsSearchBar } from "./modules/components/headerSearch.mjs";
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
+import { searchPostsByTitle } from "./modules/components/searchMain.mjs";
 
 function main() {
   redirectIfAccessDenied();
@@ -13,6 +14,7 @@ function main() {
   loadLatestPostsSearchBar();
   initializeAdminBar();
   comingFeature();
+  searchPostsByTitle();
 }
 
 main();
