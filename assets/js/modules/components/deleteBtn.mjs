@@ -1,5 +1,5 @@
 import { deletePost } from "../api/blog/deletePost.mjs";
-import { loadFivePosts } from "./adminPanel.mjs";
+import { loadFivePosts } from "../../pages/adminPanelPage.mjs";
 
 export function loadDeleteBtn() {
   const deleteButtons = document.querySelectorAll(".delete-btn");
