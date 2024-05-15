@@ -1,13 +1,8 @@
 import { loginUser } from "../modules/api/auth/login.mjs";
 import { createPost } from "../modules/api/blog/createPost.mjs";
 import { BASE_URL, URLs } from "../utils/constants.mjs";
-import {
-  getTokenFromLocalStorage,
-  getUserFromLocalStorage,
-} from "../utils/getLocalStorages.mjs";
-
-const CLIENT_ID = "d7ac36c85a3852a";
-const ACCESS_TOKEN = "677864924d901ab7d356d7e28497937ca088e659";
+import { getTokenFromLocalStorage, getUserFromLocalStorage } from "../utils/getLocalStorages.mjs";
+import { uploadImageToImgur } from "../modules/api/imgur/imgur.mjs";
 
 const thumbnailInput = document.querySelector("#thumbnail");
 
@@ -16,31 +11,54 @@ thumbnailInput.addEventListener("change", async (event) => {
   const thumbnailButton = document.querySelector(".thumbnail-background span");
   const imageUrl = document.querySelector(".image-url");
 
-  try {
-    const response = await fetch("https://api.imgur.com/3/image", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${ACCESS_TOKEN}`,
-      },
-      body: event.target.files[0],
-    });
+  uploadedImageUrl()
 
-    const data = await response.json();
+  const uploadedImageUrl = await uploadImageToImgur(event.target.files[0]);
 
-    if (data.success) {
-      thumbnailBackground.style.backgroundImage = `url(${data.data.link})`;
-      imageUrl.textContent = data.data.link;
-
-      if (thumbnailBackground.style.backgroundImage) {
-        thumbnailButton.textContent = "Change thumbnail";
-      }
-    } else {
-      console.error("Error uploading image to Imgur:", data);
-    }
-  } catch (error) {
-    console.error("Error uploading image to Imgur:", error);
+  if (uploadedImageUrl) {
+    thumbnailBackground.style.backgroundImage = `url(${uploadedImageUrl})`;
+    imageUrl.textContent = uploadedImageUrl;
+    thumbnailButton.textContent = "Change thumbnail";
+  } else {
+    alert("Error uploading image to Imgur")
   }
 });
+
+// const CLIENT_ID = "d7ac36c85a3852a";
+// const ACCESS_TOKEN = "677864924d901ab7d356d7e28497937ca088e659";
+
+// const thumbnailInput = document.querySelector("#thumbnail");
+
+// thumbnailInput.addEventListener("change", async (event) => {
+//   const thumbnailBackground = document.querySelector(".thumbnail-background");
+//   const thumbnailButton = document.querySelector(".thumbnail-background span");
+//   const imageUrl = document.querySelector(".image-url");
+
+//   try {
+//     const response = await fetch("https://api.imgur.com/3/image", {
+//       method: "POST",
+//       headers: {
+//         Authorization: `Bearer ${ACCESS_TOKEN}`,
+//       },
+//       body: event.target.files[0],
+//     });
+
+//     const data = await response.json();
+
+//     if (data.success) {
+//       thumbnailBackground.style.backgroundImage = `url(${data.data.link})`;
+//       imageUrl.textContent = data.data.link;
+
+//       if (thumbnailBackground.style.backgroundImage) {
+//         thumbnailButton.textContent = "Change thumbnail";
+//       }
+//     } else {
+//       console.error("Error uploading image to Imgur:", data);
+//     }
+//   } catch (error) {
+//     console.error("Error uploading image to Imgur:", error);
+//   }
+// });
 
 const createPostForm = document.forms.createForm;
 
