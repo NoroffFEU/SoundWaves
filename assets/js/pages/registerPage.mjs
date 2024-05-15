@@ -1,4 +1,4 @@
-import { initializeRegisterForm } from "../modules/components/registerForm.mjs";
+import { initializeRegisterForm } from "../modules/forms/registerForm.mjs";
 import { loadLoginBtn } from "../utils/registerAndLoginButtons.mjs";
 
 function main() {

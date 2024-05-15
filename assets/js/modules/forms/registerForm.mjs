@@ -1,6 +1,6 @@
 import { BASE_URL, URLs } from '../../utils/constants.mjs';
 import { registerUser } from '../api/auth/register.mjs'
-import { displayError } from './errorDisplay.mjs';
+import { displayError } from '../components/errorDisplay.mjs';
 
 export function initializeRegisterForm() {
     const registerForm = document.forms.register;
@@ -79,38 +79,44 @@ export function initializeRegisterForm() {
     // Validate form on submit
     document.forms.register?.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const name = registerForm.userName.value;
-        const email = registerForm.email.value;
-        const password = registerForm.password.value;
-        const repeatPassword = registerForm.repeatPassword.value;
 
-        if (password !== repeatPassword) {
-            displayError(new Error('Passwords do not match'));
-            return
+        try {
+            const name = registerForm.userName.value;
+            const email = registerForm.email.value;
+            const password = registerForm.password.value;
+            const repeatPassword = registerForm.repeatPassword.value;
+
+            if (password !== repeatPassword) {
+                displayError(new Error('Passwords do not match'));
+                return
+            }
+
+            if (password.length < 8) {
+                displayError(new Error('Password must be at least 8 characters long'));
+                return
+            }
+
+            if (!email.match(/^[a-zA-Z0-9._%+-]+@stud\.noroff\.no$/)) {
+                displayError(new Error('The email value must be a valid stud.noroff.no email address.'));
+                return
+            }
+
+            if (!name.match(/^[a-zA-Z0-9_]+$/)) {
+                displayError(new Error('The name value must not contain punctuation symbols apart from underscore (_)'));
+                return
+            }
+
+            const response = await registerUser(name, email, password);
+            
+            if (response) {
+                window.location.href = `${BASE_URL}${URLs.login}`
+            } else {
+                throw new Error('Profile already exists. Please log in.')
+            }
+        } catch (error) {
+            displayError(error);
         }
-
-        if (password.length < 8) {
-            displayError(new Error('Password must be at least 8 characters long'));
-            return
-        }
-
-        if (!email.match(/^[a-zA-Z0-9._%+-]+@stud\.noroff\.no$/)) {
-            displayError(new Error('The email value must be a valid stud.noroff.no email address.'));
-            return
-        }
-
-        if (!name.match(/^[a-zA-Z0-9_]+$/)) {
-            displayError(new Error('The name value must not contain punctuation symbols apart from underscore (_)'));
-            return
-        }
-
-        const response = await registerUser(name, email, password);
         
-        if (response) {
-            window.location.href = `${BASE_URL}${URLs.index}`
-        } else {
-            return
-        }
     })
 
 
