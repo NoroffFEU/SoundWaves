@@ -27,3 +27,37 @@
         }
     }
 }
+
+/* ----- MEDIA ----- */
+
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 599px) {
+    .categories-panel {
+        & ul {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            & li {
+                width: 100%;
+                padding-block: var(--space-xs);
+            }
+        }
+    }
+}
+
+/* MEDIUM screens (tablets) */
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    .categories-panel {        
+        & ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+    
+            
+            & li {
+                width: 100%;
+                padding-block: var(--space-xs);
+            }
+        }
+    }
+}
+  
