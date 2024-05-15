@@ -60,3 +60,28 @@
         }
     }
 }
+
+/* ----- MEDIA ----- */
+
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 450px) {
+    .search-result {
+        position: relative;
+
+        & .search-result-img {
+            position: absolute;
+            inset: 0;
+            z-index: -10;
+            mask-image: linear-gradient(90deg, rgba(243,243,243, .5) 0%, rgba(151,151,151, .08) 100%);
+            & img {
+                aspect-ratio: unset !important;
+                max-height: 500px !important;
+                max-width: 500px !important;
+                width: 100% !important;
+                height: 100% !important;
+             
+            }
+        }
+    }
+}
+  
