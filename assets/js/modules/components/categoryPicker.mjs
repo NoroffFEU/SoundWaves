@@ -7,7 +7,6 @@ export async function loadCategoryPicker() {
     categories.forEach((category)=> {
         category.addEventListener('click', ()=> {
             const categoryClean = category.dataset.tagCategory.replace(/ /g, "-").toLowerCase();
-            console.log(categoryClean)
             window.location.href = `${BASE_URL}${URLs.search}?category=${categoryClean}`
         })
     })
