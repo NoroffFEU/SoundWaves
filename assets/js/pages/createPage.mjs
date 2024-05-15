@@ -11,8 +11,6 @@ thumbnailInput.addEventListener("change", async (event) => {
   const thumbnailButton = document.querySelector(".thumbnail-background span");
   const imageUrl = document.querySelector(".image-url");
 
-  uploadedImageUrl()
-
   const uploadedImageUrl = await uploadImageToImgur(event.target.files[0]);
 
   if (uploadedImageUrl) {
