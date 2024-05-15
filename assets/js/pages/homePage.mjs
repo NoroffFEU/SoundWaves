@@ -31,7 +31,7 @@ function renderCarousel(posts) {
 
     title.textContent = post.title;
     tag.textContent = post.tags;
-    image.style.backgroundImage = `url(${post.media.url})`;
+    image.style.backgroundImage = `url(${post.media.url})` 
     image.setAttribute("id", post.id);
     image.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
   });

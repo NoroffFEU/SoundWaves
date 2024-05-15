@@ -1,3 +1,5 @@
+//TODO: Maybe no need
+
 export function loadSlider() {
   const prevButton = document.querySelector(".prev-slide");
   const nextButton = document.querySelector(".next-slide");
