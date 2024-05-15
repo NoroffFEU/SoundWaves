@@ -27,8 +27,18 @@
                 border: 2px solid rgba(var(--turquoise-normal), 1);
             }
 
+            & .search-result-content {
+                padding: var(--space-m);
+            }
+
             & img {
-                max-width: 250px;
+                aspect-ratio: 1;
+                max-width: 200px;
+                min-width: 200px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
             }
 
             & .tag {
