@@ -4,7 +4,8 @@ import { getURL } from "../utils/getURL.mjs"
 
 async function loadSearchedPosts(){
     try{
-        const posts = await getPostsByUser()
+        const userName = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')).name : 'Jesus_AH';
+        const posts = await getPostsByUser(null, null, userName)
         const allPosts = posts.data
         renderSearchedPosts(allPosts)
 
