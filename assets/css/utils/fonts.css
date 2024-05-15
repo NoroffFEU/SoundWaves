@@ -8,82 +8,23 @@
     src: url(./fonts/geist-normal/GeistVF.woff2) format('woff2'),
 }
 
-.fw-10 {
-    font-weight: 10;
-}
-
-.fw-20 {
-    font-weight: 20;
-}
-
-.fw-30 {
-    font-weight: 30;
-}
-
-.fw-40 {
-    font-weight: 40;
-}
-
-.fw-50 {
-    font-weight: 50;
-}
-
-.fw-60 {
-    font-weight: 60;
-}
-
-.fw-70 {
-    font-weight: 70;
-}
-
-.fw-80 {
-    font-weight: 80;
-}
-
-.fw-90 {
-    font-weight: 90;
-}
-
-.fw-100 {
-    font-weight: 100;
-}
-
-.fw-110 {
-    font-weight: 110;
-}
-
-.fw-120 {
-    font-weight: 120;
-}
-
-.fw-130 {
-    font-weight: 130;
-}
-
-.fw-140 {
-    font-weight: 140;
-}
-
-.fw-150 {
-    font-weight: 150;
-}
-
-.fw-160 {
-    font-weight: 160;
-}
-
-.fw-170 {
-    font-weight: 170;
-}
-
-.fw-180 {
-    font-weight: 180;
-}
-
-.fw-190 {
-    font-weight: 190;
-}
-
-.fw-200 {
-    font-weight: 200;
-}
+.fw-10 {font-weight: 10;}
+.fw-20 {font-weight: 20;}
+.fw-30 {font-weight: 30;}
+.fw-40 {font-weight: 40;}
+.fw-50 {font-weight: 50;}
+.fw-60 {font-weight: 60;}
+.fw-70 {font-weight: 70;}
+.fw-80 {font-weight: 80;}
+.fw-90 {font-weight: 90;}
+.fw-100 {font-weight: 100;}
+.fw-110 {font-weight: 110;}
+.fw-120 {font-weight: 120;}
+.fw-130 {font-weight: 130;}
+.fw-140 {font-weight: 140;}
+.fw-150 {font-weight: 150;}
+.fw-160 {font-weight: 160;}
+.fw-170 {font-weight: 170;}
+.fw-180 {font-weight: 180;}
+.fw-190 {font-weight: 190;}
+.fw-200 {font-weight: 200;}
