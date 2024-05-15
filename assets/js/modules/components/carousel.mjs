@@ -1,5 +1,3 @@
-import { getPostsByUser } from "../api/blog/getAllPosts.mjs";
-
 let intervalId;
 
 export function loadCarouselFunctionality() {

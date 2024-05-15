@@ -1,8 +1,8 @@
-import { BASE_URL, URLs } from "../../utils/constants.mjs";
-import { getURL } from "../../utils/getURL.mjs";
-import { handleThumbnailUpload } from "../../utils/handleThumbnailUpload.mjs";
-import { editPost } from "../api/blog/editPost.mjs";
-import { getPostByID } from "../api/blog/getPostByID.mjs";
+import { BASE_URL, URLs } from "../utils/constants.mjs";
+import { getURL } from "../utils/getURL.mjs";
+import { handleThumbnailUpload } from "../utils/handleThumbnailUpload.mjs";
+import { editPost } from "../modules/api/blog/editPost.mjs";
+import { getPostByID } from "../modules/api/blog/getPostByID.mjs";
 
 
 handleThumbnailUpload();
