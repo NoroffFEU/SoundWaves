@@ -24,7 +24,10 @@
         width: 100%;
         height: 100%;
         z-index: 100;
-        background: rgba(var(--color-primary), 1);
+        background: rgba(var(--color-primary), .8);
+        backdrop-filter: blur(20px);
+        border-bottom: 2px solid rgba(var(--turquoise-dark-hover), .1);
+        box-shadow: 0px 15px 15px rgba(var(--turquoise-dark-hover), .1);
       }
 
       & .header-content {
