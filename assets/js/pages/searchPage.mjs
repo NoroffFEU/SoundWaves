@@ -1,5 +1,6 @@
 import { getPostsByUser } from "../modules/api/blog/getAllPosts.mjs";
 import { BASE_URL, URLs } from "../utils/constants.mjs";
+import { formData } from "../utils/formDate.mjs";
 import { getURL } from "../utils/getURL.mjs"
 
 async function loadSearchedPosts(){
@@ -39,11 +40,12 @@ async function renderSearchedPosts(posts){
         const postTags = clone.querySelector('.tag');
         const postDate = clone.querySelector('.date');
         const postLink = clone.querySelector('a');
+        const formattedDate = formData(new Date(post.created));
 
         postTitle.textContent = post.title;
         postImg.src = post.media.url;
         postTags.textContent = post.tags;
-        postDate.textContent = post.created;
+        postDate.textContent = formattedDate;
         postLink.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
       
 
