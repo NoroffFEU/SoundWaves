@@ -6,13 +6,13 @@ import { headerSearchButtonInteractivity, loadLatestPostsSearchBar } from "./mod
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 
 function main() {
+  redirectIfAccessDenied();
   initializeKonamiCode();
   addHeaderScrollInteractivity();
   headerSearchButtonInteractivity();
   loadLatestPostsSearchBar();
   initializeAdminBar();
   comingFeature();
-  redirectIfAccessDenied();
 }
 
 main();
