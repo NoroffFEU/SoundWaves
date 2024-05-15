@@ -9,23 +9,50 @@ export function headerSearchButtonInteractivity() {
     const searchInput = mainSearchForm.querySelector("input[name='search']");
     const deleteTextButton = mainSearchForm.querySelector("#deleteText");
 
-    headerSearchButton.addEventListener("click", () => {
-    const isClosed = searchPanel.getAttribute("data-search-is-closed");
+    const categoriesPanel = document.querySelector(".categories-panel");
+    const categoriesButton = document.querySelector(".header-categories-btn");
 
-    if (isClosed === "true") {
+
+    headerSearchButton.addEventListener("click", () => {
+    const searchIsClosed = searchPanel.getAttribute("data-search-is-closed");
+    const categoriesAreClosed = categoriesPanel.getAttribute("data-categories-closed");
+
+    if (categoriesAreClosed === "false") {
+        categoriesPanel.setAttribute("data-categories-closed", "true");
+    } 
+
+    if (searchIsClosed === "true"){
         searchPanel.setAttribute("data-search-is-closed", "false");
         searchInput.focus();
         deleteTextButton.style.display = "none";
-    } else if (isClosed === "false") {
+    } else if (searchIsClosed === "false") {
         searchPanel.setAttribute("data-search-is-closed", "true");
         searchInput.value = "";
     }
     });
 
+    categoriesButton.addEventListener("click", () => {
+    const categoriesAreClosed = categoriesPanel.getAttribute("data-categories-closed");
+    const searchIsClosed = searchPanel.getAttribute("data-search-is-closed");
+
+    if (searchIsClosed === "false") {
+        searchPanel.setAttribute("data-search-is-closed", "true");
+        searchInput.value = "";
+        deleteTextButton.style.display = "none";
+    }
+
+    if (categoriesAreClosed === "true") {
+        categoriesPanel.setAttribute("data-categories-closed", "false");
+    } else if (categoriesAreClosed === "false") {
+        categoriesPanel.setAttribute("data-categories-closed", "true");
+    }
+    });
+
     window.addEventListener("scroll", ()=> {
-    searchPanel.setAttribute("data-search-is-closed", "true");
-    searchInput.value = "";
-    deleteTextButton.style.display = "none";
+      categoriesPanel.setAttribute("data-categories-closed", "true");
+      searchPanel.setAttribute("data-search-is-closed", "true");
+      searchInput.value = "";
+      deleteTextButton.style.display = "none";
     })
     
 }
