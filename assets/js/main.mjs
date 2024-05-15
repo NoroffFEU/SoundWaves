@@ -5,6 +5,7 @@ import { initializeAdminBar } from "./modules/components/adminBar.mjs";
 import { headerSearchButtonInteractivity, loadLatestPostsSearchBar } from "./modules/components/headerSearch.mjs";
 import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 import { searchPostsByTitle } from "./modules/components/searchMain.mjs";
+import { loadCategoryPicker } from "./modules/components/categoryPicker.mjs";
 
 function main() {
   redirectIfAccessDenied();
@@ -15,6 +16,7 @@ function main() {
   initializeAdminBar();
   comingFeature();
   searchPostsByTitle();
+  loadCategoryPicker();
 }
 
 main();

@@ -3,7 +3,6 @@ import { BASE_URL, URLs } from "../../utils/constants.mjs";
 export async function searchPostsByTitle() {
     const searchForm = document.forms.mainSearch;
     const searchInput = searchForm.querySelector("input[name='search']");
-    const searchButton = searchForm.querySelector(".search-btn");
     const deleteTextButton = searchForm.querySelector("#deleteText");
 
     searchInput.addEventListener("input", () => {
