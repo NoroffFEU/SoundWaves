@@ -42,7 +42,7 @@
             <div class="wrapper-background"></div>
             <div class="header-content media-padding flex-fw justify-sb align-items-center pd-20 relative">
                 <a href="../index.html" aria-label="SoundWaves logo" class="hover-opacity">
-                    <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo">
+                    <svg width="348" height="42" viewBox="0 0 348 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="SoundWaves logo" class="logo-header">
                         <g id="logo">
                         <g id="waves">
                         <g id="WAVES">
@@ -106,7 +106,7 @@
                 </a>
                 <nav role="navigation">
                     <ul class="flex align-items-center gap-20">
-                        <li><button type="button" aria-label="Language selector" class="flex align-items-center gap-8 hover-underline coming-feature">
+                        <li><button type="button" aria-label="Categories" class="header-categories-btn flex align-items-center gap-8 hover-underline">
                             <span class="material-symbols-outlined">category</span>
                             <span class="text fw-100">Categories</span>
                             </>
@@ -128,12 +128,12 @@
             </div>
             <div class="line"></div>
             <div class="search-panel mw-1000 media-padding" data-search-is-closed="true">
-                <form action="#" class="flex align-items-center">
+                <form action="#" class="flex align-items-center" name="mainSearch">
                     <label for="search" class="search-btn">
                         <span class="material-symbols-outlined">search</span>
                     </label>
                     <input type="search" name="search" id="search" placeholder="Search by title" class="fw-80">
-                    <button type="button">
+                    <button type="button" id="deleteText">
                         <span class="material-symbols-outlined">close</span>
                     </button>
                 </form>
@@ -157,6 +157,31 @@
                                 <span class="material-symbols-outlined gradient gradient-top">chevron_right</span>
                                 <p class="fw-80"></p>
                             </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="categories-panel mw-1000 media-padding" data-categories-closed="true">
+                <div>
+                    <ul class="flex-fw justify-sb text-center ">
+                        <li>
+                            <a href="#" class="hover-opacity" data-tag-category="New releases">New releases</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover-opacity" data-tag-category="Artist spotlights">Artist spotlights</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover-opacity" data-tag-category="Music reviews">Music reviews</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover-opacity" data-tag-category="Music & wellness">Music & wellness</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover-opacity" data-tag-category="Concert coverage">Convert coverage</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover-opacity" data-tag-category="Music tech">Music tech</a>
                         </li>
                         
                     </ul>
