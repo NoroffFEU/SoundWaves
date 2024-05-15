@@ -50,7 +50,8 @@
             font-weight: 200;
             color: rgba(var(--color-secondary), 1);
             z-index: 20;
-            text-wrap: balance;
+            text-wrap: balance; 
+            max-width: 830px;
           
         }
         
@@ -72,11 +73,11 @@
     & .carousel-controller {
         position: absolute;
         top: 50%;
-        left: 100px;
-        right: 100px;
+        left: 30px;
+        right: 30px;
         display: flex;
         justify-content: space-between;
-        z-index: 20;
+        z-index: 80;
 
         & button {
             background: rgba(var(--color-secondary), .1);
@@ -122,7 +123,32 @@
     }
 }
 
+/* ----- MEDIA ----- */
 
+/* SMALL screens (mobile) */
+@media only screen and (max-width: 600px) {
+
+    .hero {
+        & .carousel-controller {
+           
+            top: calc(100dvh - 100px)
+        }
+    }
+
+}
+  
+/* MEDIUM screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .hero {
+        & .featured-post {
+            & .title {
+                max-width: 450px;
+            }
+        }
+    }
+}
+  
+/* ----- ANIMATIONS ----- */
  
   @keyframes scroll {
     0% { opacity: 0; }

@@ -62,6 +62,7 @@
         --light: rgba(var(--color-secondary), 1);
         --dark: #28292c;
         user-select: none;
+        transform: translateY(2px);
 
         &:hover .slider::before{
             -webkit-box-shadow: inset 6px -4px 0px 0px rgba(var(--turquoise-normal), 1);
@@ -132,6 +133,11 @@
 @media only screen and (max-width: 600px) {
 
   header {
+    & svg {
+      max-width: 150px;
+    
+    }
+
     & .text {
         display: none;
     }
