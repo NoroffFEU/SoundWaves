@@ -1,5 +1,4 @@
 // Login
-
 export function login(loginData) {
     const userData = {
         name: loginData.name,
@@ -9,7 +8,6 @@ export function login(loginData) {
 }
 
 // Logout
-
 export function logout() {
     localStorage.removeItem('userData');
 }
