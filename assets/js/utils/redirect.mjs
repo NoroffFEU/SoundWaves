@@ -1,24 +1,16 @@
-import { checkIfAdmin } from "./checkIfAdmin.mjs";
 import { BASE_URL, URLs } from "./constants.mjs";
 
-
-//TODO
 export function redirectToIndexPage() {
   window.location.href = `${BASE_URL}${URLs.index}`;
 }
 
 export function redirectIfAccessDenied() {
-  const isAdmin = checkIfAdmin();
+  const userLoggedIn = localStorage.getItem('userData') ? true : false;
+  const createPage = window.location.href.includes('create.html');
+  const editPage = window.location.href.includes('edit.html');
+  const adminPanelPage = window.location.href.includes('admin-panel.html');
 
-  const currentPath = window.location.pathname;
-  const deniedPath = `${URLs.accessDenied}`;
-  const restrictedPaths = [
-    `${URLs.edit}`,
-    `${URLs.adminPanel}`,
-    `${URLs.create}`,
-  ];
-
-  if (!isAdmin && restrictedPaths.includes(currentPath)) {
-    window.location.href = deniedPath;
-  }
+  if (!userLoggedIn && (createPage || editPage || adminPanelPage)) {
+    window.location.href = `${BASE_URL}${URLs.accessDenied}`
+  } 
 }
