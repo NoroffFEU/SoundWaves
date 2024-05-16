@@ -11,10 +11,6 @@
       
     }
 
-    & .interview-question:first-child {
-        margin-top: var(--space-xl);
-    }
-
     & .interview-answer {
         font-size: var(--text-base);
         font-weight: 50;
