@@ -39,7 +39,6 @@ function renderPost(post) {
     postDate.textContent = formData(new Date(post.created));
     postContent.innerHTML = post.body;
     interviewContent.innerHTML = choosedTemplate;
-
 }
 
 function loadPostPage(){

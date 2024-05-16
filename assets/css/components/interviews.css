@@ -3,18 +3,22 @@
 .interview-content {
 
     margin-bottom: var(--space-3xl);
-    
 
     & .interview-question {
         font-size: var(--text-base);
         font-weight: 150;
+        padding-top: var(--space-l);
       
+    }
+
+    & .interview-question:first-child {
+        margin-top: var(--space-xl);
     }
 
     & .interview-answer {
         font-size: var(--text-base);
         font-weight: 50;
-        padding-block: var(--space-l);
+        padding-block: var(--space-s);
         text-wrap: pretty;
     }
 

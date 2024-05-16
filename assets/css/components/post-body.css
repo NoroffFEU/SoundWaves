@@ -8,7 +8,7 @@
     line-height: 1.75;
     padding-block: var(--space-sm);
     text-wrap: pretty;
-    font-weight: 90;
+    font-weight: 50;
   }
 
   & h1 {
@@ -30,5 +30,9 @@
     height: auto;
     border-radius: 10px;
     margin-block: var(--space-s);
+  }
+
+  & strong {
+    font-weight: 100;
   }
 }
