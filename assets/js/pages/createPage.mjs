@@ -26,7 +26,6 @@ thumbnailInput.addEventListener("change", async (event) => {
   }
 });
 
-
 // Create post form
 const createPostForm = document.forms.createForm;
 createPostForm.addEventListener("submit", async (event) => {
