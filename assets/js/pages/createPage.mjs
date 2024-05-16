@@ -32,6 +32,11 @@ createPostForm.addEventListener("submit", async (event) => {
   const body = tinymce.activeEditor.getContent();
   const media = { url: imageUrl };
 
+  if (body.length > 1999) {
+    alert("Post body is too long, please keep it under 2000 characters");
+    return;
+  }
+
   try {
     if (!title.value || !category.value || !body || !imageUrl) {
       alert("All fields are required");
