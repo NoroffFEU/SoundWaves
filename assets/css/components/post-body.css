@@ -1,34 +1,34 @@
 /* ----- POST BODY ----- */
+
 .post-body {
-    padding-block: var(--space-2xl);
+  padding-block: var(--space-2xl);
 
-    & p {
-        font-size: var(--text-base);
-        line-height: 1.75;
-        padding-block: var(--space-m);
-        text-wrap: pretty;
-        font-weight: 90;
-    }
+  & p {
+    font-size: var(--text-base);
+    line-height: 1.75;
+    padding-block: var(--space-m);
+    text-wrap: pretty;
+    font-weight: 90;
+  }
 
-    & h1 {
-        font-weight: 100;
-    }
+  & h1 {
+    font-weight: 100;
+  }
 
-    & h2 {
-        font-size: var(--text-xl);
-        font-weight: 120;
-        padding-block: var(--space-l);
-    }
+  & h2 {
+    font-size: var(--text-xl);
+    font-weight: 120;
+    padding-block: var(--space-l);
+  }
 
-    & h2 + p {
-        padding-block: 0px;
-    
-    }
+  & h2 + p {
+    padding-block: 0px;
+  }
 
-    & img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-block: var(--space-s);
-    }
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-block: var(--space-s);
+  }
 }

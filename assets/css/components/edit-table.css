@@ -1,118 +1,114 @@
 /* ----- ADMIN TABLE ----- */
+
 .table-border {
-    border: 2px solid rgba(var(--turquoise-dark), 1);
-    border-radius: 10px;
-    overflow: hidden;
+  border: 2px solid rgba(var(--turquoise-dark), 1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .table-error {
-    min-height: 45vh;
-    display: none;
-    justify-content: center;
+  min-height: 45vh;
+  display: none;
+  justify-content: center;
 }
 
 .post-table {
-    width: 100%;
-    border-collapse: separate; 
-    
-    & th {
-        font-size: var(--text-sm);
-        padding: var(--space-l);
-        font-weight: 150;
+  width: 100%;
+  border-collapse: separate;
 
-        &:nth-child(1) {
-            text-align: left;
-        }
+  & th {
+    font-size: var(--text-sm);
+    padding: var(--space-l);
+    font-weight: 150;
+
+    &:nth-child(1) {
+      text-align: left;
+    }
+  }
+
+  & td {
+    font-weight: 80;
+    font-size: var(--text-sm);
+    padding: var(--space-l);
+    border-top: 2px solid rgba(var(--turquoise-dark), 1);
+
+    &:nth-child(n + 2) {
+      text-align: center;
     }
 
-    & td {
-        font-weight: 80;
-        font-size: var(--text-sm);
-        padding: var(--space-l);
-        border-top: 2px solid rgba(var(--turquoise-dark), 1);
-
-        &:nth-child(n+2) {
-            text-align: center;
-        }
-
-        &[data-cell="title"] {
-            font-weight: 120;
-        }
-
-        &[data-cell="category"] {
-            color: rgba(var(--color-secondary), .75);
-            min-width: 150px;
-        }
-        &[data-cell="date"] {
-            color: rgba(var(--color-secondary), .75);
-            min-width: 150px;
-        }
+    &[data-cell="title"] {
+      font-weight: 120;
     }
 
-    & [data-not-found="true"] {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: var(--space-xl);
-        font-size: var(--text-md);
-        color: rgba(var(--color-secondary), .75);
+    &[data-cell="category"] {
+      color: rgba(var(--color-secondary), 0.75);
+      min-width: 150px;
     }
+    &[data-cell="date"] {
+      color: rgba(var(--color-secondary), 0.75);
+      min-width: 150px;
+    }
+  }
+
+  & [data-not-found="true"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-xl);
+    font-size: var(--text-md);
+    color: rgba(var(--color-secondary), 0.75);
+  }
 }
 
 /* ----- MEDIA ----- */
 
 /* SMALL screens (mobile) */
 @media only screen and (max-width: 800px) {
-
-    .post-table {
-        
-         & th {
-            display: none;
-        } 
-
-        .responsive-body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .responsive-tr {
-           display: flex;
-           flex-direction: column;
-           border-bottom: 2px solid rgba(var(--turquoise-dark), 1);
-           padding: var(--space-l);
-
-           &:last-child {
-               border-bottom: none;
-           }
-
-           & td {
-             border: none;
-             padding: 0px;
-           }
-           
-
-           & td[data-cell="category"]{
-                order: 1;
-                display: inline;
-                margin-bottom: 8px;
-           }
-
-           & td[data-cell="title"]{
-                order: 3;
-                text-align: center;
-                padding-block: var(--space-l);
-           }
-
-           & td[data-cell="actions"]{
-                order: 4;
-           }
-
-           & td[data-cell="date"]{
-                order: 2;
-                display: inline;
-           }
-        }
+  .post-table {
+    & th {
+      display: none;
     }
 
+    .responsive-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .responsive-tr {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 2px solid rgba(var(--turquoise-dark), 1);
+      padding: var(--space-l);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      & td {
+        border: none;
+        padding: 0px;
+      }
+
+      & td[data-cell="category"] {
+        order: 1;
+        display: inline;
+        margin-bottom: 8px;
+      }
+
+      & td[data-cell="title"] {
+        order: 3;
+        text-align: center;
+        padding-block: var(--space-l);
+      }
+
+      & td[data-cell="actions"] {
+        order: 4;
+      }
+
+      & td[data-cell="date"] {
+        order: 2;
+        display: inline;
+      }
+    }
+  }
 }
-  

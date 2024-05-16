@@ -1,25 +1,25 @@
 /* ----- 404 ----- */
 
 .not-found {
-    margin-top: 70px;
-    min-height: calc(100dvh - 74px); 
-    display: grid;
-    place-content: center;
-    text-align: center;
-    gap: 40px;
+  margin-top: 70px;
+  min-height: calc(100dvh - 74px);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 40px;
 
-    & h1 {
-        font-size: var(--text-2xl);
-        font-weight: 200;
-    }
+  & h1 {
+    font-size: var(--text-2xl);
+    font-weight: 200;
+  }
 
-    & h2 {
-        font-size: var(--text-sm);
-        font-weight: 100;
-    }
+  & h2 {
+    font-size: var(--text-sm);
+    font-weight: 100;
+  }
 
-    & a {
-        margin: auto;
-        padding: 10px 20px;
-    }
+  & a {
+    margin: auto;
+    padding: 10px 20px;
+  }
 }

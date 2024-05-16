@@ -1,151 +1,147 @@
 /* ----- HEADER ----- */
+
 .local-header {
   position: sticky;
-  transition: top .3s ease;
+  transition: top 0.3s ease;
   top: -5rem;
   z-index: 100;
-  background: rgba(var(--elephant-darker), .5);
-  box-shadow: 0px 15px 15px rgba(var(--color-primary), .3);
-  backdrop-filter: blur(20px);;
+  background: rgba(var(--elephant-darker), 0.5);
+  box-shadow: 0px 15px 15px rgba(var(--color-primary), 0.3);
+  backdrop-filter: blur(20px);
 
-    & .wrapper {
+  & .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    z-index: 100;
+
+    & .wrapper-background {
       position: absolute;
-      top: 0;
       left: 0;
+      top: 0;
       width: 100%;
-      height: auto;
-      min-height: 100%;
+      height: 100%;
       z-index: 100;
-
-      & .wrapper-background {
-        position:absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 100;
-        background: rgba(var(--color-primary), .8);
-        backdrop-filter: blur(20px);
-        border-bottom: 2px solid rgba(var(--turquoise-dark-hover), .1);
-        box-shadow: 0px 15px 15px rgba(var(--turquoise-dark-hover), .1);
-      }
-
-      & .header-content {
-        position: relative;
-        z-index: 120;
-      }
-
-      & .line {
-        position: relative;
-        z-index: 120;
-      }
-
+      background: rgba(var(--color-primary), 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 2px solid rgba(var(--turquoise-dark-hover), 0.1);
+      box-shadow: 0px 15px 15px rgba(var(--turquoise-dark-hover), 0.1);
     }
 
-    &[data-interactive="true"] .header-content{
-      max-width: 1000px;
-      margin: auto;
-    }
-  
-    & svg {
-        aspect-ratio: 58 / 7;
-        width: 175px;
-        height: 100%;
+    & .header-content {
+      position: relative;
+      z-index: 120;
     }
 
-    & button {
-        font-size: var(--text-sm);
-        cursor: pointer;
+    & .line {
+      position: relative;
+      z-index: 120;
+    }
+  }
+
+  &[data-interactive="true"] .header-content {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  & svg {
+    aspect-ratio: 58 / 7;
+    width: 175px;
+    height: 100%;
+  }
+
+  & button {
+    font-size: var(--text-sm);
+    cursor: pointer;
+  }
+
+  .toggle-switch {
+    position: relative;
+    width: 45px;
+    height: 30px;
+    --light: rgba(var(--color-secondary), 1);
+    --dark: #28292c;
+    user-select: none;
+    transform: translateY(2px);
+
+    &:hover .slider::before {
+      -webkit-box-shadow: inset 6px -4px 0px 0px rgba(var(--turquoise-normal), 1);
+      box-shadow: inset 6px -4px 0px 0px rgba(var(--turquoise-normal), 1);
     }
 
-    .toggle-switch {
-        position: relative;
-        width: 45px;
-        height: 30px;
-        --light: rgba(var(--color-secondary), 1);
-        --dark: #28292c;
-        user-select: none;
-        transform: translateY(2px);
-
-        &:hover .slider::before{
-            -webkit-box-shadow: inset 6px -4px 0px 0px rgba(var(--turquoise-normal), 1);
-            box-shadow: inset 6px -4px 0px 0px rgba(var(--turquoise-normal), 1);
-          }
-
-        & .switch-label {
-            position: absolute;
-            width: 100%;
-            height: 25px;
-            background-color: var(--dark);
-            border-radius: 30px;
-            cursor: pointer;
-            border: 3px solid var(--dark);
-          }
-          
-        & .checkbox {
-            display: none;
-          }
-          
-        & .slider {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 25px;
-            -webkit-transition: 0.3s;
-            transition: 0.3s;
-          }
-          
-        & .checkbox:checked ~ .slider {
-            background-color: var(--light);
-          }
-          
-        & .slider::before {
-            content: "";
-            position: absolute;
-            top: 2px;
-            left: 4px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            -webkit-box-shadow: inset 6px -4px 0px 0px var(--light);
-            box-shadow: inset 6px -4px 0px 0px var(--light);
-            background-color: var(--dark);
-            -webkit-transition: 0.3s;
-            transition: 0.3s;
-          }
-          
-        & .checkbox:checked ~ .slider::before {
-            -webkit-transform: translateX(18px);
-            -ms-transform: translateX(18px);
-            transform: translateX(18px);
-            background-color: var(--dark);
-            -webkit-box-shadow: none;
-            box-shadow: none;
-          }
-        & span:last-of-type {
-            display: none;
-        }
+    & .switch-label {
+      position: absolute;
+      width: 100%;
+      height: 25px;
+      background-color: var(--dark);
+      border-radius: 30px;
+      cursor: pointer;
+      border: 3px solid var(--dark);
     }
+
+    & .checkbox {
+      display: none;
+    }
+
+    & .slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+
+    & .checkbox:checked ~ .slider {
+      background-color: var(--light);
+    }
+
+    & .slider::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 4px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      -webkit-box-shadow: inset 6px -4px 0px 0px var(--light);
+      box-shadow: inset 6px -4px 0px 0px var(--light);
+      background-color: var(--dark);
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+
+    & .checkbox:checked ~ .slider::before {
+      -webkit-transform: translateX(18px);
+      -ms-transform: translateX(18px);
+      transform: translateX(18px);
+      background-color: var(--dark);
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+    & span:last-of-type {
+      display: none;
+    }
+  }
 }
-
-
 
 /* ----- MEDIA ----- */
 
 /* SMALL screens (mobile) */
 @media only screen and (max-width: 600px) {
-
   header {
     & svg {
       max-width: 150px;
-    
     }
 
     & .text {
-        display: none;
+      display: none;
     }
 
-    & ul  {
+    & ul {
       gap: 15px !important;
     }
   }

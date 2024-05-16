@@ -1,55 +1,62 @@
 /* ----- PAGINATION LANDING PAGE ----- */
+
 .pagination {
-    
-    padding-block: var(--space-3xl);
-    display: grid;
-   
+  padding-block: var(--space-3xl);
+  display: grid;
 
-    & button {
-        transition: scale .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        cursor: pointer;
-        font-size: var(--text-sm);
+  & button {
+    transition: scale 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    font-size: var(--text-sm);
+  }
+
+  & span {
+    display: block;
+    max-width: fit-content;
+    margin: auto;
+    background: linear-gradient(
+      90deg,
+      rgba(243, 243, 243, 0.1) 0%,
+      rgba(151, 151, 151, 0.03) 100%
+    );
+    padding: 5px;
+    margin-top: var(--space-s);
+    border-radius: 50%;
+
+    &::after {
+      box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 0);
+      transition: box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-
-    & span {
-        display: block;
-        max-width: fit-content;
-        margin: auto;
-        background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
-        padding: 5px;
-        margin-top: var(--space-s);
-        border-radius: 50%;
-
-        &::after {
-            box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 0);
-            transition: box-shadow .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-    }
+  }
 }
 
 .edit-pagination {
-    font-size: var(--text-sm);
-    padding-block: var(--space-3xl);
-    font-weight: 100;
+  font-size: var(--text-sm);
+  padding-block: var(--space-3xl);
+  font-weight: 100;
 
-    & button {
-        cursor: pointer;
-        transition: scale .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  & button {
+    cursor: pointer;
+    transition: scale 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  & button:hover {
+    scale: 1.1;
+
+    & span::after {
+      box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 1);
     }
+  }
 
-    & button:hover {
-        scale: 1.1;
-
-        & span::after {
-            box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 1);
-        }
-      } 
-
-    & .material-symbols-outlined {
-        font-size: 20px;
-        padding: var(--space-2xs);
-        background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
-        border-radius: 50%;
-    }
+  & .material-symbols-outlined {
+    font-size: 20px;
+    padding: var(--space-2xs);
+    background: linear-gradient(
+      90deg,
+      rgba(243, 243, 243, 0.1) 0%,
+      rgba(151, 151, 151, 0.03) 100%
+    );
+    border-radius: 50%;
+  }
 }

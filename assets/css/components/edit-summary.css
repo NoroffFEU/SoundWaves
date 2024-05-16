@@ -1,77 +1,76 @@
 /* ----- SUMMARY ----- */
+
 .admin-panel-heading.heading {
-    margin-top: var(--space-2xl);
+  margin-top: var(--space-2xl);
 }
 
 .summary {
-    background: linear-gradient(90deg, rgba(243,243,243, .1) 0%, rgba(151,151,151, .03) 100%);
-    border-radius: 10px;
-    padding: var(--space-l);
+  background: linear-gradient(
+    90deg,
+    rgba(243, 243, 243, 0.1) 0%,
+    rgba(151, 151, 151, 0.03) 100%
+  );
+  border-radius: 10px;
+  padding: var(--space-l);
 
-    & h2 {
-        font-size: var(--text-xl);
-        font-weight: 200;
-        padding-block: var(--space-3xs);
-    }
+  & h2 {
+    font-size: var(--text-xl);
+    font-weight: 200;
+    padding-block: var(--space-3xs);
+  }
 
-    & div:first-of-type {
-        border-right: 2px solid rgba(var(--turquoise-dark), 1);
-    }
+  & div:first-of-type {
+    border-right: 2px solid rgba(var(--turquoise-dark), 1);
+  }
 
-    & div:last-of-type {
-        border-left: 2px solid rgba(var(--turquoise-dark), 1);
-    }
+  & div:last-of-type {
+    border-left: 2px solid rgba(var(--turquoise-dark), 1);
+  }
 
-    & span {
-        font-size: var(--text-sm);
-    }
+  & span {
+    font-size: var(--text-sm);
+  }
 }
 
 /* ----- MEDIA ----- */
 
 /* SMALL screens (mobile) */
 @media only screen and (max-width: 800px) {
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 0px;
+    padding: 0px;
 
-    .summary {
-        grid-template-columns: 1fr;
-        gap: 0px;
-        padding: 0px;
-
-        & div {
-            padding: var(--space-l);
-        }
-
-        
-
-        & div:first-of-type {
-            position: relative;
-            border-right: none;
-            
-
-            &::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                border-bottom: 2px solid rgba(var(--turquoise-dark), 1);
-                max-width: 50%;
-                margin: auto;
-            }
-        }
-    
-        & div:last-of-type {
-            border-left: none;
-            position: relative;
-
-            &::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                border-top: 2px solid rgba(var(--turquoise-dark), 1);
-                max-width: 50%;
-                margin: auto;
-            }
-        }
-
+    & div {
+      padding: var(--space-l);
     }
+
+    & div:first-of-type {
+      position: relative;
+      border-right: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-bottom: 2px solid rgba(var(--turquoise-dark), 1);
+        max-width: 50%;
+        margin: auto;
+      }
+    }
+
+    & div:last-of-type {
+      border-left: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-top: 2px solid rgba(var(--turquoise-dark), 1);
+        max-width: 50%;
+        margin: auto;
+      }
+    }
+  }
 }
-  

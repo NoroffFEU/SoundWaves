@@ -1,63 +1,60 @@
+/* ----- CATEGORY PANEL ----- */
+
 .categories-panel {
-    position: relative;
-    font-size: var(--text-sm);
-    z-index: 120;
-    transition: max-height .3s ease, opacity .3s ease, visibility .3s ease;
+  position: relative;
+  font-size: var(--text-sm);
+  z-index: 120;
+  transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 
-    &[data-categories-closed="false"] {
-        max-height: auto;
-        opacity: 1;
-        visibility: visible;
-        transition: max-height .3s ease, opacity .3s ease, visibility .3s ease;
+  &[data-categories-closed="false"] {
+    max-height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+  &[data-categories-closed="true"] {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
 
+  & ul {
+    padding-block: var(--space-2xl);
+
+    & li {
+      font-size: var(--text-sm);
+      font-weight: 100;
     }
-    &[data-categories-closed="true"] {
-        max-height: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: max-height .3s ease, opacity .3s ease, visibility .3s ease;
-    }
-
-    & ul {
-        padding-block: var(--space-2xl);
-
-        & li {
-            font-size: var(--text-sm);
-            font-weight: 100;
-        }
-    }
+  }
 }
 
 /* ----- MEDIA ----- */
 
 /* SMALL screens (mobile) */
 @media only screen and (max-width: 599px) {
-    .categories-panel {
-        & ul {
-            display: grid;
-            grid-template-columns: 1fr;
+  .categories-panel {
+    & ul {
+      display: grid;
+      grid-template-columns: 1fr;
 
-            & li {
-                width: 100%;
-                padding-block: var(--space-xs);
-            }
-        }
+      & li {
+        width: 100%;
+        padding-block: var(--space-xs);
+      }
     }
+  }
 }
 
 /* MEDIUM screens (tablets) */
 @media only screen and (min-width: 600px) and (max-width: 800px) {
-    .categories-panel {        
-        & ul {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-    
-            
-            & li {
-                width: 100%;
-                padding-block: var(--space-xs);
-            }
-        }
+  .categories-panel {
+    & ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      & li {
+        width: 100%;
+        padding-block: var(--space-xs);
+      }
     }
+  }
 }
-  

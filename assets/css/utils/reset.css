@@ -1,104 +1,126 @@
 /* ------------------ RESET ------------------ */
 
-    /* ----- BEFORE & AFTER ------ */
+/* ----- BEFORE & AFTER ------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-    *, *::before, *::after {box-sizing: border-box;}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
 
-    blockquote:before, blockquote:after, q:before, q:after {
-        content:"";
-        content: none;
-    }
+/* ----- MARGINS & PADDINGS ----- */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
 
-    /* ----- MARGINS & PADDINGS ----- */
+/* ----- IMG ----- */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        box-sizing: border-box;
-    }
+/* ----- LINKS ----- */
+a {
+  display: block;
+}
 
-    /* ----- IMG ----- */
+p a {
+  display: inline;
+}
 
-    img, picture, video, iframe, figure {
-        max-width: 100%;
-        width: auto;
-        display: block;
-        object-fit: cover;
-        object-position: center center;
-    }
+/* ----- LISTS ----- */
+li {
+  list-style-type: none;
+}
 
-    /* ----- LINKS ----- */
+/* ----- SCROLL BEHAVIOR ----- */
+html {
+  scroll-behavior: smooth;
+}
 
-    a {
-        display: block;
-    }
-    
-    p a 
-    {display: inline;
-    }
+/* ----- TEXT STYLES ----- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
 
-    /* ----- LISTS ----- */
+::selection {
+  background-color: rgba(var(--color-secondary), 1);
+  color: rgba(var(--color-primary), 1);
+}
 
-    li {
-        list-style-type: none;
-    }
+/* ----- FORMS ----- */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  display: block;
+  background-color: transparent;
+}
 
-    /* ----- SCROLL BEHAVIOR ----- */
+/* ----- TABLES ----- */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+/* ----- SVG ----- */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
 
-    /* ----- TEXT STYLES ----- */
-
-    h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
-        font-size: 1em;
-        font-weight: inherit;
-        font-style: inherit;
-        text-decoration: none;
-        color: inherit;
-    }
-
-
-    ::selection {
-        background-color: rgba(var(--color-secondary), 1);
-        color: rgba(var(--color-primary), 1);
-    }
-
-    /* ----- FORMS ----- */
-
-    form, input, textarea, select, button, label {
-        font-family: inherit;
-        font-size: inherit;
-        color: inherit;
-        display: block;
-        background-color: transparent;
-    }
-
-    /* ----- TABLES ----- */
-
-    table, tr, td {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    /* ----- SVG ----- */
-    svg {
-        width: 100%;
-        display: block;
-        fill: currentColor;
-    }
-
-    body {
-        min-height: 100vh;
-        font-size: 100%;
-        font-family: var(--font-primary);
-        background: rgba(var(--color-primary), 1);
-        color: rgba(var(--color-secondary), 1);
-        line-height: 1.4;
-        font-smooth: always;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
-    }
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--font-primary);
+  background: rgba(var(--color-primary), 1);
+  color: rgba(var(--color-secondary), 1);
+  line-height: 1.4;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}

@@ -1,55 +1,52 @@
 /* ----- ADMIN BAR ----- */
+
 .admin-bar {
-    position: fixed;
-    z-index: 100;
-    bottom: 0;
-    width: 100%;
-    padding: 20px;
-    
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
 
-    & nav {
-        background: rgba(var(--turquoise-dark), .8);
-        color: rgba(var(--color-secondary), 1);
-        padding: var(--space-s);
-        border-radius: 10px;
-        backdrop-filter: blur(5px);
+  & nav {
+    background: rgba(var(--turquoise-dark), 0.8);
+    color: rgba(var(--color-secondary), 1);
+    padding: var(--space-s);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
 
-        & .left {
-            font-size: var(--text-base);
+    & .left {
+      font-size: var(--text-base);
 
-            img {
-                border-radius: 50%;
-                background-color: rgba(var(--color-primary), 1);
-                aspect-ratio: 1 / 1;
-                width: var(--space-xl);
-                
-            }
-        }
-
-        & a, button {
-            cursor: pointer;
-        }
-
-        & .text {
-            font-size: var(--text-sm);
-        }
+      img {
+        border-radius: 50%;
+        background-color: rgba(var(--color-primary), 1);
+        aspect-ratio: 1 / 1;
+        width: var(--space-xl);
+      }
     }
 
+    & a,
+    button {
+      cursor: pointer;
+    }
+
+    & .text {
+      font-size: var(--text-sm);
+    }
+  }
 }
 
 [data-admin-logged="false"] {
-    display: none;
+  display: none;
 }
 
 /* ----- MEDIA ----- */
 
 /* SMALL screens (mobile) */
 @media only screen and (max-width: 600px) {
-
-    .admin-bar {
-        & .text {
-            display: none;
-        }
+  .admin-bar {
+    & .text {
+      display: none;
     }
+  }
 }
-  

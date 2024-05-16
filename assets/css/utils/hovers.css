@@ -1,148 +1,145 @@
-.hover-opacity{
-    opacity: 1;
-    
-    transition: opacity .2s ease-in-out;
+.hover-opacity {
+  opacity: 1;
 
-    &:hover {
-        opacity: .7;
-        transition: opacity .3s ease-in-out;
-    }
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+  }
 }
 
 .hover-underline {
-    position: relative;
-    border: none;
-    background: none;
+  position: relative;
+  border: none;
+  background: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: color;
+
+  &:hover {
+    color: rgba(var(--turquoise-normal-hover), 1);
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 300ms;
+    transition-duration: 400ms;
     transition-property: color;
 
-    &:hover {
-        color: rgba(var(--turquoise-normal-hover), 1);
-        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-        transition-duration: 400ms;
-        transition-property: color;
-
-        &::after {
-            width: 100%;
-            left: 5%;
-        }
-    }
-
     &::after {
-        content: "";
-        pointer-events: none;
-        bottom: -5px;
-        left: 50%;
-        position: absolute;
-        width: 0%;
-        height: 2px;
-        background-color: rgba(var(--turquoise-normal-hover), 1);
-        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-        transition-duration: 400ms;
-        transition-property: width, left;
-    }
-
-}
-
-.hover-media {
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition: color .3s ease, scale .3s ease;
-
-    &::before {
-        content: "";
-        position: absolute;
-        transform: translateX(-14%);
-        filter: blur(15px);
-        opacity: 0;
-        transition: opacity .5s ease; 
-        inset: 0;
-        width: 140%;
-        height: 100%;
-        background-color: rgba(var(--turquoise-normal-hover), 1);
-        border-radius: 50%;
-        z-index: -1;
-    }
-
-    &.tp:hover {
-        color: rgba(var(--turquoise-normal-hover), 1);
-        
-        &::before {
-            opacity: .6;
-        }
-    }
-  
-    &:hover:not(.tp) {
-      scale: 1.2;
-      color: rgba(var(--turquoise-normal-hover), 1);
-  
-      &::before {
-        opacity: .6;
-      }
+      width: 100%;
+      left: 5%;
     }
   }
 
-  .post:hover {
-    
-    & header img {   
-        scale: 1.1;
-    }
-    
-    & .material-symbols-outlined {
-        transform: translateX(10px);
-        background: transparent;
-        color: rgba(var(--turquoise-normal), 1);
-        border-radius: 50%;
-    }
+  &::after {
+    content: "";
+    pointer-events: none;
+    bottom: -5px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: rgba(var(--turquoise-normal-hover), 1);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+}
 
+.hover-media {
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition: color 0.3s ease, scale 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transform: translateX(-14%);
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    inset: 0;
+    width: 140%;
+    height: 100%;
+    background-color: rgba(var(--turquoise-normal-hover), 1);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &.tp:hover {
+    color: rgba(var(--turquoise-normal-hover), 1);
+
+    &::before {
+      opacity: 0.6;
+    }
+  }
+
+  &:hover:not(.tp) {
+    scale: 1.2;
+    color: rgba(var(--turquoise-normal-hover), 1);
+
+    &::before {
+      opacity: 0.6;
+    }
+  }
+}
+
+.post:hover {
+  & header img {
+    scale: 1.1;
+  }
+
+  & .material-symbols-outlined {
+    transform: translateX(10px);
+    background: transparent;
+    color: rgba(var(--turquoise-normal), 1);
+    border-radius: 50%;
+  }
 }
 
 .pagination {
-      & button:hover {
-        scale: 1.1;
+  & button:hover {
+    scale: 1.1;
 
-        & span::after {
-            box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 1);
-        }
-      } 
+    & span::after {
+      box-shadow: 0 0 10px rgba(var(--turquoise-normal-hover), 1);
+    }
+  }
 }
 
 .carousel-controller {
+  & button {
+    box-shadow: 0 0 10px rgba(var(--turquoise-normal), 0);
+    transition: border 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      background 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      scale 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    & button {
-        box-shadow: 0 0 10px rgba(var(--turquoise-normal), 0);
-        transition: border .1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background .1s cubic-bezier(0.25, 0.46, 0.45, 0.94), color .3s cubic-bezier(0.25, 0.46, 0.45, 0.94), scale .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    &:hover {
+      color: rgba(var(--turquoise-normal), 1);
+      border: 2px solid rgba(var(--turquoise-normal), 1);
+      background: rgba(var(--turquoise-normal), 0.1);
+      scale: 1.2;
 
-
-        &:hover {
-            color: rgba(var(--turquoise-normal), 1);
-            border: 2px solid rgba(var(--turquoise-normal), 1);
-            background: rgba(var(--turquoise-normal), .1);
-            scale: 1.2;
-            
-            &::before {
-                position: absolute;
-                content: "";
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background: rgba(var(--turquoise-normal), .1);
-                z-index: -1;
-                filter: blur(20px);
-                box-shadow: 0 0 10px rgba(var(--turquoise-normal), 1);
-            }
-        }
+      &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(var(--turquoise-normal), 0.1);
+        z-index: -1;
+        filter: blur(20px);
+        box-shadow: 0 0 10px rgba(var(--turquoise-normal), 1);
+      }
     }
+  }
 }
 
 .btn {
-    transition: background .3s ease, color .3s ease, scale .3s ease;
+  transition: background 0.3s ease, color 0.3s ease, scale 0.3s ease;
 
-    &:hover {
-        background: rgba(var(--turquoise-dark), 1);
-        color: rgba(var(--color-white), 1);
-    }
+  &:hover {
+    background: rgba(var(--turquoise-dark), 1);
+    color: rgba(var(--color-white), 1);
+  }
 }
-
