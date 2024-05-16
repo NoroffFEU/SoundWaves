@@ -68,6 +68,10 @@ editPostForm.addEventListener('submit', async (event)=> {
         const thumbnail = document.querySelector('.image-url').textContent;
         const media = { url : thumbnail }
         const postID = getURL("id");
+        if (content.length > 1999) {
+            alert("Post body is too long, please keep it under 2000 characters");
+            return;
+        }
         await editPost(name, token, postID, title, content, category, media)
         window.location.href = `${BASE_URL}${URLs.adminPanel}`
 
@@ -77,10 +81,12 @@ editPostForm.addEventListener('submit', async (event)=> {
         const title = editPostForm.title.value;
         const category = editPostForm.category.value;
         const thumbnail = document.querySelector('.image-url').textContent;
-        console.log(content, title, category, thumbnail)
-        console.log(content)
         const media = { url : thumbnail}
         const postID = getURL("id");
+        if (content.length > 1999) {
+            alert("Post body is too long, please keep it under 2000 characters");
+            return;
+        }
         await editPost('Jesus_AH', token, postID, title, content, category, media)
 
         window.location.href = `${BASE_URL}${URLs.adminPanel}`
