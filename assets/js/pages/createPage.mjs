@@ -4,53 +4,70 @@ import { BASE_URL, URLs } from "../utils/constants.mjs";
 import { getTokenFromLocalStorage, getUserFromLocalStorage } from "../utils/getLocalStorages.mjs";
 import { uploadImageToImgur } from "../modules/api/imgur/imgur.mjs";
 
-const thumbnailInput = document.querySelector("#thumbnail");
+async function loadThumbnailFunctionality() {
+  const thumbnailInput = document.querySelector("#thumbnail");
 
-thumbnailInput.addEventListener("change", async (event) => {
-  const thumbnailBackground = document.querySelector(".thumbnail-background");
-  const thumbnailButton = document.querySelector(".thumbnail-background span");
-  const imageUrl = document.querySelector(".image-url");
+  thumbnailInput.addEventListener("change", async (event) => {
+    const thumbnailBackground = document.querySelector(".thumbnail-background");
+    const thumbnailButton = document.querySelector(".thumbnail-background span");
+    const imageUrl = document.querySelector(".image-url");
 
-  const uploadedImageUrl = await uploadImageToImgur(event.target.files[0]);
+    try {
+      const uploadedImageUrl = await uploadImageToImgur(event.target.files[0]);
+  
+      if (uploadedImageUrl) {
+        thumbnailBackground.style.backgroundImage = `url(${uploadedImageUrl})`;
+        imageUrl.textContent = uploadedImageUrl;
+        thumbnailButton.textContent = "Change thumbnail";
+      } else {
+        alert("Error uploading image to Imgur, please try again later.");
+      }
+    } catch (error) {
+      console.error("Error uploading image to Imgur:", error);
+    }
+  });
+}
 
-  if (uploadedImageUrl) {
-    thumbnailBackground.style.backgroundImage = `url(${uploadedImageUrl})`;
-    imageUrl.textContent = uploadedImageUrl;
-    thumbnailButton.textContent = "Change thumbnail";
-  } else {
-    alert("Error uploading image to Imgur, please try again later.")
-  }
-});
+async function loadCreateEditorFunctionality() {
+  const createPostForm = document.forms.createForm;
 
-const createPostForm = document.forms.createForm;
+  createPostForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-createPostForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
+    const { title, category } = createPostForm;
+    const imageUrl = document.querySelector(".image-url").textContent;
+    const body = tinymce.activeEditor.getContent();
+    const media = { url: imageUrl };
 
-  const { title, category } = createPostForm;
-  const imageUrl = document.querySelector(".image-url").textContent;
-  const body = tinymce.activeEditor.getContent();
-  const media = { url: imageUrl };
-
-  if (body.length > 1999) {
-    alert("Post body is too long, please keep it under 2000 characters");
-    return;
-  }
-
-  try {
-    if (!title.value || !category.value || !body || !imageUrl) {
-      alert("All fields are required");
+    if (body.length > 1999) {
+      alert("Post body is too long, please keep it under 2000 characters");
       return;
     }
-    const name = localStorage.getItem("userData")
-      ? getUserFromLocalStorage()
-      : "Jesus_AH";
-    const token = localStorage.getItem("userData")
-      ? getTokenFromLocalStorage()
-      : await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
-    await createPost(name, token, title.value, body, category.value, media);
-    window.location.href = `${BASE_URL}${URLs.adminPanel}`;
-  } catch (error) {
-    console.error("Error creating post:", error);
-  }
-});
+
+    try {
+      if (!title.value || !category.value || !body || !imageUrl) {
+        alert("All fields are required");
+        return;
+      }
+
+      const name = localStorage.getItem("userData")
+        ? getUserFromLocalStorage()
+        : "Jesus_AH";
+      const token = localStorage.getItem("userData")
+        ? getTokenFromLocalStorage()
+        : await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+      await createPost(name, token, title.value, body, category.value, media);
+      window.location.href = `${BASE_URL}${URLs.adminPanel}`;
+    } catch (error) {
+      console.error("Error creating post:", error);
+    }
+  });
+
+}
+
+function loadCreatePage() {
+  loadThumbnailFunctionality();
+  loadCreateEditorFunctionality();
+}
+
+loadCreatePage();

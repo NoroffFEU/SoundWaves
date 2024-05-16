@@ -24,11 +24,11 @@ function renderPost(post) {
     const postImgSource = postPicture.querySelector('source');
     const postTags = postHeader.querySelector('.tag');
     const postDate = postHeader.querySelector('.date');
-
     const postContent = document.querySelector('.post-body');
 
     postTitle.textContent = post.title;
     postImg.src = post.media.url;
+    postImg.alt = `${post.title} image`;
     postImgSource.srcset = post.media.url;
     postTags.textContent = post.tags;
     postDate.textContent = formData(new Date(post.created));

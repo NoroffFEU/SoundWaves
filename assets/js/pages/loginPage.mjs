@@ -1,9 +1,9 @@
 import { initializeLoginForm } from "../modules/forms/loginForm.mjs";
 import { loadRegisterBtn } from "../utils/registerAndLoginButtons.mjs";
 
-function main () {
+function loadPage () {
     loadRegisterBtn();
     initializeLoginForm();
 }
 
-main();
+loadPage();

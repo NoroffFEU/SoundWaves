@@ -8,13 +8,16 @@ let page = 1;
 
 async function loadPostsAndProcess() {
   try {
+    // Get user name from local storage if it exists. 
     const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
     const name = userData?.name; 
 
+    // Get posts by user name.
     const posts = await getPostsByUser(12, 1, name);
     const carouselPosts = posts.data.slice(0, 3);
     const remainingPosts = posts.data.slice(3);
-
+    
+    // Rendering
     renderCarousel(carouselPosts);
     renderRemainingPosts(remainingPosts);
     checkIfIsLastPage(posts.meta.isLastPage)
@@ -23,6 +26,7 @@ async function loadPostsAndProcess() {
     console.error(error);
   }
 }
+
 function renderCarousel(posts) {
   posts.forEach((post, index) => {
     const title = document.querySelectorAll(".hero article .title")[index];
@@ -36,27 +40,6 @@ function renderCarousel(posts) {
     image.href = `${BASE_URL}${URLs.post}?id=${post.id}`;
   });
 }
-
-async function handleLoadMore() {
-  const loadMoreButton = document.querySelector(".load-more");
-
-  loadMoreButton.addEventListener("click", async () => {
-    page++; 
-
-    try {
-      const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
-      const name = userData?.name; 
-
-      const posts = await getPostsByUser(12, page, name);
-      await renderRemainingPosts(posts.data);
-      checkIfIsLastPage(posts.meta.isLastPage); 
-    } catch (error) {
-      console.error(error);
-    }
-  });
-}
-
-
 
 function renderRemainingPosts(posts) {
   const container = document.querySelector(".all-post");
@@ -83,12 +66,37 @@ function renderRemainingPosts(posts) {
 
     const image = clone.querySelector("img");
     image.src = post.media.url || "../../img/logo-og.webp"
+    image.alt = `${post.title} image`;
     
 
     fragment.appendChild(clone);
   });
 
   container.appendChild(fragment);
+}
+
+// Load more button
+async function handleLoadMore() {
+  const loadMoreButton = document.querySelector(".load-more");
+
+  loadMoreButton.addEventListener("click", async () => {
+    page++; 
+
+    try {
+      // Get user name from local storage if it exists.
+      const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
+      const name = userData?.name; 
+      
+      // Get posts by user name.
+      const posts = await getPostsByUser(12, page, name);
+      // Render posts.
+      const restPosts = await renderRemainingPosts(posts.data);
+      // Check if is last page.
+      checkIfIsLastPage(posts.meta.isLastPage); 
+    } catch (error) {
+      console.error(error);
+    }
+  });
 }
 
 

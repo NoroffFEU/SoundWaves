@@ -21,10 +21,3 @@ export const tableRowTemplate = (data) => {
     </tr>
     `;
 };
-
-
-
-export const tableRowTemplateError = (error) => {
-    return `
-        ${error}
-    `; }

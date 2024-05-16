@@ -3,90 +3,55 @@ import { getPostsByUser } from "../modules/api/blog/getAllPosts.mjs";
 import { loadDeleteBtn } from "../modules/components/deleteBtn.mjs";
 import { loadEditBtn } from "../modules/components/editBtn.mjs";
 
-//TODO ADD ERROR HANDLING AND PRINT ERROR MESSAGE TO TABLE
-
 let currentPage = 1;
 
 export async function loadFivePosts() {
   const table = document.querySelector("#table-content");
+  const tableContainer = document.querySelector(".table-border");
+  const errorDisplay = document.querySelector(".table-error");
   const paginationContainer = document.querySelector("#table-pagination");
+
   let template = "";
+
   try {
-    if (localStorage.getItem("userData")) {
-      const storedUser = localStorage.getItem("userData");
-      const userData = JSON.parse(storedUser);
-      const name = userData.name;
-      const posts = await getPostsByUser(5, currentPage, name);
-      if (!posts) {
-        return;
-      }
-      if (posts.data.length === 0) {
-        currentPage--;
-        await loadFivePosts();
-        return;
-      }
-      posts.data.forEach((post) => {
-        template += tableRowTemplate(post);
-      });
+    const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
+    const name = userData?.name;
+    // Get 5 posts by user name.
+    const posts = await getPostsByUser(5, currentPage, name);
 
-      table.innerHTML = template;
-      paginationText(posts.meta.currentPage, posts.meta.pageCount);
-      summaryText();
-      loadEditBtn();
-      loadDeleteBtn();
-    } else {
-      const posts = await getPostsByUser(5, currentPage);
-
-      if (!posts) {
-        return;
-      }
-
-      if (posts.data.length === 0) {
-        currentPage--;
-        await loadFivePosts();
-        return;
-      }
-
-      posts.data.forEach((post) => {
-        template += tableRowTemplate(post);
-      });
-
-      table.innerHTML = template;
-      paginationText(posts.meta.currentPage, posts.meta.pageCount);
-      summaryText();
-      loadEditBtn();
-      loadDeleteBtn();
+    // If there are no posts, hide table and pagination.
+    if (!posts) {
+      tableContainer.style.display = "none";
+      paginationContainer.style.display = "none";
+      errorDisplay.style.display = "flex";
+      return;
     }
+
+    // Come back to prev page if there are no posts.
+    if (posts.data.length === 0) {
+      currentPage--;
+      await loadFivePosts();
+      return;
+    }
+
+    // Render posts, pagination and summary text.
+    posts.data.forEach((post) => {
+      template += tableRowTemplate(post);
+    });
+
+    table.innerHTML = template;
+
+    paginationText(posts.meta.currentPage, posts.meta.pageCount);
+    summaryText();
+    loadEditBtn();
+    loadDeleteBtn();
+
   } catch (error) {
     console.log(error.message);
   }
 }
 
-// Load pagination buttons
-function loadPaginationButtons() {
-  const nextBtn = document.querySelector("#nextBtn");
-  const prevBtn = document.querySelector("#prevBtn");
-  nextBtn.addEventListener("click", nextButtonFunction);
-  prevBtn.addEventListener("click", previousButtonFunction);
-}
-
-// Next button function
-async function nextButtonFunction() {
-  nextBtn.disabled = true;
-  currentPage++;
-  await loadFivePosts();
-  nextBtn.disabled = false;
-}
-
-// Previous button function
-async function previousButtonFunction() {
-  prevBtn.disabled = true;
-  currentPage--;
-  await loadFivePosts();
-  prevBtn.disabled = false;
-}
-
-// Pagination text
+// Render Pagination text.
 function paginationText(currentPage, pageCount) {
   const currentPageElement = document.querySelector("#current-page");
   const pageCountElement = document.querySelector("#page-count");
@@ -118,7 +83,7 @@ function paginationText(currentPage, pageCount) {
   }
 }
 
-// Summary text
+// Render Summary text
 async function summaryText() {
   try {
     if (localStorage.getItem("userData")) {
@@ -137,6 +102,31 @@ async function summaryText() {
     console.log(error);
   }
 }
+
+// Load pagination buttons
+function loadPaginationButtons() {
+  const nextBtn = document.querySelector("#nextBtn");
+  const prevBtn = document.querySelector("#prevBtn");
+  nextBtn.addEventListener("click", nextButtonFunction);
+  prevBtn.addEventListener("click", previousButtonFunction);
+}
+
+// Next button function
+async function nextButtonFunction() {
+  nextBtn.disabled = true;
+  currentPage++;
+  await loadFivePosts();
+  nextBtn.disabled = false;
+}
+
+// Previous button function
+async function previousButtonFunction() {
+  prevBtn.disabled = true;
+  currentPage--;
+  await loadFivePosts();
+  prevBtn.disabled = false;
+}
+
 
 loadFivePosts();
 loadPaginationButtons();

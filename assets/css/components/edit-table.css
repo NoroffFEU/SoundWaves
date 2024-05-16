@@ -5,6 +5,12 @@
     overflow: hidden;
 }
 
+.table-error {
+    min-height: 45vh;
+    display: none;
+    justify-content: center;
+}
+
 .post-table {
     width: 100%;
     border-collapse: separate; 
