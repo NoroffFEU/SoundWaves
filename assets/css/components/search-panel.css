@@ -67,6 +67,19 @@
 
     & ul {
       margin: 30px;
+
+      & p {
+        transition: color 0.3s ease;
+      }
+
+      & p:hover {
+        color: rgba(var(--color-secondary), .75);
+      }
+
+      & .material-symbols-outlined {
+        font-size: 20px;
+        font-weight: 150;
+      }
     }
   }
 }
