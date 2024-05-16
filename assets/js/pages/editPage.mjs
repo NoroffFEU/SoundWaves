@@ -35,7 +35,7 @@ editPostForm.addEventListener('submit', async (event)=> {
     const token = JSON.parse(user).token;
 
     try {
-        const content = tinymce.activeEditor.getContent();
+        const content = await tinymce.activeEditor.getContent();
         const title = editPostForm.title.value;
         const category = editPostForm.category.value;
         const thumbnail = document.querySelector('.image-url').textContent;
