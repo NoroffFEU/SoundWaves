@@ -24,5 +24,5 @@ export const zearInterviewTemplate = ()=> {
     <p>Perhaps when we started out, everything was more taboo, marginal music made by and for a segment of society less privileged. But like in the United States or France (to give examples), it has lost that marginal touch of protest and revolution music, evolving into a more commercial music style, with more artists, more producers, and more support from record labels and distributors, making hip-hop something normalized and with more audience than ever.</p>
     <h3 class="interview-question">Finally, do you have any musical projects in mind currently, or do you plan to become active in the hip-hop scene again in the near future?</h3>
     <p class="interview-answer">It's something that's always on my mind. I love creating music and enjoy it in all its processes. As for whether I have a musical project in mind today, no. But I have no doubt that I will return to the music scene with more hunger than ever, with a thousand and one stories to tell, eager to inspire a new generation.</p>
-    `
+    `;
 }
