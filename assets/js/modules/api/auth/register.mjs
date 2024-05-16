@@ -3,6 +3,7 @@ import { NameError, EmailError, PasswordError, APIError } from "../../../utils/e
 
 // Register new ADMIN
 export async function registerUser(name, email, password) {
+
   // Handling name errors
   const nameError = new NameError(
     "The name value must not contain punctuation symbols apart from underscore (_)"
@@ -25,7 +26,7 @@ export async function registerUser(name, email, password) {
       "The password value must be at least 8 characters."
     );
   }
-
+  
   // API data
   const url = `${API_BASE_URL}${AUTH_ENDPOINTS.REGISTER}`;
 

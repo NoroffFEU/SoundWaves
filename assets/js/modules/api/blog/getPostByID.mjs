@@ -1,6 +1,5 @@
 import { API_BASE_URL, BLOG_ENDPOINTS } from "../../../utils/constants.mjs";
 import { APIError } from "../../../utils/errorHandling.mjs";
-import { loginUser } from "../auth/login.mjs";
 
 // Get one post by ID
 export async function getPostByID(id, user = "Jesus_AH") {

@@ -1,6 +1,4 @@
 import { API_BASE_URL, BLOG_ENDPOINTS } from "../../../utils/constants.mjs";
-import { loginUser } from "../auth/login.mjs";
-
 
 // Delete post
 export async function deletePost(id, name, token) {
