@@ -14,16 +14,13 @@ export function initializeAdminBar() {
         redirectToIndexPage();
     }) 
 
-    token ? showAdminBar() : hideAdminBar();
-        
+    token ? showAdminBar() : hideAdminBar(); 
 }
 
 // Show-Hide Admin Bar
-
 export function showAdminBar() {
     ADMIN_BAR?.setAttribute('data-admin-logged', 'true');
 }
-
 export function hideAdminBar() {
     ADMIN_BAR?.setAttribute('data-admin-logged', 'false');
 }

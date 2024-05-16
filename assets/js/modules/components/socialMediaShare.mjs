@@ -26,10 +26,8 @@ export function loadSocialMediaShare() {
         setTimeout(() => {
           tooltip.style.visibility = 'hidden';
           tooltip.style.opacity = '0';
-  
         }, 1000);
         navigator.clipboard.writeText(link);
-  
       });
     });
   }

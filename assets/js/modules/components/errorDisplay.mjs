@@ -1,3 +1,5 @@
+// Display error in Login and Register forms
+
 export function displayError(error) {
     const h1 = document.querySelector('h1')
     const errorMessage = document.querySelector('.error')
