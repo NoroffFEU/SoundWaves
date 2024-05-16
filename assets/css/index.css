@@ -17,7 +17,6 @@
 @import url("./components/header.css");
 @import url("./components/footer.css");
 @import url("./components/hero.css");
-@import url("./components/categories.css");
 @import url("./components/posts-landing.css");
 @import url("./components/pagination.css");
 @import url("./components/newsletter.css");
@@ -36,3 +35,7 @@
 @import url("./components//edit-search.css");
 @import url("./components//edit-table.css");
 @import url("./components//edit-summary.css");
+
+
+/* ----- CSS ANIMATIONS ----- */
+@import url("./utils/keyframes.css")

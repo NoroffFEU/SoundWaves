@@ -138,7 +138,6 @@
         & .subscription-form-container {
             flex-direction: column;
       
-
             & input {
                 width: 100%;
                 padding: 15px;
@@ -153,43 +152,5 @@
     }
     .notes-right {
         display: none;
-    }
-}
-
-/* ----- ANIMATIONS ----- */
-
-@keyframes notesToRight {
-    0% {
-        right: 20%;
-        bottom: 0;
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        right: 10%;
-        bottom: 50%;
-        opacity: 0;
-    }
-}
-
-@keyframes notesToLeft {
-    0% {
-        left: 20%;
-        bottom: 0;
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        left: 10%;
-        bottom: 50%;
-        opacity: 0;
     }
 }

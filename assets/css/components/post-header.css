@@ -83,21 +83,3 @@
             }
         }
 }
-
-/* ----- MEDIA ----- */
-
-/* SMALL screens (mobile) */
-@media only screen and (max-width: 600px) {
-
-}
-  
-/* MEDIUM screens (tablets) */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    
-
-}
-  
-/* LARGE screens (desktop) */
- @media only screen and (min-width: 1025px) {
-    
-}
