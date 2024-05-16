@@ -380,18 +380,5 @@
       height: 750,
       toolbar: 'undo redo | bold italic underline',
       plugins: 'wordcount',
-      setup: function (editor) {
-        var max = 20;
-        editor.on('submit', function (e){
-            var numChars = tinymce.activeEditor.plugins.wordcount.body.getCharacterCount();
-            if (numChars > max) {
-                alert('You have exceeded the character limit of ' + max + '.');
-                e.preventDefault();
-            }
-        })
-      }
     });
 </script>
-
-
-assets\js\modules\tinymce\skins\ui\oxide-dark\style.css
