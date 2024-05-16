@@ -1,12 +1,12 @@
 /* ----- POST BODY ----- */
 
 .post-body {
-  padding-block: var(--space-2xl);
+  margin-top: var(--space-xl);
 
   & p {
     font-size: var(--text-base);
     line-height: 1.75;
-    padding-block: var(--space-m);
+    padding-block: var(--space-sm);
     text-wrap: pretty;
     font-weight: 90;
   }

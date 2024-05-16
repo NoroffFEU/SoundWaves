@@ -3,6 +3,8 @@ import { getURL } from '../utils/getURL.mjs';
 import { getPostByID } from '../modules/api/blog/getPostByID.mjs';
 import { getUserFromLocalStorage } from '../utils/getLocalStorages.mjs';
 import { loadSocialMediaShare } from '../modules/components/socialMediaShare.mjs';
+import { matsInterviewTemplate } from '../templates/interviews/matsInterview.mjs';
+import { checkTemplateByID } from '../templates/interviews/templateChecker.mjs';
 
 async function getDataPostPage() {
   try {
@@ -25,6 +27,9 @@ function renderPost(post) {
     const postTags = postHeader.querySelector('.tag');
     const postDate = postHeader.querySelector('.date');
     const postContent = document.querySelector('.post-body');
+    const interviewContent = document.querySelector('.interview-content');
+
+    const choosedTemplate = checkTemplateByID(post.id)
 
     postTitle.textContent = post.title;
     postImg.src = post.media.url;
@@ -33,6 +38,8 @@ function renderPost(post) {
     postTags.textContent = post.tags;
     postDate.textContent = formData(new Date(post.created));
     postContent.innerHTML = post.body;
+    interviewContent.innerHTML = choosedTemplate;
+
 }
 
 function loadPostPage(){
