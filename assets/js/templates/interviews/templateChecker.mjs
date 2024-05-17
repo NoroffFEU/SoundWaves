@@ -5,19 +5,19 @@ import { zearInterviewTemplate } from "./zearInterview.mjs";
 
 export function checkTemplateByID(id) {
     switch (id) {
-        case "79701330-b132-46c5-8f12-7531911837bf":
+        case "0ebe0ca1-fc6d-459f-929b-8245a3b6db5c":
             return matsInterviewTemplate();
             break;
 
-        case "cf075d23-ffd0-48fd-b1c5-c602f926ee15":
+        case "79701330-b132-46c5-8f12-7531911837bf":
             return stigInterviewTemplate();
             break;
 
-        case "523c8f70-259a-40be-8a71-ac8b85a9f7e1":
+        case "ac37dfd5-d18d-4fca-b791-1c8ef360c253":
             return zearInterviewTemplate();
             break;
 
-        case "9abede27-6cf7-4eb9-a079-7f6d27c7ca86":
+        case "fabafbe7-9456-4752-9035-ff9ace4dcae0":
             return estebanInterviewTemplate();
             break;
             
