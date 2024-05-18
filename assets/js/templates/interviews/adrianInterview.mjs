@@ -20,5 +20,7 @@ export const adrianInterviewTemplate = ()=> {
 
           <h3 class="interview-question">What exciting projects do you have in mind for the near future?</h3>
           <p class="interview-answer">I am going to collaborate soon with a very good childhood friend of mine, who is a professional in the music world, and he has proposed we make a track together. I am very excited about it because it's a project we've been talking about for a long time, and we are finally going to be able to carry it out</p>
+
+          <iframe width="560" height="455" src="https://www.youtube.com/embed/1ArVHJItI4E?si=6mSjNcJ25zgGYsJh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     `;
 } 

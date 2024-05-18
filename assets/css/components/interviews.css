@@ -25,18 +25,30 @@
         text-wrap: pretty;
     }
 
+    & p > a {
+        color: rgba(var(--turquoise-dark), 1);
+        font-size: var(--text-base);
+        font-weight: 100;
+        text-decoration: none;
+        text-decoration: underline;
+    }
+
     & ul {
         padding-inline: var(--space-l);
         padding-block: var(--space-s);
+
         & li {
             font-size: var(--text-base);
             font-style: italic;
             font-weight: 50;
             padding-bottom: var(--space-3xs);
             list-style-type: disc;
-
-            
         }
+    }
+
+    & strong {
+
+        font-weight: 120;
     }
 
     & img {
@@ -51,6 +63,9 @@
         margin-top: var(--space-l);
         aspect-ratio: 16/9;
         width: 100%;
+        /* aspect-ratio: 16/9;
+        width: 100%;
         height: 100%;
+        background: rgba(var(--color-primary), 1); */
     }
 }
