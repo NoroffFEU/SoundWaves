@@ -19,5 +19,6 @@ export const estebanInterviewTemplate = ()=> {
     <p>Far from intending to change the thoughts of the artists who may read me in these lines, and even further from judging their work, I would like to make a plea and (above all) an invitation in favor of critical thinking.</p>
     <p>How pretentious it is to see professionals (from all disciplines) buy into the avant-garde discourse of "new creation," and pretend to make and unmake the rules of understanding and communication at will behind a curtain of technical and mathematical complexity.</p>
     <p>My way of thinking about this is clear: We are not Gods. We do not create or destroy in terms of sensory perception. We simply order a discourse, not invent languages that no one is capable of understanding. In this way, I believe that creation would be approached with more respect and with truly artistic results: always seeking a maximum degree of technical cleanliness but never despising its more human side.</p>
+    <iframe width="560" height="455" src="https://www.youtube.com/embed/zdUtfe2Nzho?si=imq7DPePUZeyAhnq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     `;
 }
