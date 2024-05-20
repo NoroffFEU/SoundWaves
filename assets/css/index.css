@@ -35,7 +35,11 @@
 @import url("./components//edit-table.css");
 @import url("./components//edit-summary.css");
 @import url("./components/interviews.css");
+@import url("./components/soundWaves.css");
 
 
 /* ----- CSS ANIMATIONS ----- */
-@import url("./utils/keyframes.css")
+@import url("./utils/keyframes.css");
+
+
+

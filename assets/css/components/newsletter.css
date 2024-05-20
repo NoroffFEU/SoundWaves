@@ -60,20 +60,14 @@
   }
 
   & .waves-effect {
-    & img {
+    & svg {
       position: absolute;
       inset: 0;
       margin: auto auto 0 auto;
       min-width: 1200px;
       max-width: 1920px;
       width: 100%;
-      mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        rgba(var(--color-primary), 1) 10%,
-        rgba(var(--color-primary), 1) 90%,
-        transparent 100%
-      );
+      transform: scaleY(1.2);
     }
   }
 
