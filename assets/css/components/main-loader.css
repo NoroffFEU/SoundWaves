@@ -1,5 +1,9 @@
 /* ----- MAIN LOADER ----- */
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .main-loader {
   position: fixed;
   display: flex;
@@ -11,8 +15,9 @@
   width: 100%;
   z-index: 9999999;
   background: rgba(var(--color-primary), 1);
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 
   & .loader {
     position: relative;

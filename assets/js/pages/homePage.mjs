@@ -3,6 +3,7 @@ import { getPostsByUser } from "../modules/api/blog/getAllPosts.mjs";
 import { BASE_URL, URLs } from "../utils/constants.mjs";
 import { formData } from "../utils/formDate.mjs";
 import { checkIfIsLastPage } from "../utils/checkIsLastPage.mjs";
+import { initLoader } from "../modules/components/loader.mjs";
 
 let page = 1; 
 
@@ -104,6 +105,7 @@ function loadHomePage() {
   loadPostsAndProcess();
   loadCarouselFunctionality();
   handleLoadMore();
+  initLoader();
 }
 
 loadHomePage();
