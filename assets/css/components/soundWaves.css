@@ -2,7 +2,6 @@
     transform: scaleY(0);
     transform-origin: bottom;
     animation: lineGrow 1.2s cubic-bezier(0.2, 0.2, 0.8, 0.8) infinite alternate;
-    stroke-dashoffset: 200px;
     scale: 2;
     
     &:nth-child(2n) {
