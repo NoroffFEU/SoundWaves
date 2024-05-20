@@ -74,25 +74,3 @@ footer {
     }
   }
 }
-
-/* ----- ANIMATIONS ----- */
-
-footer {
-  & .footer-logo {
-    animation: toRight linear both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 15%;
-  }
-
-  & .social {
-    animation: toLeft linear both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 15%;
-  }
-
-  & .noroff {
-    animation: reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 15%;
-  }
-}

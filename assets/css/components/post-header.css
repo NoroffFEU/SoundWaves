@@ -89,3 +89,13 @@
     }
   }
 }
+
+
+/* ----- ANIMATIONS ----- */
+
+.post-header {
+  & .social {
+    animation: reveal 0.5s ease 0.3s forwards;
+    opacity: 0;
+  }
+}

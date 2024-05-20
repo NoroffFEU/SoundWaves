@@ -160,12 +160,14 @@
   .account-body {
     background: rgba(var(--elephant-darker), 1);
 
+   
+
     & .account {
       padding: 20px;
     }
 
-    & .gradient-login::after {
-      background: none;
+    & .gradient::after {
+      display: none;
     }
   }
 }
