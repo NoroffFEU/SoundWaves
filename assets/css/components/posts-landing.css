@@ -1,6 +1,7 @@
 /* ----- POSTS ----- */
 
 .posts {
+  
   & .all-post {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -102,4 +103,13 @@
       }
     }
   }
+}
+
+
+/* ----- ANIMATIONS ----- */
+
+main {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 15%;
 }
