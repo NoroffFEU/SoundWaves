@@ -146,3 +146,48 @@
     }
   }
 }
+
+
+/* ----- ANIMATIONS ----- */
+
+.header-content.first-load {
+
+  & a {
+    animation: toRight 0.5s 1s forwards;
+    opacity: 0;
+  }
+
+  & li {
+    &:nth-child(1) {
+      animation: toLeft 0.5s 1.2s forwards;
+      opacity: 0;
+    }
+    &:nth-child(2) {
+      animation: toLeft 0.5s 1.4s forwards;
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      animation: toLeft 0.5s 1.6s forwards;
+      opacity: 0;
+    }
+  }
+}
+
+.carousel-controller {
+  & .next-slide {
+    animation: toLeft 0.5s 1s forwards;
+    opacity: 0;
+  }
+  & .prev-slide {
+    animation: toRight 0.5s 1s forwards;
+    opacity: 0;
+  }
+}
+
+.scroll-downs {
+
+  & .mousey {
+    animation: toTop 0.5s 1s forwards;
+    opacity: 0;
+  }
+}
