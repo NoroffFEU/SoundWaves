@@ -3,7 +3,6 @@ import { getURL } from '../utils/getURL.mjs';
 import { getPostByID } from '../modules/api/blog/getPostByID.mjs';
 import { getUserFromLocalStorage } from '../utils/getLocalStorages.mjs';
 import { loadSocialMediaShare } from '../modules/components/socialMediaShare.mjs';
-import { matsInterviewTemplate } from '../templates/interviews/matsInterview.mjs';
 import { checkTemplateByID } from '../templates/interviews/templateChecker.mjs';
 
 async function getDataPostPage() {

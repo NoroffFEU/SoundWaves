@@ -87,11 +87,6 @@
 
 /* ----- ANIMATIONS ----- */
 
-
-[data-categories-closed="false"] {
-
-}
-
 [data-search-is-closed="false"] {
   & form { 
     animation: opacity 0.5s ease 0s forwards;

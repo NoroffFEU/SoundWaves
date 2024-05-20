@@ -7,6 +7,7 @@ import { redirectIfAccessDenied } from "./utils/redirect.mjs";
 import { searchPostsByTitle } from "./modules/components/searchMain.mjs";
 import { loadCategoryPicker } from "./modules/components/categoryPicker.mjs";
 
+
 function main() {
   redirectIfAccessDenied();
   initializeKonamiCode();
