@@ -89,7 +89,7 @@
   }
 
   & .material-symbols-outlined {
-    transform: translateX(10px);
+    transform: translateX(-10px);
     background: transparent;
     color: rgba(var(--turquoise-normal), 1);
     border-radius: 50%;

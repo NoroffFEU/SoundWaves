@@ -147,11 +147,9 @@
   }
 }
 
-
 /* ----- ANIMATIONS ----- */
 
 .header-content.first-load {
-
   & a {
     animation: toRight 0.5s 1s forwards;
     opacity: 0;
@@ -185,7 +183,6 @@
 }
 
 .scroll-downs {
-
   & .mousey {
     animation: toTop 0.5s 1s forwards;
     opacity: 0;

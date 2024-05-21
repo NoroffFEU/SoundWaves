@@ -78,7 +78,7 @@
 
 @keyframes lineGrow {
   0% {
-    transform: scaleY(.5);
+    transform: scaleY(0.5);
   }
 
   50% {
@@ -86,6 +86,6 @@
   }
 
   100% {
-    transform: scaleY(.5);
+    transform: scaleY(0.5);
   }
 }
