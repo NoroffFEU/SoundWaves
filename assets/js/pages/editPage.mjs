@@ -3,6 +3,7 @@ import { getURL } from "../utils/getURL.mjs";
 import { handleThumbnailUpload } from "../utils/handleThumbnailUpload.mjs";
 import { editPost } from "../modules/api/blog/editPost.mjs";
 import { getPostByID } from "../modules/api/blog/getPostByID.mjs";
+import { loadDiscardButton } from "../modules/components/discardBtn.mjs";
 
 // Fetch post data
 async function fetchPostData() {
@@ -54,5 +55,6 @@ editPostForm.addEventListener('submit', async (event)=> {
     }
 })
 
+loadDiscardButton();
 handleThumbnailUpload();
 fetchPostData()

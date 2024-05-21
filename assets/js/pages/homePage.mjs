@@ -5,7 +5,6 @@ import { formData } from "../utils/formDate.mjs";
 import { checkIfIsLastPage } from "../utils/checkIsLastPage.mjs";
 import { initLoader } from "../modules/components/loader.mjs";
 
-
 let page = 1; 
 
 async function loadPostsAndProcess() {
@@ -100,7 +99,6 @@ async function handleLoadMore() {
     }
   });
 }
-
 
 
 function loadHomePage() {

@@ -3,6 +3,7 @@ import { createPost } from "../modules/api/blog/createPost.mjs";
 import { BASE_URL, URLs } from "../utils/constants.mjs";
 import { getTokenFromLocalStorage, getUserFromLocalStorage } from "../utils/getLocalStorages.mjs";
 import { uploadImageToImgur } from "../modules/api/imgur/imgur.mjs";
+import { loadDiscardButton } from "../modules/components/discardBtn.mjs";
 
 // Thumbnail and IMGur upload
 const thumbnailInput = document.querySelector("#thumbnail");
@@ -58,3 +59,5 @@ createPostForm.addEventListener("submit", async (event) => {
     console.error("Error creating post:", error);
   }
 });
+
+loadDiscardButton();
