@@ -21,7 +21,7 @@ createPostForm.addEventListener("submit", async (event) => {
   }
 
   try {
-    if (!title.value || !category.value || !body || !imageUrl) {
+    if (!title.value || !category.value || !body) {
       alert("All fields are required");
       return;
     }
