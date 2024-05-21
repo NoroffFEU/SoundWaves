@@ -11,7 +11,7 @@ createPostForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const { title, category } = createPostForm;
-  const imageUrl = document.querySelector(".image-url").textContent;
+  let imageUrl = document.querySelector(".image-url").textContent;
   const body = tinymce.activeEditor.getContent();
   const media = { url: imageUrl };
 
@@ -25,6 +25,11 @@ createPostForm.addEventListener("submit", async (event) => {
       alert("All fields are required");
       return;
     }
+
+    if(!imageUrl) {
+      imageUrl = "https://imgur.com/y7u7fuU";
+    }
+    
     const name = localStorage.getItem("userData")
       ? getUserFromLocalStorage()
       : "Jesus_AH";
