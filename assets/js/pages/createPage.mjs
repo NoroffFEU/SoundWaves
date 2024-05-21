@@ -12,6 +12,9 @@ createPostForm.addEventListener("submit", async (event) => {
 
   const { title, category } = createPostForm;
   let imageUrl = document.querySelector(".image-url").textContent;
+  if (!imageUrl) {
+    imageUrl = "https://imgur.com/y7u7fuU";
+  }
   const body = tinymce.activeEditor.getContent();
   const media = { url: imageUrl };
 
@@ -26,10 +29,6 @@ createPostForm.addEventListener("submit", async (event) => {
       return;
     }
 
-    if(!imageUrl) {
-      imageUrl = "https://imgur.com/y7u7fuU";
-    }
-    
     const name = localStorage.getItem("userData")
       ? getUserFromLocalStorage()
       : "Jesus_AH";
