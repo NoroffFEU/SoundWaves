@@ -4,6 +4,7 @@ import { BASE_URL, URLs } from "../utils/constants.mjs";
 import { getTokenFromLocalStorage, getUserFromLocalStorage } from "../utils/getLocalStorages.mjs";
 import { uploadImageToImgur } from "../modules/api/imgur/imgur.mjs";
 import { loadDiscardButton } from "../modules/components/discardBtn.mjs";
+import { handleThumbnailUpload } from "../utils/handleThumbnailUpload.mjs";
 
 // Thumbnail and IMGur upload
 // const thumbnailInput = document.querySelector("#thumbnail");
@@ -27,32 +28,32 @@ import { loadDiscardButton } from "../modules/components/discardBtn.mjs";
 //   }
 // });
 
-const thumbnailInput = document.querySelector("#thumbnail");
+// const thumbnailInput = document.querySelector("#thumbnail");
 
-thumbnailInput.addEventListener("change", async (event) => {
-  const thumbnailBackground = document.querySelector(".thumbnail-background");
-  const thumbnailButton = document.querySelector(".thumbnail-background span");
-  const imageUrl = document.querySelector(".image-url");
-  const file = event.target.files[0];
+// thumbnailInput.addEventListener("change", async (event) => {
+//   const thumbnailBackground = document.querySelector(".thumbnail-background");
+//   const thumbnailButton = document.querySelector(".thumbnail-background span");
+//   const imageUrl = document.querySelector(".image-url");
+//   const file = event.target.files[0];
 
-  if (file && (file.type === "image/jpeg" || file.type === "image/jpg")) {
-    try {
-      const uploadedImageUrl = await uploadImageToImgur(file);
+//   if (file && (file.type === "image/jpeg" || file.type === "image/jpg")) {
+//     try {
+//       const uploadedImageUrl = await uploadImageToImgur(file);
     
-      if (uploadedImageUrl) {
-        thumbnailBackground.style.backgroundImage = `url(${uploadedImageUrl})`;
-        imageUrl.textContent = uploadedImageUrl;
-        thumbnailButton.textContent = "Change thumbnail";
-      } else {
-        alert("Error uploading image to Imgur, please try again later.");
-      }
-    } catch (error) {
-      console.error("Error uploading image to Imgur:", error);
-    }
-  } else {
-    alert("Please upload a JPEG image.");
-  }
-});
+//       if (uploadedImageUrl) {
+//         thumbnailBackground.style.backgroundImage = `url(${uploadedImageUrl})`;
+//         imageUrl.textContent = uploadedImageUrl;
+//         thumbnailButton.textContent = "Change thumbnail";
+//       } else {
+//         alert("Error uploading image to Imgur, please try again later.");
+//       }
+//     } catch (error) {
+//       console.error("Error uploading image to Imgur:", error);
+//     }
+//   } else {
+//     alert("Please upload a JPEG image.");
+//   }
+// });
 
 // Create post form
 const createPostForm = document.forms.createForm;
@@ -87,4 +88,5 @@ createPostForm.addEventListener("submit", async (event) => {
   }
 });
 
+handleThumbnailUpload();
 loadDiscardButton();
