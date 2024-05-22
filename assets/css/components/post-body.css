@@ -1,38 +1,40 @@
 /* ----- POST BODY ----- */
+.post-page {
+  
+  & .post-body {
+    margin-top: var(--space-xl);
 
-.post-body {
-  margin-top: var(--space-xl);
+    & p {
+      font-size: var(--text-base);
+      line-height: 1.75;
+      padding-block: var(--space-sm);
+      text-wrap: pretty;
+      font-weight: 50;
+    }
 
-  & p {
-    font-size: var(--text-base);
-    line-height: 1.75;
-    padding-block: var(--space-sm);
-    text-wrap: pretty;
-    font-weight: 50;
-  }
+    & h1 {
+      font-weight: 100;
+    }
 
-  & h1 {
-    font-weight: 100;
-  }
+    & h2 {
+      font-size: var(--text-xl);
+      font-weight: 120;
+      padding-block: var(--space-l);
+    }
 
-  & h2 {
-    font-size: var(--text-xl);
-    font-weight: 120;
-    padding-block: var(--space-l);
-  }
+    & h2 + p {
+      padding-block: 0px;
+    }
 
-  & h2 + p {
-    padding-block: 0px;
-  }
+    & img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-block: var(--space-s);
+    }
 
-  & img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-block: var(--space-s);
-  }
-
-  & strong {
-    font-weight: 100;
+    & strong {
+      font-weight: 100;
+    }
   }
 }
