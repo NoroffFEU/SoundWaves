@@ -2,6 +2,7 @@ import { tableRowTemplate } from "../templates/tableRow.mjs";
 import { getPostsByUser } from "../modules/api/blog/getAllPosts.mjs";
 import { loadDeleteBtn } from "../modules/components/deleteBtn.mjs";
 import { loadEditBtn } from "../modules/components/editBtn.mjs";
+import { loadFilteredPosts } from "../modules/components/adminSearch.mjs";
 
 let currentPage = 1;
 
@@ -52,41 +53,8 @@ export async function loadFivePosts() {
   }
 }
 
-// Filter posts by search input
-async function loadFilteredPosts(searchInput) {
-  const table = document.querySelector("#table-content");
-
-  let template = "";
-
-  try {
-    const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
-    const name = userData?.name;
-    currentPage = 1;
-
-    // Get 5 posts by user name.
-    const posts = await getPostsByUser(null, currentPage, name);
-    const filteredPosts = posts.data.filter((post)=> {
-      return post.title.toLowerCase().includes(searchInput.toLowerCase()) || post.tags.some((tag) => tag.toLowerCase().includes(searchInput.toLowerCase()));
-    });
-
-    filteredPosts.forEach((post) => {
-      template += tableRowTemplate(post);
-    });
-
-
-    table.innerHTML = template;
-
-    paginationText(null, null);
-    summaryText();
-    loadEditBtn();
-    loadDeleteBtn();
-    
-  } catch (error) {
-    console.log(error.message);
-  }
-}
 // Render Pagination text.
-function paginationText(currentPage, pageCount) {
+export function paginationText(currentPage, pageCount) {
   const currentPageElement = document.querySelector("#current-page");
   const pageCountElement = document.querySelector("#page-count");
   const textContainer = document.querySelector("#pagination-text-container");
@@ -143,7 +111,7 @@ function checkIfSearchInputIsEmpty() {
 }
 
 // Render Summary text
-async function summaryText() {
+export async function summaryText() {
   try {
     if (localStorage.getItem("userData")) {
       const storedUser = localStorage.getItem("userData");
