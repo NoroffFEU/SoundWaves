@@ -9,8 +9,6 @@ export async function handleThumbnailUpload() {
     const imageUrl = document.querySelector('.image-url');
     const thumbnailBtn = document.querySelector('.thumbnail-btn')
 
-    console.log(thumbnailText)
-
     const file = event.target.files[0];
 
     const validImageTypes = ['image/jpeg', 'image/jpg'];
