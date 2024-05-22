@@ -1,9 +1,6 @@
 import { getAccessToken } from "../modules/api/imgur/imgur.mjs";
 
 const thumbnailInput = document.querySelector('#thumbnail');
-// const ACCESS_TOKEN = '677864924d901ab7d356d7e28497937ca088e659';
-// const CLIENT_ID = 'd7ac36c85a3852a'; 
-// const REFRESH_TOKEN = '801a424005032b6dd9cd2d8d6df2c2ce63a272aa';
 
 export async function handleThumbnailUpload() {
   thumbnailInput.addEventListener('change', async (event) => {
