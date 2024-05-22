@@ -108,7 +108,7 @@
 
 /* ----- ANIMATIONS ----- */
 
-main {
+& .view-transition {
   animation: reveal linear both;
   animation-timeline: view();
   animation-range: entry 5% cover 15%;
