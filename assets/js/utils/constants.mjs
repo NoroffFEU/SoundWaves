@@ -13,13 +13,12 @@ export const BLOG_ENDPOINTS = {
   POST_BY_ID: (name, id) => `blog/posts/${name}/${id}`,
 };
 
-export const ADMIN_BAR = document.querySelector('.admin-bar');
-
+export const ADMIN_BAR = document.querySelector(".admin-bar");
 
 // Constants URL
 
 const BASE_URL_LOCAL = "http://localhost:5500";
-const BASE_URL_GITHUB =  "https://norofffeu.github.io/FED1-PE1-Whisperpiano";
+const BASE_URL_GITHUB = "https://norofffeu.github.io/FED1-PE1-Whisperpiano";
 
 const isLocal = window.location.hostname !== "norofffeu.github.io";
 
@@ -40,5 +39,4 @@ export const URLs = {
   //404
   notFound: `/404/index.html`,
   accessDenied: `/404/denied.html`,
-}
-
+};

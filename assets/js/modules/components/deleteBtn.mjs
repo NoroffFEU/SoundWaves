@@ -9,18 +9,23 @@ export function loadDeleteBtn() {
 }
 
 async function removePost(event) {
-    const dataID = event.target.getAttribute("data-post-id");
+  const dataID = event.target.getAttribute("data-post-id");
 
-    const confirmDelete = confirm("Are you sure you want to delete this post?")
-    if (!confirmDelete) {
-      return;
-    }
+  const confirmDelete = confirm("Are you sure you want to delete this post?");
+  if (!confirmDelete) {
+    return;
+  }
 
-    try {
-      const userData = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')) : { name: 'Jesus_AH', token: await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin") };
-      await deletePost(dataID, userData.name, userData.token);
-      await loadFivePosts();
-    } catch (error) {
-        console.error(error);
-    } 
+  try {
+    const userData = localStorage.getItem("userData")
+      ? JSON.parse(localStorage.getItem("userData"))
+      : {
+          name: "Jesus_AH",
+          token: await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin"),
+        };
+    await deletePost(dataID, userData.name, userData.token);
+    await loadFivePosts();
+  } catch (error) {
+    console.error(error);
+  }
 }
