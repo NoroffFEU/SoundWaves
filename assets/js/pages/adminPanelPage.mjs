@@ -10,12 +10,13 @@ export async function loadFivePosts() {
   const tableContainer = document.querySelector(".table-border");
   const errorDisplay = document.querySelector(".table-error");
   const paginationContainer = document.querySelector("#table-pagination");
-
+ 
   let template = "";
 
   try {
     const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
     const name = userData?.name;
+  
     // Get 5 posts by user name.
     const posts = await getPostsByUser(5, currentPage, name);
 
@@ -51,6 +52,39 @@ export async function loadFivePosts() {
   }
 }
 
+// Filter posts by search input
+async function loadFilteredPosts(searchInput) {
+  const table = document.querySelector("#table-content");
+
+  let template = "";
+
+  try {
+    const userData = localStorage.getItem("userData") ? JSON.parse(localStorage.getItem("userData")) : null;
+    const name = userData?.name;
+    currentPage = 1;
+
+    // Get 5 posts by user name.
+    const posts = await getPostsByUser(null, currentPage, name);
+    const filteredPosts = posts.data.filter((post)=> {
+      return post.title.toLowerCase().includes(searchInput.toLowerCase()) || post.tags.some((tag) => tag.toLowerCase().includes(searchInput.toLowerCase()));
+    });
+
+    filteredPosts.forEach((post) => {
+      template += tableRowTemplate(post);
+    });
+
+
+    table.innerHTML = template;
+
+    paginationText(null, null);
+    summaryText();
+    loadEditBtn();
+    loadDeleteBtn();
+    
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 // Render Pagination text.
 function paginationText(currentPage, pageCount) {
   const currentPageElement = document.querySelector("#current-page");
@@ -78,9 +112,34 @@ function paginationText(currentPage, pageCount) {
 
   if (!currentPage && !pageCount) {
     textContainer.style.visibility = "hidden";
+    prevBtn.style.visibility = "hidden";
   } else {
     textContainer.style.visibility = "visible";
   }
+}
+
+// Check if search input is empty
+function checkIfSearchInputIsEmpty() {
+  const searchForm = document.forms.searchEdit;
+  const searchInput = searchForm.querySelector("#search-edit");
+  const searchBtn = searchForm.querySelector("#search-btn");
+  
+  // Hearing for input event
+  searchInput.addEventListener("input", async() => {
+    if (searchInput.value.length > 0) {
+      await loadFilteredPosts(searchInput.value);
+      return false;
+    } else {
+      await loadFivePosts();
+      return true;
+    }
+  });
+
+  // When submit button is clicked, load filtered posts
+  searchForm.addEventListener("submit", async(e) => {
+    e.preventDefault();
+    await loadFilteredPosts(searchInput.value);
+  });
 }
 
 // Render Summary text
@@ -127,6 +186,6 @@ async function previousButtonFunction() {
   prevBtn.disabled = false;
 }
 
-
+checkIfSearchInputIsEmpty();
 loadFivePosts();
 loadPaginationButtons();
