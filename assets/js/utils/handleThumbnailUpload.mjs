@@ -5,8 +5,11 @@ const thumbnailInput = document.querySelector('#thumbnail');
 export async function handleThumbnailUpload() {
   thumbnailInput.addEventListener('change', async (event) => {
     const thumbnailBackground = document.querySelector('.thumbnail-background');
-    const thumbnailButton = document.querySelector('.thumbnail-background span');
+    const thumbnailText = document.querySelector('.thumbnail-background span p');
     const imageUrl = document.querySelector('.image-url');
+    const thumbnailBtn = document.querySelector('.thumbnail-btn')
+
+    console.log(thumbnailText)
 
     const file = event.target.files[0];
 
@@ -18,6 +21,7 @@ export async function handleThumbnailUpload() {
     }
 
     try {
+      thumbnailBtn.classList.add('loading');
       let accessToken = await getAccessToken();
 
       const response = await fetch('https://api.imgur.com/3/image', {
@@ -35,7 +39,7 @@ export async function handleThumbnailUpload() {
         imageUrl.textContent = data.data.link;
         
         if (thumbnailBackground.style.backgroundImage) {
-          thumbnailButton.textContent = 'Change thumbnail';
+          thumbnailText.textContent = 'Change thumbnail';
         }
       } else {
         console.error('Error uploading image to Imgur:', data);
@@ -43,6 +47,8 @@ export async function handleThumbnailUpload() {
 
     } catch (error) {
       console.error('Error uploading image to Imgur:', error);
+    } finally {
+      thumbnailBtn.classList.remove('loading');
     }
   });
 }

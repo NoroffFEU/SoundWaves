@@ -84,6 +84,42 @@
         font-size: var(--text-sm);
         font-weight: 120;
         z-index: 10;
+        min-width: 179px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .btn-loader{
+          display: none;
+          justify-content: center;
+          align-items: center;;
+          gap: .4rem;
+
+          & > div {
+            width: .5rem;
+            height: .5rem;
+            background-color: rgba(var(--color-secondary), 1);
+            border-radius: 50%;
+            animation: 1.2s infinite ease-in-out scaleUp;
+
+            &:nth-child(1) {
+              animation-delay: -0.32s;
+            }
+
+            &:nth-child(2) {
+              animation-delay: -0.16s;
+            }
+          }
+        }
+      }
+
+      & span.loading .btn-loader {
+        display: flex;
+      }
+
+      & span.loading p {
+        display: none;
       }
 
       &::before {
