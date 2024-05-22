@@ -37,8 +37,6 @@ export async function handleThumbnailUpload() {
         }
       } else {
         console.error('Error uploading image to Imgur:', data);
-        thumbnailBackground.style.backgroundImage = `url("https://imgur.com/y7u7fuU")`;
-        imageUrl.textContent = 'https://imgur.com/y7u7fuU';
       }
 
     } catch (error) {

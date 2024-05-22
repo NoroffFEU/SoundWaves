@@ -12,9 +12,11 @@ createPostForm.addEventListener("submit", async (event) => {
 
   const { title, category } = createPostForm;
   let imageUrl = document.querySelector(".image-url").textContent;
+
   if (!imageUrl) {
-    imageUrl = "https://imgur.com/y7u7fuU";
+    imageUrl = "https://i.imgur.com/XSsJ7Zz.jpg";
   }
+
   const body = tinymce.activeEditor.getContent();
   const media = { url: imageUrl };
 
@@ -35,6 +37,7 @@ createPostForm.addEventListener("submit", async (event) => {
     const token = localStorage.getItem("userData")
       ? getTokenFromLocalStorage()
       : await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+
     await createPost(name, token, title.value, body, category.value, media);
     window.location.href = `${BASE_URL}${URLs.adminPanel}`;
   } catch (error) {

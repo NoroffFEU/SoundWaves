@@ -39,7 +39,11 @@ editPostForm.addEventListener('submit', async (event)=> {
         const content = await tinymce.activeEditor.getContent();
         const title = editPostForm.title.value;
         const category = editPostForm.category.value;
-        const thumbnail = document.querySelector('.image-url').textContent;
+        let thumbnail = document.querySelector('.image-url').textContent;
+
+        if(!thumbnail) {
+            thumbnail = "https://i.imgur.com/XSsJ7Zz.jpg";
+        }
         const media = { url : thumbnail }
         const postID = getURL("id");
 
