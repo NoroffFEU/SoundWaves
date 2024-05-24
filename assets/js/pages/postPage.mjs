@@ -30,6 +30,7 @@ function renderPost(post) {
 
     const choosedTemplate = checkTemplateByID(post.id)
 
+    document.title = `SoundWaves Discoveries - ${post.title}`;
     postTitle.textContent = post.title;
     postImg.src = post.media.url;
     postImg.alt = `${post.title} image`;
