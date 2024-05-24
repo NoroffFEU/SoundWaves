@@ -4,6 +4,7 @@ import { getPostByID } from '../modules/api/blog/getPostByID.mjs';
 import { getUserFromLocalStorage } from '../utils/getLocalStorages.mjs';
 import { loadSocialMediaShare } from '../modules/components/socialMediaShare.mjs';
 import { checkTemplateByID } from '../templates/interviews/templateChecker.mjs';
+import { updateOpenGraph } from '../modules/components/openGraph.mjs';
 
 async function getDataPostPage() {
   try {
@@ -12,6 +13,7 @@ async function getDataPostPage() {
     const response = await getPostByID(postID, name);
     const post = response.data;
     renderPost(post);
+    updateOpenGraph(post)
   } catch (error) {
     console.error(error);
   }
