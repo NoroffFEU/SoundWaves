@@ -1,20 +1,26 @@
-const CLIENT_ID = 'd7ac36c85a3852a'; 
-const REFRESH_TOKEN = '801a424005032b6dd9cd2d8d6df2c2ce63a272aa';
+const CLIENT_ID = "a0af399aae11d62";
 
-export async function getAccessToken() {
-  const response = await fetch('https://api.imgur.com/oauth2/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      refresh_token: REFRESH_TOKEN,
-      client_id: CLIENT_ID,
-      client_secret: '7c656c7e69236a558d27b666225ed536b4831e05',
-      grant_type: 'refresh_token',
-    }),
-  });
+export async function uploadImage(image) {
+  try {
+    const formData = new FormData();
+    formData.append("image", image);
 
-  const data = await response.json();
-  return data.access_token;
+    const response = await fetch("https://api.imgur.com/3/image", {
+      method: "POST",
+      headers: {
+        Authorization: `Client-ID ${CLIENT_ID}`,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error("Error uploading image");
+    }
+
+    const data = await response.json();
+
+    return data.data.link;
+  } catch (error) {
+    console.error(error);
+  }
 }
