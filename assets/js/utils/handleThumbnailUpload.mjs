@@ -38,35 +38,5 @@ export async function handleThumbnailUpload() {
     } finally {
       thumbnailBtn.classList.remove("loading");
     }
-    // try {
-    //   thumbnailBtn.classList.add('loading');
-    //   let accessToken = await getAccessToken();
-
-    //   const response = await fetch('https://api.imgur.com/3/image', {
-    //     method: 'POST',
-    //     headers: {
-    //       Authorization: `Bearer ${accessToken}`
-    //     },
-    //     body: file,
-    //   });
-
-    //   const data = await response.json();
-
-    //   if (data.success) {
-    //     thumbnailBackground.style.backgroundImage = `url(${data.data.link})`;
-    //     imageUrl.textContent = data.data.link;
-
-    //     if (thumbnailBackground.style.backgroundImage) {
-    //       thumbnailText.textContent = 'Change thumbnail';
-    //     }
-    //   } else {
-    //     console.error('Error uploading image to Imgur:', data);
-    //   }
-
-    // } catch (error) {
-    //   console.error('Error uploading image to Imgur:', error);
-    // } finally {
-    //   thumbnailBtn.classList.remove('loading');
-    // }
   });
 }
