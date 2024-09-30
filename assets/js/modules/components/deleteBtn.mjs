@@ -20,8 +20,8 @@ async function removePost(event) {
     const userData = localStorage.getItem("userData")
       ? JSON.parse(localStorage.getItem("userData"))
       : {
-          name: "Jesus_AH",
-          token: await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin"),
+          name: "jesusnoroff",
+          token: await loginUser("jesusnoroff@stud.noroff.no", "jesusnoroff"),
         };
     await deletePost(dataID, userData.name, userData.token);
     await loadFivePosts();

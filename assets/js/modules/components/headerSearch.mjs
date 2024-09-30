@@ -65,7 +65,7 @@ export async function loadLatestPostsSearchBar() {
   try {
     const name = localStorage.getItem("userData")
       ? getUserFromLocalStorage()
-      : "Jesus_AH";
+      : "jesusnoroff";
     const posts = await getPostsByUser(3, 1, name);
     const postsData = posts.data;
 

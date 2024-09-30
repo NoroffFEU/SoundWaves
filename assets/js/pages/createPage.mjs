@@ -1,7 +1,10 @@
 import { loginUser } from "../modules/api/auth/login.mjs";
 import { createPost } from "../modules/api/blog/createPost.mjs";
 import { BASE_URL, URLs } from "../utils/constants.mjs";
-import { getTokenFromLocalStorage, getUserFromLocalStorage } from "../utils/getLocalStorages.mjs";
+import {
+  getTokenFromLocalStorage,
+  getUserFromLocalStorage,
+} from "../utils/getLocalStorages.mjs";
 import { loadDiscardButton } from "../modules/components/discardBtn.mjs";
 import { handleThumbnailUpload } from "../utils/handleThumbnailUpload.mjs";
 
@@ -33,10 +36,10 @@ createPostForm.addEventListener("submit", async (event) => {
 
     const name = localStorage.getItem("userData")
       ? getUserFromLocalStorage()
-      : "Jesus_AH";
+      : "jesusnoroff";
     const token = localStorage.getItem("userData")
       ? getTokenFromLocalStorage()
-      : await loginUser("jesalb53435@stud.noroff.no", "IamTheAdmin");
+      : await loginUser("jesusnoroff@stud.noroff.no", "jesusnoroff");
 
     await createPost(name, token, title.value, body, category.value, media);
     window.location.href = `${BASE_URL}${URLs.adminPanel}`;
