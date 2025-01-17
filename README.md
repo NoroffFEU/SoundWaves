@@ -3,14 +3,14 @@
 <div align="center">
   
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/jes%C3%BAs-alberola-herrero-896b61189/)
+[![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)](https://norofffeu.github.io/SoundWaves/)
 
-  
 </div>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://norofffeu.github.io/FED1-PE1-Whisperpiano/index.html">
+  <a href="https://norofffeu.github.io/SoundWaves/">
     <img src="assets/img/Logo dark.svg" alt="Logo" width="300" height="120">
   </a>
 
