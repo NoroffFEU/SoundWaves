@@ -18,7 +18,7 @@ export const ADMIN_BAR = document.querySelector(".admin-bar");
 // Constants URL
 
 const BASE_URL_LOCAL = "http://localhost:5500";
-const BASE_URL_GITHUB = "https://norofffeu.github.io/FED1-PE1-Whisperpiano";
+const BASE_URL_GITHUB = "https://norofffeu.github.io/SoundWaves/";
 
 const isLocal = window.location.hostname !== "norofffeu.github.io";
 
